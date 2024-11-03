@@ -2,7 +2,7 @@
 
 public class CheckOut;
 
-public void DoCheckOut((List<InventoryItem> inventory, double DailyFat, double DailyCarbs, double DailyProteins, double Klimaneutral)
+public static void DoCheckOut((List<InventoryItem> inventory, double DailyFat, double DailyCarbs, double DailyProteins, double Klimaneutral)
 {
     foreach (var item in inventory)
     {
