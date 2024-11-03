@@ -1,7 +1,7 @@
 /* Baseclass for commands
  */
 
-class BaseCommand {
+public class BaseCommand {
   protected string description = "Undocumented";
   
   protected bool GuardEq (string[] parameters, int bound) {
