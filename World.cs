@@ -10,6 +10,7 @@ class World {
     Space cave     = new Space("Cave");
     Space pit      = new Space("Darkest Pit");
     Space outside  = new Space("Outside");
+    Space checkout = new Space("Checkout");
     
     entry.AddEdge("door", corridor);
     corridor.AddEdge("door", cave);
@@ -19,6 +20,8 @@ class World {
     outside.AddEdge("door", cave);
     
     this.entry = entry;
+    
+    
   }
   
   public Space GetEntry () {
