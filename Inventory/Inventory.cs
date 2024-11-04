@@ -43,5 +43,6 @@ public class Inventory
             
         }
     }
+    //det her er for at pushe
     
 }
