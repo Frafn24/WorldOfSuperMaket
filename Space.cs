@@ -13,7 +13,7 @@ class Space : Node
   public void Welcome () {
     Console.WriteLine("You are now at "+name);
     HashSet<string> exits = edges.Keys.ToHashSet();
-    Console.WriteLine("Current exits are:");
+    Console.WriteLine("You can go to:");
     foreach (String exit in exits) {
       Console.WriteLine(" - "+exit);
     }
