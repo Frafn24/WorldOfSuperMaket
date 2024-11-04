@@ -6,7 +6,7 @@ public void DoCheckOut((List<InventoryItem> inventory, double DailyFat, double D
 {
     foreach (var item in Inventory)
     {
-        Console.WriteLine($"Item: {item.GetName()}");
+        Console.WriteLine($"Item: {item.Getname()}");
         var info = GetInfo();
         Console.WriteLine($"Calories: {info[0]}");
         Console.WriteLine($"CO2: {info[4]}");
@@ -58,3 +58,5 @@ public class InventoryItem
     public double Carbohydrates { get; set; }
     public double Proteins { get; set; }
 }
+
+//push

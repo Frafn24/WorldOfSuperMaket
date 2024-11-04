@@ -11,13 +11,14 @@ class World {
     //Space pit      = new Space("Darkest Pit");
     //Space outside  = new Space("Outside");
         Space refrigerator = new Space("Refrigerator");
-        Space meats = new Space("Meats");
-        Space frozen = new Space("Frozen");
-        Space groceries = new Space("Groceries");
-        Space bakery = new Space("Bakery");
+        Space meats        = new Space("Meats");
+        Space frozen       = new Space("Frozen");
+        Space groceries    = new Space("Groceries");
+        Space bakery       = new Space("Bakery");
         Space preserves = new Space("Preserves");
-
-    
+        
+        
+        
     //entry.AddEdge("door", corridor);
     //corridor.AddEdge("door", cave);
     //cave.AddEdge("north", pit);

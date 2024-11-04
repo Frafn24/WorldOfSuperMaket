@@ -34,4 +34,8 @@ public class Inventory
             }
         }
     }
+
+    public void Add(Items itemToPickUp)
+    {
+    }
 }
