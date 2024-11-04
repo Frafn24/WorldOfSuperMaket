@@ -2,17 +2,17 @@
 
 public class Inventory
 {
-    private Dictionary<string, Item> items;
+    private Dictionary<string, Items> items;
 
     public Inventory()
     {
-        items = new Dictionary<string, Item>();
+        items = new Dictionary<string, Items>();
     }
-    public void AddItem(string name, Item item)
+    public void AddItem(string name, Items item)
     {
         if (!items.ContainsKey(name))
         {
-            items[name] = new List<Item>();
+            items[name] = new List<Items>();
         }
         items[name].Add(item);
         Console.WriteLine($"{item.Name} added to your cart.");
