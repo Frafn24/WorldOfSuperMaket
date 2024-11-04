@@ -30,8 +30,7 @@ public class Inventory
         foreach (var item in res)
         {
             if (item != null)
-            {
-                Console.WriteLine($"Item: {item.Name}, Calories: {item.Calories}");
+            { Console.WriteLine($"Item: {item.Name}, Calories: {item.Calorie}");
             }
         }
     }

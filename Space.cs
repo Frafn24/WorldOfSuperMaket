@@ -10,7 +10,8 @@ class Space : Node
   {
   }
   
-  public void Welcome () {
+  public void Welcome ()
+  {
     Console.WriteLine("You are now at "+name);
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("You can go to:");
