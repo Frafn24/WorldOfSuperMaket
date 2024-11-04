@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="https:\github.com\FrederikThy\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="https:\github.com\FrederikThy\SemesterProjekt.git" />
+  </ItemGroup>
+
 </Project>

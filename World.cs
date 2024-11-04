@@ -33,6 +33,8 @@ class World {
 
     
     this.entry = entry;
+    
+    
   }
   
   public Space GetEntry () {
