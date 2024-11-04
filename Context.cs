@@ -1,14 +1,16 @@
 /* Context class to hold all context relevant to a session.
  */
 
-class Context {
+public class Context {
   Space current;
   bool done = false;
   
   public Context (Space node) {
     current = node;
   }
-  
+
+  public object CurrentLocation { get; set; }
+
   public Space GetCurrent() {
     return current;
   }
