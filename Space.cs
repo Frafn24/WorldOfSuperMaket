@@ -18,7 +18,7 @@ class Space : Node
       Console.WriteLine(" - "+exit);
     }
   }
-
+//push
   public void Checkout(CheckOut checkOut, double RequiredCal, double DailyFat, double DailyCarbs, double DailyProteins, double Klimaneutral)
   {
     double CaloriesInCart = inventory.Sum(i => i.Calories);
