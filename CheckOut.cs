@@ -4,7 +4,7 @@ public class CheckOut;
 
 public static void DoCheckOut((List<InventoryItem> inventory, double DailyFat, double DailyCarbs, double DailyProteins, double Klimaneutral)
 {
-    foreach (var item in inventory)
+    foreach (var item in Inventory)
     {
         Console.WriteLine($"Item: {item.GetName()}");
         var info = GetInfo();
@@ -16,11 +16,11 @@ public static void DoCheckOut((List<InventoryItem> inventory, double DailyFat, d
         Console.WriteLine();
     }
     
-    double totalCalories = inventory.Sum(i => i.Calories);
-    double totalCO2 = inventory.Sum(i => i.CO2);
-    double totalFat = inventory.Sum(i => i.Fat);
-    double totalCarbs = inventory.Sum(i => i.Carbohydrates);
-    double totalProteins = inventory.Sum(i => i.Proteins);
+    double totalCalories = Inventory.Sum(i => i.Calories);
+    double totalCO2 = Inventory.Sum(i => i.CO2);
+    double totalFat = Inventory.Sum(i => i.Fat);
+    double totalCarbs = Inventory.Sum(i => i.Carbohydrates);
+    double totalProteins = Inventory.Sum(i => i.Proteins);
 
     Console.WriteLine($"Total Calories: {totalCalories}");
     Console.WriteLine($"Total CO2: {totalCO2}");

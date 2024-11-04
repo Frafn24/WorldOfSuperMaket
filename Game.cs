@@ -19,7 +19,7 @@ class Game {
 
     public void run()
     {
-        Console.WriteLine("Welcome to the World of Zuul!");
+        Console.WriteLine("Welcome to the supermarked");
 
 
         InitRegistry();

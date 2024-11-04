@@ -2,27 +2,33 @@
 
 public class Inventory
 {
-    private Dictionary<string, Items> items;
+    Items[]res= new Items[1];
+    void inte()
+    {
+        res[1] = new Items("test", 100);
+    }
 
-    public Inventory()
+    public void add()
     {
-        items = new Dictionary<string, Items>();
+        int count = res.Length;
+        var newarray = new Items[count+1];
+        newarray[res.Length+1]= new Items("test2", 100);
+        res=newarray;
     }
-    public void AddItem(string name, Items item)
+    public void remove()
     {
-        if (!items.ContainsKey(name))
-        {
-            items[name] = new List<Items>();
-        }
-        items[name].Add(item);
-        Console.WriteLine($"{item.Name} added to your cart.");
+        
+    
+    
+}
     }
+    
     public void RemoveItem(string name)
     {
         if (items.ContainsKey(name) && items[name].Count > 0)
         {
             items[name].RemoveAt(items[name].Count - 1);
-            Console.WriteLine($"You removed {name} removed from cart.");
+            Console.WriteLine($"You have dropped {name} on the floor.");
             if (items[name].Count == 0)
             {
                 items.Remove(name);
