@@ -10,6 +10,19 @@ class Space : Node
     public Space(String name) : base(name)
     {
     }
+    
+    public string Name { get; set; }
+    private List<Items> items; 
+    
+    public void AddItem(Items item)
+    {
+        items.Add(item); // Add item to a space (eg. Meats)
+    }
+    
+    public List<Items> GetItems()
+    {
+        return items; // get the items from a space (eg. Meats)
+    }
 
     public void Welcome()
     {

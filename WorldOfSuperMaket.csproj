@@ -15,4 +15,8 @@
     <None Remove="https:\github.com\FrederikThy\SemesterProjekt.git" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
+  </ItemGroup>
+
 </Project>

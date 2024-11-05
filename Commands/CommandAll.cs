@@ -56,7 +56,7 @@ namespace WorldOfSuperMaket.Commands
                 addStock();
             }
             List<Items> roomsItem = new List<Items>();
-            Console.WriteLine("Ville item en vare til din kurv?");
+            Console.WriteLine($"ønsker du at tilføje denne varer til din kurv");
             string anwser = "";
             bool right = false;
             while (right==false) 

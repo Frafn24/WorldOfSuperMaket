@@ -1,27 +1,41 @@
 /* World class for modeling the entire in-game world
  */
 
-class World {
-  Space entry;
-  
-  public World () {
-        Space entry = new Space("Ingang");
-        Space corridor = new Space("Corridor");
-        Space cave = new Space("Cave");
-        Space pit = new Space("Darkest Pit");
-        Space outside = new Space("Outside");
-        Space refrigerator = new Space("Refrigerator");
-        Space meats = new Space("Meats");
-        Space frozen = new Space("Frozen");
-        Space groceries = new Space("Groceries");
-        Space bakery = new Space("Bakery");
-        Space preserves = new Space("Preserves");
-        Space checkout = new Space("CheckOut");
+class World
+{
 
-        entry.AddEdge("Ingang", refrigerator);
+    Space entry = new Space("Ingang");
+    Space refrigerator = new Space("Refrigerator");
+    Space meats = new Space("Meats");
+    Space frozen = new Space("Frozen");
+    Space groceries = new Space("Groceries");
+    Space bakery = new Space("Bakery");
+    Space preserves = new Space("Preserves");
+    Space checkout = new Space("CheckOut");
+    
+    private Dictionary<string, Space> spaces;
+    
+    public World()
+    {
+        
+        spaces = new Dictionary<string, Space>
+        {
+            { "Ingang", entry },
+            { "Refrigerator", refrigerator },
+            { "Meats", meats },
+            { "Frozen", frozen },
+            { "Groceries", groceries },
+            { "Bakery", bakery },
+            { "Preserves", preserves },
+            { "CheckOut", checkout }
+        };
 
 
-        //refrigerator's tildeling af rum man kan gå til når man er i refrigerator
+
+        entry.AddEdge("Indgang", refrigerator);
+
+
+        //refrigerator's tildeling af rum man kan gï¿½ til nï¿½r man er i refrigerator
 
         refrigerator.AddEdge("Meats", meats);
         refrigerator.AddEdge("Groceries", groceries);
@@ -30,7 +44,7 @@ class World {
         refrigerator.AddEdge("Bakery", bakery);
         refrigerator.AddEdge("Checkout", checkout);
 
-        //meats's tildeling af rum man kan gå til når man er i meats
+        //meats's tildeling af rum man kan gï¿½ til nï¿½r man er i meats
 
         meats.AddEdge("Refrigerator", refrigerator);
         meats.AddEdge("Groceries", groceries);
@@ -40,7 +54,7 @@ class World {
         meats.AddEdge("Checkout", checkout);
 
 
-        //groceries's tildeling af rum man kan gå til når man er i groceries
+        //groceries's tildeling af rum man kan gï¿½ til nï¿½r man er i groceries
 
         groceries.AddEdge("Refrigerator", refrigerator);
         groceries.AddEdge("Meats", meats);
@@ -50,7 +64,7 @@ class World {
         groceries.AddEdge("Checkout", checkout);
 
 
-        //frozen's tildeling af rum man kan gå til når man er i frozen
+        //frozen's tildeling af rum man kan gï¿½ til nï¿½r man er i frozen
 
         frozen.AddEdge("Refrigerator", refrigerator);
         frozen.AddEdge("Meats", meats);
@@ -59,7 +73,7 @@ class World {
         frozen.AddEdge("Bakery", bakery);
         frozen.AddEdge("Checkout", checkout);
 
-        //preserves's tildeling af rum man kan gå til når man er i preserves
+        //preserves's tildeling af rum man kan gï¿½ til nï¿½r man er i preserves
 
         preserves.AddEdge("Refrigerator", refrigerator);
         preserves.AddEdge("Meats", meats);
@@ -68,7 +82,7 @@ class World {
         preserves.AddEdge("Bakery", bakery);
         preserves.AddEdge("Checkout", checkout);
 
-        //bakery's tildeling af rum man kan gå til når man er i bakery
+        //bakery's tildeling af rum man kan gï¿½ til nï¿½r man er i bakery
 
         bakery.AddEdge("Refrigerator", refrigerator);
         bakery.AddEdge("Meats", meats);
@@ -77,7 +91,7 @@ class World {
         bakery.AddEdge("Preserves", preserves);
         bakery.AddEdge("Checkout", checkout);
 
-        //Checkout's tildeling af rum man kan gå til når man er i Checkout
+        //Checkout's tildeling af rum man kan gï¿½ til nï¿½r man er i Checkout
         checkout.AddEdge("Refrigerator", refrigerator);
         checkout.AddEdge("Meats", meats);
         checkout.AddEdge("Groceries", groceries);
@@ -85,21 +99,21 @@ class World {
         checkout.AddEdge("Preserves", preserves);
         checkout.AddEdge("Bakery", bakery);
 
-        //entry.AddEdge("door", corridor);
-        //corridor.AddEdge("door", cave);
-        //cave.AddEdge("north", pit);
-        //cave.AddEdge("south", outside);
-        //pit.AddEdge("door", cave);
-        //outside.AddEdge("door", cave);
-
-
         this.entry = entry;
+
+    }
     
+    //Gives the current space
+    public Space GetSpaceType(string type)
+    {
+        spaces.TryGetValue(type, out Space target);
+        return target;
+    }
+
+    public Space GetEntry()
+    {
+        return entry;
+    }
     
-  }
-  
-  public Space GetEntry () {
-    return entry;
-  }
 }
 
