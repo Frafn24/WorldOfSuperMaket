@@ -26,9 +26,9 @@ class Space : Node
 
     public void Welcome()
     {
-        Console.WriteLine("You are now at " + name);
+        Console.WriteLine("Du er nu ved: " + name);
         HashSet<string> exits = edges.Keys.ToHashSet();
-        Console.WriteLine("Current exits are:");
+        Console.WriteLine("Udgangene er nu ved: ");
         foreach (String exit in exits)
         {
             Console.WriteLine(" - " + exit);
@@ -55,7 +55,7 @@ class Space : Node
         }
         else
         {
-            Console.WriteLine("You do not have enough calories to go to checkout");
+            Console.WriteLine("Du mangler at tilføje flere kalorier til din kurv, før du kan gå til kassen.");
         }
     }
 

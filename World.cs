@@ -4,14 +4,14 @@
 class World
 {
 
-    Space entry = new Space("Ingang");
-    Space refrigerator = new Space("Refrigerator");
-    Space meats = new Space("Meats");
-    Space frozen = new Space("Frozen");
-    Space groceries = new Space("Groceries");
-    Space bakery = new Space("Bakery");
-    Space preserves = new Space("Preserves");
-    Space checkout = new Space("CheckOut");
+    Space entry = new Space("Indgang");
+    Space refrigerator = new Space("Køleafdeling");
+    Space meats = new Space("Kødafdeling");
+    Space frozen = new Space("Frostafdeling");
+    Space groceries = new Space("Grøntafdeling");
+    Space bakery = new Space("Brød");
+    Space preserves = new Space("Konserves");
+    Space checkout = new Space("Kassen");
     
     private Dictionary<string, Space> spaces;
     
@@ -20,14 +20,14 @@ class World
         
         spaces = new Dictionary<string, Space>
         {
-            { "Ingang", entry },
-            { "Refrigerator", refrigerator },
-            { "Meats", meats },
-            { "Frozen", frozen },
-            { "Groceries", groceries },
-            { "Bakery", bakery },
-            { "Preserves", preserves },
-            { "CheckOut", checkout }
+            { "Indgang", entry },
+            { "Køleafdeling", refrigerator },
+            { "Kødafdeling", meats },
+            { "Frostafdeling", frozen },
+            { "Grøntafdeling", groceries },
+            { "Brød", bakery },
+            { "Konserves", preserves },
+            { "Kassen", checkout }
         };
 
 
@@ -37,67 +37,67 @@ class World
 
         //refrigerator's tildeling af rum man kan g� til n�r man er i refrigerator
 
-        refrigerator.AddEdge("Meats", meats);
-        refrigerator.AddEdge("Groceries", groceries);
-        refrigerator.AddEdge("Frozen", frozen);
-        refrigerator.AddEdge("Preserves", preserves);
-        refrigerator.AddEdge("Bakery", bakery);
-        refrigerator.AddEdge("Checkout", checkout);
+        refrigerator.AddEdge("Kødafdeling", meats);
+        refrigerator.AddEdge("Grøntafdeling", groceries);
+        refrigerator.AddEdge("Frostafdeling", frozen);
+        refrigerator.AddEdge("Konserves", preserves);
+        refrigerator.AddEdge("Brød", bakery);
+        refrigerator.AddEdge("Kassen", checkout);
 
         //meats's tildeling af rum man kan g� til n�r man er i meats
 
-        meats.AddEdge("Refrigerator", refrigerator);
-        meats.AddEdge("Groceries", groceries);
-        meats.AddEdge("Frozen", frozen);
-        meats.AddEdge("Preserves", preserves);
-        meats.AddEdge("Bakery", bakery);
-        meats.AddEdge("Checkout", checkout);
+        meats.AddEdge("Køleafdeling", refrigerator);
+        meats.AddEdge("Grøntafdeling", groceries);
+        meats.AddEdge("Frostafdeling", frozen);
+        meats.AddEdge("Konserves", preserves);
+        meats.AddEdge("Bager", bakery);
+        meats.AddEdge("Kassen", checkout);
 
 
         //groceries's tildeling af rum man kan g� til n�r man er i groceries
 
-        groceries.AddEdge("Refrigerator", refrigerator);
-        groceries.AddEdge("Meats", meats);
-        groceries.AddEdge("Frozen", frozen);
-        groceries.AddEdge("Preserves", preserves);
-        groceries.AddEdge("Bakery", bakery);
-        groceries.AddEdge("Checkout", checkout);
+        groceries.AddEdge("Køleafdeling", refrigerator);
+        groceries.AddEdge("Kødafdeling", meats);
+        groceries.AddEdge("Frostafdeling", frozen);
+        groceries.AddEdge("Konserves", preserves);
+        groceries.AddEdge("Food", bakery);
+        groceries.AddEdge("Kassen", checkout);
 
 
         //frozen's tildeling af rum man kan g� til n�r man er i frozen
 
-        frozen.AddEdge("Refrigerator", refrigerator);
-        frozen.AddEdge("Meats", meats);
-        frozen.AddEdge("Groceries", groceries);
-        frozen.AddEdge("Preserves", preserves);
-        frozen.AddEdge("Bakery", bakery);
-        frozen.AddEdge("Checkout", checkout);
+        frozen.AddEdge("Køleafdeling", refrigerator);
+        frozen.AddEdge("Kødafdeling", meats);
+        frozen.AddEdge("Grøntafdeling", groceries);
+        frozen.AddEdge("Konserves", preserves);
+        frozen.AddEdge("Brød", bakery);
+        frozen.AddEdge("Kassen", checkout);
 
         //preserves's tildeling af rum man kan g� til n�r man er i preserves
 
-        preserves.AddEdge("Refrigerator", refrigerator);
-        preserves.AddEdge("Meats", meats);
-        preserves.AddEdge("Groceries", groceries);
-        preserves.AddEdge("Frozen", frozen);
-        preserves.AddEdge("Bakery", bakery);
-        preserves.AddEdge("Checkout", checkout);
+        preserves.AddEdge("Køleafdeling", refrigerator);
+        preserves.AddEdge("Kødafdeling", meats);
+        preserves.AddEdge("Grøntafdeling", groceries);
+        preserves.AddEdge("Frostafdeling", frozen);
+        preserves.AddEdge("Brød", bakery);
+        preserves.AddEdge("Kassen", checkout);
 
         //bakery's tildeling af rum man kan g� til n�r man er i bakery
 
-        bakery.AddEdge("Refrigerator", refrigerator);
-        bakery.AddEdge("Meats", meats);
-        bakery.AddEdge("Groceries", groceries);
-        bakery.AddEdge("Frozen", frozen);
-        bakery.AddEdge("Preserves", preserves);
-        bakery.AddEdge("Checkout", checkout);
+        bakery.AddEdge("Køleafdeling", refrigerator);
+        bakery.AddEdge("Kødafdeling", meats);
+        bakery.AddEdge("Grøntafdeling", groceries);
+        bakery.AddEdge("Frostafdeling", frozen);
+        bakery.AddEdge("Konserves", preserves);
+        bakery.AddEdge("Kassen", checkout);
 
         //Checkout's tildeling af rum man kan g� til n�r man er i Checkout
-        checkout.AddEdge("Refrigerator", refrigerator);
-        checkout.AddEdge("Meats", meats);
-        checkout.AddEdge("Groceries", groceries);
-        checkout.AddEdge("Frozen", frozen);
-        checkout.AddEdge("Preserves", preserves);
-        checkout.AddEdge("Bakery", bakery);
+        checkout.AddEdge("Køleafdeling", refrigerator);
+        checkout.AddEdge("Kødafdeling", meats);
+        checkout.AddEdge("Grøntafdeling", groceries);
+        checkout.AddEdge("Frostafdeling", frozen);
+        checkout.AddEdge("Konserves", preserves);
+        checkout.AddEdge("Brød", bakery);
 
         this.entry = entry;
 

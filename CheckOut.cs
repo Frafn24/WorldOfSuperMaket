@@ -6,12 +6,12 @@ public class CheckOut
     {
         foreach (var item in inv)
         {
-            Console.WriteLine($"Item: {item.GetName()}");
+            Console.WriteLine($"Vare: {item.GetName()}");
             var info = item.GetMacros();
-            Console.WriteLine($"Calories: {info[0]}");
-            Console.WriteLine($"Carbohydrates: {info[1]}");
-            Console.WriteLine($"Proteins: {info[2]}");
-            Console.WriteLine($"Fat: {info[3]}");
+            Console.WriteLine($"Kalorier: {info[0]}");
+            Console.WriteLine($"Kulhydrater: {info[1]}");
+            Console.WriteLine($"Protein: {info[2]}");
+            Console.WriteLine($"Fedt: {info[3]}");
             Console.WriteLine($"CO2: {info[4]}");
             Console.WriteLine();
         }
@@ -22,11 +22,11 @@ public class CheckOut
         double totalCarbs = inv.Sum(i => i.Carbo);
         double totalProteins = inv.Sum(i => i.Protien);
 
-        Console.WriteLine($"Total Calories: {totalCalories}");
+        Console.WriteLine($"Total Kalorier: {totalCalories}");
         Console.WriteLine($"Total CO2: {totalCO2}");
-        Console.WriteLine($"Total Fat: {totalFat}");
-        Console.WriteLine($"Total Carbohydrates: {totalCarbs}");
-        Console.WriteLine($"Total Proteins: {totalProteins}");
+        Console.WriteLine($"Total Fedt: {totalFat}");
+        Console.WriteLine($"Total Kulhydrater: {totalCarbs}");
+        Console.WriteLine($"Total Protein: {totalProteins}");
 
         double carbsPercentage = (totalCarbs / userInfo.DaliyKullhydrat) * 100;
         double proteinsPercentage = (totalProteins / userInfo.DaliyProtien) * 100;
@@ -49,8 +49,8 @@ public class CheckOut
 
         double EnviromentScore = totalCO2 / (0.55 / 52);
 
-        Console.WriteLine($"The food in you cart covers {foodScore} % of your required macro");
-        Console.WriteLine($"If everyone shopped like you, we would need {EnviromentScore} Earths just for grocery shopping");
+        Console.WriteLine($"Varene i din kurv dækker over {foodScore} % af de påkrævet macros.");
+        Console.WriteLine($"Hvis alle handlede som dig, skulle vi bruge {EnviromentScore} jordkloder, kun til at handle madvarer.");
     }
 }
 

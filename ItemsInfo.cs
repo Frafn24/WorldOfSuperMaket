@@ -8,7 +8,7 @@ class ItemsInfo : BaseCommand, ICommand
     private Items[] Itm;
     public ItemsInfo(Items[] items)
     {
-        description = "Information omkring vare.";
+        description = "Information omkring varer.";
         Itm = items;
     }
 

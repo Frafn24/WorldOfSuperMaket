@@ -5,7 +5,7 @@
         //private Inventory.Inventory inventory;
         public CommandPickUp()
         {
-            description = "Put an item into your cart";
+            description = "Læg en vare i kurven.";
 
         }
 
@@ -13,7 +13,7 @@
         {
             if (GuardEq(parameters, 1))
             {
-                Console.WriteLine("I don't seem to know where that is 🤔");
+                Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
                 return;
             }
             context.Transition(parameters[0]);

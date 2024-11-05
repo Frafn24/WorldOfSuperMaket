@@ -13,7 +13,7 @@ public class Inventory
     {
         if (inv.Length == 0) 
         {
-            Console.WriteLine("Der er ikke noget i din inventory :(");
+            Console.WriteLine("Der er ikke noget i dit inventory :(");
             return inv;
         }
         int count = inv.Length;
@@ -22,10 +22,10 @@ public class Inventory
     }
     public void Show(Items[] inv)
     {
-        Console.WriteLine("Items in your cart:");
+        Console.WriteLine("Vare i din kurv:");
         foreach (var itm in inv)
         {
-            Console.WriteLine($"Item: {itm.Name}, Quantity: ");
+            Console.WriteLine($"Vare: {itm.Name}, Mængde: ");
 
         }
     }

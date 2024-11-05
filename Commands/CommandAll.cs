@@ -18,7 +18,7 @@ namespace WorldOfSuperMaket.Commands
 
         public CommandActios(UserInfo userInfo)
         {
-            description = "Her kan du lave alle dine Action i rummet";
+            description = "Her kan du lave alle dine actions i rummet";
             User = userInfo;
         }
 
@@ -27,12 +27,12 @@ namespace WorldOfSuperMaket.Commands
             context.GetCurrent().GetName();
             if (GuardEq(parameters, 1))
             {
-                Console.WriteLine("I don't seem to know where that is 🤔");
+                Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
                 return;
             }
             switch (parameters[0])
             {
-                case "Tilføje":
+                case "Tilføj":
                     AddItems();
                     break;
                 case "Fjern":
@@ -56,7 +56,7 @@ namespace WorldOfSuperMaket.Commands
                 addStock();
             }
             List<Items> roomsItem = new List<Items>();
-            Console.WriteLine($"ønsker du at tilføje denne varer til din kurv");
+            Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
             string anwser = "";
             bool right = false;
             while (right==false) 
@@ -87,8 +87,8 @@ namespace WorldOfSuperMaket.Commands
         {
             if (inv != null)
             {
-                Console.WriteLine("Show items in your inventory");
-                Console.WriteLine("Items in inventory: ");
+                Console.WriteLine("Vis vare i din kurv.");
+                Console.WriteLine("Vare i din kurv: ");
                 for (int i = 0; i < inv.Count(); i++)
                 {
                     Console.WriteLine($"antal:{inv[i].Number} stk. " + inv[i].item.Name);
@@ -96,7 +96,7 @@ namespace WorldOfSuperMaket.Commands
             }
             else
             {
-                Console.WriteLine("Der er ingen item i din inventory");
+                Console.WriteLine("Der er ingen items i dit inventory");
             }
         }
         public void AddItem(Items item)
@@ -132,7 +132,7 @@ namespace WorldOfSuperMaket.Commands
             }
             else
             {
-                Console.WriteLine("Der er ingen item i din inventory");
+                Console.WriteLine("Der er ingen items i dit inventory");
                 //eturn inv;
             }
         }

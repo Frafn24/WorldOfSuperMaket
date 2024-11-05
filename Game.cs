@@ -38,7 +38,7 @@ class Game {
         //int height = 0;
         //int Weaght = 0;
         //string Gender = "";
-        Console.WriteLine("Welcome to the supermarked");
+        Console.WriteLine("Velkommen til supermarkedet.");
         //Console.WriteLine("Skriv dit og dine infomationer nede under");
         //text.printText("Hvad er dit Navn:");
         //var name = Console.ReadLine();
@@ -106,7 +106,7 @@ class Game {
                 if (line=="Actions")
                 {
                     Console.WriteLine("Disse Action du kan vælge imellem her er");
-                    Console.WriteLine(" Tilføj vare - Tilføje");
+                    Console.WriteLine(" Tilføj vare - Tilføj");
                     Console.WriteLine(" Fjern vare - Fjern");
                     Console.WriteLine(" Se kurv - Kurv");
                     Console.Write(">");
