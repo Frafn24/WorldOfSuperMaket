@@ -61,7 +61,7 @@ namespace WorldOfSuperMaket.Commands
             bool right = false;
             while (right==false) 
             {
-                Console.WriteLine("Du skal vælge mellem Yes eller no");
+                Console.WriteLine("Du skal vælge mellem Ja eller Nej");
                 Console.Write(">");
                 var line = Console.ReadLine();
                 if (line == "Yes")
@@ -77,7 +77,7 @@ namespace WorldOfSuperMaket.Commands
                 }
                 else
                 {
-                    Console.WriteLine("Du skal vælge mellem Yes eller no");
+                    Console.WriteLine("Du skal vælge mellem Ja eller Nej");
                 }
             }
             Items[] items = new Items[1];

@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using CsvHelper;
+//using CsvHelper;
 
 namespace WorldOfSuperMaket;
 
@@ -7,28 +7,17 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        var itemList = LoadCsv("Data/items.csv"); //Finds the CSV file at a path, we should make it generic
-        RunGame(itemList);
+        RunGame();
         Console.ReadLine();
 
     }
-    static void RunGame(List<Items> items)
+    static void RunGame()
     {
-        World world = new World();
-        
-        foreach (var item in items)
-        {
-            Space targetSpace = world.GetSpaceType(item.Type); // Get the space based on item type
-            if (targetSpace != null)
-            {
-                targetSpace.AddItem(item); // Add item to the corresponding space (eg. Type Meats to Meats node)
-            }
-        }
-        
         Game game = new Game();
         game.run();
     }
-    static List<Items> LoadCsv(string filePath)
+}
+    /*static List<Items> LoadCsv(string filePath)
     {
         var items = new List<Items>();
             
@@ -55,5 +44,4 @@ internal class Program
         }
         
         return items;
-    }
-}
+    }*/
