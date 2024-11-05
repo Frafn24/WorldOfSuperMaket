@@ -10,7 +10,7 @@ namespace WorldOfSuperMaket.Commands
 {
     public class CommandActios:BaseCommand,ICommand
     {
-        List<Items> Stock { get; set; }
+        List<Items> Stock = new List<Items>();
         List<Inv> inv = new List<Inv>();
         Context Context { get; set; }
         UserInfo User { get; set; }
@@ -24,22 +24,34 @@ namespace WorldOfSuperMaket.Commands
 
         void ICommand.Execute(Context context, string command, string[] parameters)
         {
-            //context.GetCurrent().GetName();
+            context.GetCurrent().GetName();
             if (GuardEq(parameters, 1))
             {
                 Console.WriteLine("I don't seem to know where that is 🤔");
                 return;
             }
+            switch (parameters[0])
+            {
+                case "Tilføje":
+                    AddItems();
+                    break;
+                case "Fjern":
+                    Remove(Stock[0]);
+                    break;
+                case "Kurv":
+                    ShowInv();
+                    break;
+            }
         }
         public void addStock()
         {
-            var TestItem = new Items("Test", "Dette er en Test", "Test", 0, 0, 0, 0, 0);
+            var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
             description = "alle de ting, som du kan gøre i dette rum ";
             Stock.Add(TestItem);
         }
         public void AddItems()
         {
-            if (Stock.Count==0)
+            if (Stock.Count()==0)
             {
                 addStock();
             }
@@ -90,14 +102,16 @@ namespace WorldOfSuperMaket.Commands
         public void AddItem(Items item)
         {
 
-            if (inv.Count()>0 && item !=null)
+            if (item !=null)
             {
                 if (inv.Count(x=>x.item ==item) == 0) 
                 {
-                    var newItem = (1, item);
-                    inv.Add(new Inv() { Number = 1, item = item });
+                    Inv inve = new Inv();
+                    inve.Number = 1;
+                    inve.item = item;
+                    inv.Add(inve);
                     //inv = new Items[1];
-                    //inv[0] = item;
+                    
                 }
                 else
                 {

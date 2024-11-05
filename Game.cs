@@ -14,7 +14,7 @@ class Game {
   UserInfo user;
   bool whil = false;
   TextAnime text = new TextAnime();
-  SoundsClass sound = new SoundsClass();
+  //SoundsClass sound = new SoundsClass();
   
   private void InitRegistry () 
   {
@@ -93,11 +93,13 @@ class Game {
         //var gender = Console.ReadLine();
         //user = new UserInfo(name, Age,height,Weaght,gender);
 
+            Console.Clear();
         InitRegistry();
-        context.GetCurrent().Welcome();
+            context.GetCurrent().Welcome();
         while (context.IsDone() == false)
         {
-            Console.Write("> ");
+            //context.
+            //Console.Write("> ");
             var line = Console.ReadLine();
             if (line != null)
             {
@@ -120,7 +122,7 @@ class Game {
                 context.MakeDone();
             }
         }
-        sound.Play();
+        //sound.Play();
         Console.WriteLine("Game Over 😥");
 
 

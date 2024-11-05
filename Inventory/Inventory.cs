@@ -1,7 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using WMPLib;
-
-namespace WorldOfSuperMaket.Inventory;
+﻿namespace WorldOfSuperMaket.Inventory;
 
 public class Inventory
 {
