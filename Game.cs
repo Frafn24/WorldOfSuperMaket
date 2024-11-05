@@ -2,8 +2,11 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.Commands;
 
 class Game {
+  Items[] items = new Items[1];
+    Items[] inv = new Items[0];
   static World    world    = new World();
   static Context  context  = new Context(world.GetEntry());
   static ICommand fallback = new CommandUnknown();
@@ -12,26 +15,29 @@ class Game {
   bool whil = false;
   TextAnime text = new TextAnime();
   SoundsClass sound = new SoundsClass();
-  Items[] items = new Items[1];
   
   private void InitRegistry () 
   {
-    ICommand cmdExit = new CommandExit();
-    registry.Register("exit", cmdExit);
-    registry.Register("quit", cmdExit);
-    registry.Register("bye", cmdExit);
-    registry.Register("go", new CommandGo());
-    registry.Register("help", new CommandHelp(registry));
-    registry.Register("Inventory",new InventoryCommand());
+
+        //items = CommandItem.AddItems();
+        ICommand cmdExit = new CommandExit();
+        registry.Register("exit", cmdExit);
+        registry.Register("quit", cmdExit);
+        registry.Register("bye", cmdExit);
+        registry.Register("go", new CommandGo());
+        registry.Register("help", new CommandHelp(registry));
+        registry.Register("Actions", new CommandActios(user));
+        //registry.Register("Items", new CommandItem(items));
+        registry.Register("Inventory",new InventoryCommand());
 
   }
 
     public void run()
     {
-        int Age=0;
-        int height = 0;
-        int Weaght = 0;
-        string Gender = "";
+        //int Age=0;
+        //int height = 0;
+        //int Weaght = 0;
+        //string Gender = "";
         Console.WriteLine("Welcome to the supermarked");
         //Console.WriteLine("Skriv dit og dine infomationer nede under");
         //text.printText("Hvad er dit Navn:");
@@ -95,7 +101,19 @@ class Game {
             var line = Console.ReadLine();
             if (line != null)
             {
+                if (line=="Actions")
+                {
+                    Console.WriteLine("Disse Action du kan vælge imellem her er");
+                    Console.WriteLine(" Tilføj vare - Tilføje");
+                    Console.WriteLine(" Fjern vare - Fjern");
+                    Console.WriteLine(" Se kurv - Kurv");
+                    Console.Write(">");
+                    var line2 = Console.ReadLine();
+                    line = line +" "+ line2;
+                }
                 registry.Dispatch(line);
+                //Console.WriteLine(context.GetCurrent().GetName());
+                
             }
             if (string.IsNullOrEmpty(line))
             {

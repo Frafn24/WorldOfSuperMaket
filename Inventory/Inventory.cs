@@ -1,54 +1,58 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using WMPLib;
 
 namespace WorldOfSuperMaket.Inventory;
 
 public class Inventory
 {
-    Items[]inventory= new Items[0];
     //void inte()
     //{
     //    inventory[1] = new Items("test", 100);
     //}
 
-    public void add()
+    public Items[] Add(Items[] inv, Items item)
     {
-            int count = inventory.Length;
-            var newarray = new Items[count + 1];
-            //newarray[inventory.Length + 1] = new Items("test2", 100);
-            inventory = newarray;
+        int count = inv.Length;
+        var newarray = new Items[count + 1];
+        newarray[inv.Length + 1] = item;
+        return newarray;
     }
-    public void remove()
+    public Items[] Remove(Items[] inv, Items item)
     {
-        
-    
-    
-}
-    }
-    
-    public void RemoveItem(string name)
-    {
-        if (items.ContainsKey(name) && items[name].Count > 0)
+        if (inv.Length == 0) 
         {
-            items[name].RemoveAt(items[name].Count - 1);
-            Console.WriteLine($"You have dropped {name} on the floor.");
-            if (items[name].Count == 0)
-            {
-                items.Remove(name);
-            }
+            Console.WriteLine("Der er ikke noget i din inventory :(");
+            return inv;
         }
-        else
-        {
-            Console.WriteLine($"You do not have {name} in your cart.");
-        }
+        int count = inv.Length;
+        var newarray = inv.Where(x => x != item).ToArray();
+        return inv;
     }
-    
-    public void ListItems()
+    public void Show(Items[] inv)
     {
         Console.WriteLine("Items in your cart:");
-        foreach (var itm in items)
+        foreach (var itm in inv)
         {
-            Console.WriteLine($"Item: {itm.Key}, Quantity: ");
-            
+            Console.WriteLine($"Item: {itm.Name}, Quantity: ");
+
         }
     }
+
+    //public void RemoveItem(string name)
+    //{
+    //    //if (items.ContainsKey(name) && items[name].Count > 0)
+    //    //{
+    //    //    items[name].RemoveAt(items[name].Count - 1);
+    //    //    Console.WriteLine($"You have dropped {name} on the floor.");
+    //    //    if (items[name].Count == 0)
+    //    //    {
+    //    //        items.Remove(name);
+    //    //    }
+    //    //}
+    //    //else
+    //    //{
+    //    //    Console.WriteLine($"You do not have {name} in your cart.");
+    //    //}
+    //}
+
 }
