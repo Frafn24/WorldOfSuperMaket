@@ -22,7 +22,7 @@ public class Items
         Fat = x_Fat;
         C02 = x_C02;
     }
-    public string Getname()
+    public string GetName()
     {
         return Name;
         
@@ -31,7 +31,7 @@ public class Items
     {
         return Description;
     }
-    public double[] getMacros()
+    public double[] GetMacros()
     {
         double[] Macros = {Calorie, Carbo, Protien, Fat};
         return Macros;
@@ -40,6 +40,7 @@ public class Items
     {
         return C02;
     }
+
 
 
 }

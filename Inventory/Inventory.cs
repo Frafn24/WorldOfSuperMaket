@@ -1,51 +1,41 @@
-﻿namespace WorldOfSuperMaket.Inventory;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace WorldOfSuperMaket.Inventory;
 
 public class Inventory
 {
-    Items[]res= new Items[1];
-    void inte()
-    {
-        res[1] = new Items("test", 100);
-    }
+    Items[]inventory= new Items[0];
+    //void inte()
+    //{
+    //    inventory[1] = new Items("test", 100);
+    //}
 
     public void add()
     {
-        int count = res.Length;
-        var newarray = new Items[count+1];
-        newarray[res.Length+1]= new Items("test2", 100);
-        res=newarray;
+            int count = inventory.Length;
+            var newarray = new Items[count + 1];
+            //newarray[inventory.Length + 1] = new Items("test2", 100);
+            inventory = newarray;
     }
-    public void remove()
+    public void remove(Items items)
     {
-        
+        if (inventory.Length > 0)
+        {
+            var index = Array.FindIndex(inventory, x => x.Name == items.Name);
+
+            var newinventory = inventory.Where(x => x.Name != items.Name).ToArray();
+            inventory = newinventory;
+        }
     
-    
-}
+
     }
     
-    public void RemoveItem(string name)
-    {
-        if (items.ContainsKey(name) && items[name].Count > 0)
-        {
-            items[name].RemoveAt(items[name].Count - 1);
-            Console.WriteLine($"You have dropped {name} on the floor.");
-            if (items[name].Count == 0)
-            {
-                items.Remove(name);
-            }
-        }
-        else
-        {
-            Console.WriteLine($"You do not have {name} in your cart.");
-        }
-    }
-    
-    public void ListItems()
+    public void ListItems(List<Items> inventory)
     {
         Console.WriteLine("Items in your cart:");
-        foreach (var itm in items)
+        foreach (var itm in inventory)
         {
-            Console.WriteLine($"Item: {itm.Key}, Quantity: ");
+            Console.WriteLine($"Item: {itm.Name}, Quantity: ");
             
         }
     }

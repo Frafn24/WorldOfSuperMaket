@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldOfSuperMaket
 {
-    internal class UserInfo
+    public class UserInfo
     {
         public string Username { get; set; }
         public int Age { get; set; }
@@ -56,18 +56,18 @@ namespace WorldOfSuperMaket
         }
         double caleKulhydrat(double daliyCalo, int weaght)
         {
-            var res = ((daliyCalo / 100) * 30) / 4.2;
-            return res;
+            var inventory = ((daliyCalo / 100) * 30) / 4.2;
+            return inventory;
         }
         double caleProtien(double daliyCalo)
         {
-            var res = ((daliyCalo / 100) * 55) / 4.2;
-            return res;
+            var inventory = ((daliyCalo / 100) * 55) / 4.2;
+            return inventory;
         }
         double caleFat(double daliyCalo)
         {
-            var res = ((daliyCalo / 100) * 10) / 9.1;
-            return res;
+            var inventory = ((daliyCalo / 100) * 10) / 9.1;
+            return inventory;
         }
     }
 }
