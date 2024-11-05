@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+
 namespace WorldOfSuperMaket;
 
 public class Items
@@ -22,6 +26,7 @@ public class Items
         Fat = x_Fat;
         C02 = x_C02;
     }
+
     public string GetName()
     {
         return Name;

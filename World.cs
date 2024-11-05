@@ -1,24 +1,38 @@
-/* World-class for modeling the entire in-game world
+/* World class for modeling the entire in-game world
  */
 
-class World {
-  Space entry;
-  
-  public World () {
-        Space entry = new Space("Ingang");
-        Space corridor = new Space("Corridor");
-        Space cave = new Space("Cave");
-        Space pit = new Space("Darkest Pit");
-        Space outside = new Space("Outside");
-        Space refrigerator = new Space("Refrigerator");
-        Space meats = new Space("Meats");
-        Space frozen = new Space("Frozen");
-        Space groceries = new Space("Groceries");
-        Space bakery = new Space("Bakery");
-        Space preserves = new Space("Preserves");
-        Space checkout = new Space("CheckOut");
+class World
+{
 
-        entry.AddEdge("Ingang", refrigerator);
+    Space entry = new Space("Ingang");
+    Space refrigerator = new Space("Refrigerator");
+    Space meats = new Space("Meats");
+    Space frozen = new Space("Frozen");
+    Space groceries = new Space("Groceries");
+    Space bakery = new Space("Bakery");
+    Space preserves = new Space("Preserves");
+    Space checkout = new Space("CheckOut");
+    
+    private Dictionary<string, Space> spaces;
+    
+    public World()
+    {
+        
+        spaces = new Dictionary<string, Space>
+        {
+            { "Ingang", entry },
+            { "Refrigerator", refrigerator },
+            { "Meats", meats },
+            { "Frozen", frozen },
+            { "Groceries", groceries },
+            { "Bakery", bakery },
+            { "Preserves", preserves },
+            { "CheckOut", checkout }
+        };
+
+
+
+        entry.AddEdge("Indgang", refrigerator);
 
 
         //refrigerator's tildeling af rum man kan g� til n�r man er i refrigerator
@@ -85,21 +99,21 @@ class World {
         checkout.AddEdge("Preserves", preserves);
         checkout.AddEdge("Bakery", bakery);
 
-        //entry.AddEdge("door", corridor);
-        //corridor.AddEdge("door", cave);
-        //cave.AddEdge("north", pit);
-        //cave.AddEdge("south", outside);
-        //pit.AddEdge("door", cave);
-        //outside.AddEdge("door", cave);
-
-
         this.entry = entry;
+
+    }
     
+    //Gives the current space
+    public Space GetSpaceType(string type)
+    {
+        spaces.TryGetValue(type, out Space target);
+        return target;
+    }
+
+    public Space GetEntry()
+    {
+        return entry;
+    }
     
-  }
-  
-  public Space GetEntry () {
-    return entry;
-  }
 }
 

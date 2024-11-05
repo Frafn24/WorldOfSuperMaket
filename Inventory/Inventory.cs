@@ -2,11 +2,6 @@
 
 public class Inventory
 {
-    //void inte()
-    //{
-    //    inventory[1] = new Items("test", 100);
-    //}
-
     public Items[] Add(Items[] inv, Items item)
     {
         int count = inv.Length;
@@ -34,22 +29,4 @@ public class Inventory
 
         }
     }
-
-    //public void RemoveItem(string name)
-    //{
-    //    //if (items.ContainsKey(name) && items[name].Count > 0)
-    //    //{
-    //    //    items[name].RemoveAt(items[name].Count - 1);
-    //    //    Console.WriteLine($"You have dropped {name} on the floor.");
-    //    //    if (items[name].Count == 0)
-    //    //    {
-    //    //        items.Remove(name);
-    //    //    }
-    //    //}
-    //    //else
-    //    //{
-    //    //    Console.WriteLine($"You do not have {name} in your cart.");
-    //    //}
-    //}
-
 }
