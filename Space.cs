@@ -2,9 +2,11 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.Inventory;
 
 class Space : Node
 {
+    private CheckOut checkOut = new CheckOut();
     public Space(String name) : base(name)
     {
     }
@@ -22,6 +24,21 @@ class Space : Node
 
     public void Goodbye()
     {
+    }
+    public void Checkout(CheckOut checkOut, double RequiredCal, double DailyFat, double DailyCarbs, double DailyProteins, double Klimaneutral)
+    {
+        ////double CaloriesInCart = inventory.Sum(i => i.Calories);
+
+        //bool EnoughCalories = CaloriesInCart >= RequiredCal;
+
+        //if (name.Equals("Checkout") && EnoughCalories)
+        //{
+        //    checkOut.DoCheckout(inventory, DailyFat, DailyCarbs, DailyProteins, Klimaneutral);
+        //}
+        //else
+        //{
+        //    Console.WriteLine("You do not have enough calories to go to checkout");
+        //}
     }
 
     public Space FollowEdge(string direction)
