@@ -8,7 +8,7 @@ class ItemsInfo : BaseCommand, ICommand
     private Items[] Itm;
     public ItemsInfo(Items[] items)
     {
-        description = "Information omkring vare.";
+        description = "Information omkring varer.";
         Itm = items;
     }
 
@@ -19,6 +19,6 @@ class ItemsInfo : BaseCommand, ICommand
 
     public void Show()
     {
-        Console.WriteLine($"{Itm[0].Getname()}");
+        //Console.WriteLine($"{Itm[0].Getname()}");
     }
 }

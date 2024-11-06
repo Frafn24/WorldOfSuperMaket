@@ -5,7 +5,7 @@ class InventoryCommand : BaseCommand, ICommand {
     Items[] Items;
     public InventoryCommand()
     {
-        description = "Show items in your inventory";
+        description = "Vis items i din kurv.";
        // Items = items;
     }
 
@@ -29,15 +29,15 @@ class InventoryCommand : BaseCommand, ICommand {
     {
         if (Items!=null)
         {
-            Console.WriteLine("Show items in your inventory");
+            Console.WriteLine("Vis varer i dit inventory.");
             for (int i = 0; i < Items.Length; i++)
             {
-                Console.WriteLine("Items in inventory: " + Items[i].Name);
+                Console.WriteLine("Varer i din kurv: " + Items[i].Name);
             }
         }
         else
         {
-            Console.WriteLine("Der er ingen item i din inventory");
+            Console.WriteLine("Der er ingen items i dit inventory");
         }
     }
 }

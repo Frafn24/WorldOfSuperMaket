@@ -3,12 +3,12 @@
 
 class CommandGo : BaseCommand, ICommand {
   public CommandGo () {
-    description = "Follow an exit";
+    description = "Følg en udgang";
   }
   
   public void Execute (Context context, string command, string[] parameters) {
     if (GuardEq(parameters, 1)) {
-      Console.WriteLine("I don't seem to know where that is 🤔");
+      Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
       return;
     }
     context.Transition(parameters[0]);

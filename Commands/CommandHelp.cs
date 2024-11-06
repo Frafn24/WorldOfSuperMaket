@@ -6,7 +6,7 @@ class CommandHelp : BaseCommand, ICommand {
   
   public CommandHelp (Registry registry) {
     this.registry = registry;
-    this.description = "Display a help message";
+    this.description = "Viser en 'hjælp' meddelelse";
   }
   
   public void Execute (Context context, string command, string[] parameters) {
@@ -21,7 +21,7 @@ class CommandHelp : BaseCommand, ICommand {
     }
     
     // present list of commands
-    Console.WriteLine("Commands:");
+    Console.WriteLine("Kommandoer:");
     foreach (String commandName in commandNames) {
       string description = registry.GetCommand(commandName).GetDescription();
       Console.WriteLine(" - {0,-"+max+"} "+description, commandName);
