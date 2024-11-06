@@ -28,18 +28,16 @@ class Game {
         registry.Register("help", new CommandHelp(registry));
         registry.Register("Actions", new CommandActions(user));
         //registry.Register("Items", new CommandItem(items));
-        registry.Register("Inventory",new InventoryCommand());
+        
 
   }
-
+  
     public void run()
     {
         //int Age=0;
         //int height = 0;
         //int Weaght = 0;
         //string Gender = "";
-        //Console.WriteLine("Velkommen til supermarkedet.");
-        
         
         //Console.WriteLine("Skriv dit og dine infomationer nede under");
         //text.printText("Hvad er dit Navn:");

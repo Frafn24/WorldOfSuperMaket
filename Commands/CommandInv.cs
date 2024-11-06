@@ -2,8 +2,8 @@ namespace WorldOfSuperMaket.Commands;
 
 class CommandInv
 {
-   
-        
+    
+    //Metode, der tilføjer en item til listen inv.
     public List<Inv> AddItems(Items item, List<Inv> inv)
     {
         List<Items> roomsItem = new List<Items>();
@@ -33,6 +33,8 @@ class CommandInv
         }
         return inv;
     }
+    
+    // Metoden AddItem arbejder sammen med ovenstående metode AddItems.
     
     public List<Inv> AddItem(Items item,List<Inv> inv)
     {
@@ -72,8 +74,7 @@ class CommandInv
         }
     }
     
-    
-    
+    // Metode, der fjerner en item fra listen inv.
     
     public List<Inv> Remove(Items item, List<Inv> inv)
     {
@@ -106,6 +107,8 @@ class CommandInv
     //{
 
     //}
+    
+    //Metode, der viser alle items i listen inv.
     
     public void ShowInv(List<Inv> inv)
        {
