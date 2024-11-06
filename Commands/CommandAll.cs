@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
 
 namespace WorldOfSuperMaket.Commands
 {
     public class CommandActios:BaseCommand,ICommand
     {
         List<Items> Stock = new List<Items>();
+        List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
         Context Context { get; set; }
         UserInfo User { get; set; }
@@ -25,6 +28,7 @@ namespace WorldOfSuperMaket.Commands
         void ICommand.Execute(Context context, string command, string[] parameters)
         {
             context.GetCurrent().GetName();
+            var room = context.GetCurrent().GetName();
             if (GuardEq(parameters, 1))
             {
                 Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
@@ -33,7 +37,7 @@ namespace WorldOfSuperMaket.Commands
             switch (parameters[0])
             {
                 case "Tilføj":
-                    AddItems();
+                    AddItems(room);
                     break;
                 case "Fjern":
                     Remove(Stock[0]);
@@ -43,21 +47,73 @@ namespace WorldOfSuperMaket.Commands
                     break;
             }
         }
+        
         public void addStock()
         {
-            var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
-            description = "alle de ting, som du kan gøre i dette rum ";
-            Stock.Add(TestItem);
+/*            if (Stock.Count == 0)
+            {
+                LoadCsv();
+            }
+            List<Items> LoadCsv(string filePath)
+            {
+                var items = new List<Items>();
+            
+                var csvPath = @"data\items.csv";
+
+                if (!File.Exists(csvPath))
+                {
+                    Stock=LoadCsv(filePath);
+                }
+                else
+                {
+                    Console.WriteLine("CSV File Not Found, HerbDeDerp");
+                }
+            
+                using (var reader = new StreamReader(filePath))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Read();
+                    csv.ReadHeader();
+                    while (csv.Read())
+                    {
+                        var item = new Items(
+                            csv.GetField("Name"),
+                            csv.GetField("Description"),
+                            csv.GetField("Type"),
+                            csv.GetField<double>("Calorie"),
+                            csv.GetField<double>("Carbo"),
+                            csv.GetField<double>("Protien"),
+                            csv.GetField<double>("Fat"),
+                            csv.GetField<double>("C02"),
+                            csv.GetField<double>("Price")
+                        );
+
+                        items.Add(item);
+                        
+                        
+                    
+                    }
+            
+                    return items;
+                }
+            }
+            
+            //var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
+            
+*/            description = "alle de ting, som du kan gøre i dette rum ";
+            
+            
+            
         }
-        public void AddItems()
+        public void AddItems(string room)
         {
-            if (Stock.Count()==0)
+            if (Stock.Count == 0)
             {
                 addStock();
             }
-            List<Items> roomsItem = new List<Items>();
+             List<Items> roomsItem = new List<Items>();
             Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
-            string anwser = "";
+            string anwser = ">";
             bool right = false;
             while (right==false) 
             {

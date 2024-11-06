@@ -26,13 +26,24 @@ class Space : Node
 
     public void Welcome()
     {
-        Console.WriteLine("Du er nu ved: " + name);
-        HashSet<string> exits = edges.Keys.ToHashSet();
-        Console.WriteLine("Udgangene er nu ved: ");
-        foreach (String exit in exits)
+        Items[] inv = // her skal der være en metode som får fat i spillerens inventory
+        UserInfo userInfo = //her skal der være den metode som får fat i spillerinfo
+        
+        if (name == "checkout")
         {
-            Console.WriteLine(" - " + exit);
+            Checkout(inv, userInfo);
         }
+        else
+        {
+            Console.WriteLine("Du er nu ved: " + name);
+            HashSet<string> exits = edges.Keys.ToHashSet();
+            Console.WriteLine("Udgangene er nu ved: ");
+            foreach (String exit in exits)
+            {
+                Console.WriteLine(" - " + exit);
+            }
+        }
+        
     }
     public string GetName()
     {
@@ -41,12 +52,14 @@ class Space : Node
     public void Goodbye()
     {
     }
-    public void Checkout(Items[] inv,UserInfo userInfo,double Klimaneutral)
+    public void Checkout(Items[] inv,UserInfo userInfo)
     {
         var info = userInfo;
         double CaloriesInCart = inv.Sum(i => i.Calorie);
 
         bool EnoughCalories = CaloriesInCart >= userInfo.DaliyCalo;
+        
+        double Calodif = CaloriesInCart - userInfo.DaliyCalo;
 
         if (name.Equals("Checkout") && EnoughCalories)
         {
@@ -55,7 +68,7 @@ class Space : Node
         }
         else
         {
-            Console.WriteLine("Du mangler at tilføje flere kalorier til din kurv, før du kan gå til kassen.");
+            Console.WriteLine($"Du mangler at tilføje flere kalorier til din kurv, før du kan gå til Kurv du mangler {Calodif} Kalorier");
         }
     }
 
