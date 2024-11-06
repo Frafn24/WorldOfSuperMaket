@@ -27,6 +27,7 @@ class Game {
         registry.Register("go", new CommandGo());
         registry.Register("help", new CommandHelp(registry));
         registry.Register("Actions", new CommandActios(user));
+        registry.Register("Showinventory", new CommandShowInv());
         //registry.Register("Items", new CommandItem(items));
         registry.Register("Inventory",new InventoryCommand());
 

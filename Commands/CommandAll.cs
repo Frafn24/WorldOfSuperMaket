@@ -12,7 +12,7 @@ namespace WorldOfSuperMaket.Commands
     {
         List<Items> Stock = new List<Items>();
         List<Inv> inv = new List<Inv>();
-        Context Context { get; set; }
+        CommandInv commandInv = new CommandInv();
         UserInfo User { get; set; }
         string description;
 
@@ -36,10 +36,11 @@ namespace WorldOfSuperMaket.Commands
                     AddItems();
                     break;
                 case "Fjern":
-                    Remove(Stock[0]);
+                    inv = commandInv.Remove(Stock[0],inv);
+                    //Remove(Stock[0]);
                     break;
                 case "Kurv":
-                    ShowInv();
+                    //ShowInv();
                     break;
             }
         }
@@ -49,6 +50,8 @@ namespace WorldOfSuperMaket.Commands
             description = "alle de ting, som du kan gøre i dette rum ";
             Stock.Add(TestItem);
         }
+        
+        
         public void AddItems()
         {
             if (Stock.Count()==0)
@@ -64,13 +67,13 @@ namespace WorldOfSuperMaket.Commands
                 Console.WriteLine("Du skal vælge mellem Ja eller Nej");
                 Console.Write(">");
                 var line = Console.ReadLine();
-                if (line == "Yes")
+                if (line == "Ja")
                 {
                     AddItem(Stock.First());
                     Console.WriteLine("der er nu tilføjet en vare til din kurv");
                     right = true;
                 }
-                else if (line =="No")
+                else if (line =="Nej")
                 {
                     Console.WriteLine("der er ikke tilføjet en vare til din kurv");
                     right= true;
@@ -83,7 +86,11 @@ namespace WorldOfSuperMaket.Commands
             Items[] items = new Items[1];
             //return items;
         }
-        public void ShowInv()
+        
+        
+        
+        // New Command 
+       /* public void ShowInv()
         {
             if (inv != null)
             {
@@ -98,7 +105,9 @@ namespace WorldOfSuperMaket.Commands
             {
                 Console.WriteLine("Der er ingen items i dit inventory");
             }
-        }
+        }*/
+        
+        // 
         public void AddItem(Items item)
         {
 
@@ -136,7 +145,7 @@ namespace WorldOfSuperMaket.Commands
                 //eturn inv;
             }
         }
-        public void Remove(Items item)
+        /*public void Remove(Items item)
         {
             if (inv.Count(x=> x.item == item) > 1)
             {
@@ -164,8 +173,8 @@ namespace WorldOfSuperMaket.Commands
         //public static void Checkout(Items[] inv, Context context)
         //{
 
-        //}
+        //}*/
 
 
-    }
+    //}
 }
