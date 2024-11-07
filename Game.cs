@@ -99,7 +99,7 @@ class Game {
         while (context.IsDone() == false)
         {
             //context.
-            //Console.Write("> ");
+            Console.Write("> ");
             var line = Console.ReadLine();
             if (line != null)
             {

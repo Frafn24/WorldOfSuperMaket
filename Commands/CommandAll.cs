@@ -64,13 +64,13 @@ namespace WorldOfSuperMaket.Commands
                 Console.WriteLine("Du skal vælge mellem Ja eller Nej");
                 Console.Write(">");
                 var line = Console.ReadLine();
-                if (line == "Yes")
+                if (line == "Ja")
                 {
                     AddItem(Stock.First());
                     Console.WriteLine("der er nu tilføjet en vare til din kurv");
                     right = true;
                 }
-                else if (line =="No")
+                else if (line =="Nej")
                 {
                     Console.WriteLine("der er ikke tilføjet en vare til din kurv");
                     right= true;
