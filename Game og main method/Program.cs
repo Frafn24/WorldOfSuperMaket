@@ -15,6 +15,7 @@ internal class Program
     {
         Game game = new Game();
         game.run();
+        
     }
 }
     /*static List<Items> LoadCsv(string filePath)

@@ -26,19 +26,19 @@ class Game {
         registry.Register("bye", cmdExit);
         registry.Register("go", new CommandGo());
         registry.Register("help", new CommandHelp(registry));
-        registry.Register("Actions", new CommandActios(user));
+        registry.Register("Actions", new CommandActions(user));
         //registry.Register("Items", new CommandItem(items));
-        registry.Register("Inventory",new InventoryCommand());
+        
 
   }
-
+  
     public void run()
     {
         //int Age=0;
         //int height = 0;
         //int Weaght = 0;
         //string Gender = "";
-        Console.WriteLine("Velkommen til supermarkedet.");
+        
         //Console.WriteLine("Skriv dit og dine infomationer nede under");
         //text.printText("Hvad er dit Navn:");
         //var name = Console.ReadLine();
@@ -94,6 +94,10 @@ class Game {
         //user = new UserInfo(name, Age,height,Weaght,gender);
 
             Console.Clear();
+            Console.WriteLine("Velkommen til supermarkedet.");
+            Console.WriteLine("Du kan skrive 'go' + 'lokation' for at bevæge dig igennem supermarkedet");
+            Console.WriteLine("Skriv 'Actions' for at tilføje eller fjerne en vare");
+            Console.WriteLine("Skriv 'help' for at se alle kommandoer");
         InitRegistry();
             context.GetCurrent().Welcome();
         while (context.IsDone() == false)
