@@ -12,12 +12,11 @@ namespace WorldOfSuperMaket.Commands
 {
     public class CommandActios:BaseCommand,ICommand
     {
+        CheckOut check = new CheckOut();
         List<Items> Stock = new List<Items>();
-        List<Items> StockInRoom = new List<Items>();
+        //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
-        Context Context { get; set; }
         UserInfo User { get; set; }
-        string description;
 
         public CommandActios(UserInfo userInfo)
         {
@@ -45,11 +44,19 @@ namespace WorldOfSuperMaket.Commands
                 case "Kurv":
                     ShowInv();
                     break;
+                case "Checkout":
+                    checkout(context);
+                    break;
             }
         }
         
         public void addStock()
         {
+            if (Stock.Count > 0) 
+            { 
+                var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,30);
+                Stock.Add(TestItem);
+            }
 /*            if (Stock.Count == 0)
             {
                 LoadCsv();
@@ -216,6 +223,11 @@ namespace WorldOfSuperMaket.Commands
             inv = NewArray;
             Console.WriteLine("Den ønskede vare er nu fjernet fra din kurv");
             return inv;*/
+        }
+        public void checkout(Context context)
+        {
+            context.GetCurrent().Checkout(inv,User);
+            check.DoCheckOut(inv,User);
         }
         //public static void Checkout(Items[] inv, Context context)
         //{

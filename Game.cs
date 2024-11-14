@@ -18,7 +18,7 @@ class Game {
   
   private void InitRegistry () 
   {
-
+        ICommand commandAction = new CommandActios(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
         registry.Register("exit", cmdExit);
@@ -26,7 +26,8 @@ class Game {
         registry.Register("bye", cmdExit);
         registry.Register("go", new CommandGo());
         registry.Register("help", new CommandHelp(registry));
-        registry.Register("Actions", new CommandActios(user));
+        registry.Register("Actions", commandAction);
+        registry.Register("Checkout", commandAction);
         //registry.Register("Items", new CommandItem(items));
         registry.Register("Inventory",new InventoryCommand());
 
@@ -112,6 +113,10 @@ class Game {
                     Console.Write(">");
                     var line2 = Console.ReadLine();
                     line = line +" "+ line2;
+                }
+                if (line == "Checkout")
+                {
+                    line = line + " Checkout";
                 }
                 registry.Dispatch(line);
                 //Console.WriteLine(context.GetCurrent().GetName());
