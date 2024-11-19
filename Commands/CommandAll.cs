@@ -46,7 +46,7 @@ namespace WorldOfSuperMaket.Commands
                     ShowInv();
                     break;
                 case "Checkout":
-                    checkout(context);
+                    //checkout(context);
                     break;
             }
         }
@@ -225,11 +225,11 @@ namespace WorldOfSuperMaket.Commands
             Console.WriteLine("Den ønskede vare er nu fjernet fra din kurv");
             return inv;*/
         }
-        public void checkout(Context context)
-        {
-            context.GetCurrent().Checkout(inv,User);
-            check.DoCheckOut(inv,User);
-        }
+        //public void checkout(Context context)
+        //{
+        //    context.GetCurrent().Checkout(inv,User);
+        //    check.DoCheckOut(inv,User);
+        //}
         //public static void Checkout(Items[] inv, Context context)
         //{
 
