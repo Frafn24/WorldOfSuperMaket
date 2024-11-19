@@ -15,8 +15,7 @@ internal class ScoreBoard
         }  
     }
       
-
-
+    
     private Data ParseCsvLine(string csvLine)
     {
         string[] lines = csvLine.Split(';');
