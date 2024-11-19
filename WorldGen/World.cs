@@ -5,7 +5,7 @@ class World
 {
 
     Space entry = new Space("Indgang");
-    Space refrigerator = new Space("Køleafdeling");
+    Space refrigerator = new Space("Koleafdeling");
     Space meats = new Space("Kødafdeling");
     Space frozen = new Space("Frostafdeling");
     Space groceries = new Space("Grøntafdeling");
@@ -21,7 +21,7 @@ class World
         spaces = new Dictionary<string, Space>
         {
             { "Indgang", entry },
-            { "Køleafdeling", refrigerator },
+            { "Koleafdeling", refrigerator },
             { "Kødafdeling", meats },
             { "Frostafdeling", frozen },
             { "Grøntafdeling", groceries },

@@ -2,6 +2,7 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.data;
 using WorldOfSuperMaket.Inventory;
 
 class Space : Node
@@ -26,6 +27,15 @@ class Space : Node
 
     public void Welcome()
     {
+        //Items[] inv = // her skal der være en metode som får fat i spillerens inventory
+        //UserInfo userInfo = //her skal der være den metode som får fat i spillerinfo
+
+        //if (name == "checkout")
+        //{
+        //    Checkout(inv, userInfo);
+        //}
+        //else
+        //{
         Console.WriteLine("Du er nu ved: " + name);
         HashSet<string> exits = edges.Keys.ToHashSet();
         Console.WriteLine("Udgangene er nu ved: ");
@@ -33,6 +43,8 @@ class Space : Node
         {
             Console.WriteLine(" - " + exit);
         }
+        //}
+
     }
     public string GetName()
     {
@@ -41,12 +53,14 @@ class Space : Node
     public void Goodbye()
     {
     }
-    public void Checkout(Items[] inv,UserInfo userInfo,double Klimaneutral)
+    public void Checkout(List<Inv> inv,UserInfo userInfo)
     {
         var info = userInfo;
-        double CaloriesInCart = inv.Sum(i => i.Calorie);
+        double CaloriesInCart = inv.Sum(i => i.item.Calorie);
 
         bool EnoughCalories = CaloriesInCart >= userInfo.DaliyCalo;
+        
+        double Calodif = CaloriesInCart - userInfo.DaliyCalo;
 
         if (name.Equals("Checkout") && EnoughCalories)
         {
@@ -55,7 +69,7 @@ class Space : Node
         }
         else
         {
-            Console.WriteLine("Du mangler at tilføje flere kalorier til din kurv, før du kan gå til kassen.");
+            Console.WriteLine($"Du mangler at tilføje flere kalorier til din kurv, før du kan gå til Kurv du mangler {Calodif} Kalorier");
         }
     }
 

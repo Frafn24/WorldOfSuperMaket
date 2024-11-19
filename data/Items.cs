@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace WorldOfSuperMaket;
+namespace WorldOfSuperMaket.data;
 
 public class Items
 {
@@ -14,8 +14,9 @@ public class Items
     public double Protien { get; set; }
     public double Fat { get; set; }
     public double C02 { get; set; }
+    public double Price { get; set; }
 
-    public Items(string x_Name, string x_Description, string x_Type, double x_Calorie, double x_Carbo, double x_Protien, double x_Fat, double x_C02)
+    public Items(string x_Name, string x_Description, string x_Type, double x_Calorie, double x_Carbo, double x_Protien, double x_Fat, double x_C02, double X_Price)
     {
         Name = x_Name;
         Description = x_Description;
@@ -25,12 +26,13 @@ public class Items
         Protien = x_Protien;
         Fat = x_Fat;
         C02 = x_C02;
+        Price = X_Price;
     }
 
     public string GetName()
     {
         return Name;
-        
+
     }
     public string GEtDescription()
     {
@@ -38,7 +40,7 @@ public class Items
     }
     public double[] GetMacros()
     {
-        double[] Macros = {Calorie, Carbo, Protien, Fat};
+        double[] Macros = { Calorie, Carbo, Protien, Fat };
         return Macros;
     }
     public double GetC02()
