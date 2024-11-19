@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using WorldOfSuperMaket.data;
 
 namespace WorldOfSuperMaket.Commands
 {
     public class CommandActions:BaseCommand,ICommand
     {
+        CheckOut check = new CheckOut();
         List<Items> Stock = new List<Items>();
+        //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
-        CommandInv commandInv = new CommandInv();
         UserInfo User { get; set; }
         string description;
         
@@ -20,6 +24,8 @@ namespace WorldOfSuperMaket.Commands
         Items TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
 
         public CommandActions(UserInfo userInfo)
+
+        public CommandActios(UserInfo userInfo)
         {
             description = "Her kan du tilføje og fjerne varer i rummet";
             User = userInfo;
@@ -28,6 +34,7 @@ namespace WorldOfSuperMaket.Commands
         void ICommand.Execute(Context context, string command, string[] parameters)
         {
             context.GetCurrent().GetName();
+            var room = context.GetCurrent().GetName();
             if (GuardEq(parameters, 1))
             {
                 Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
@@ -37,6 +44,7 @@ namespace WorldOfSuperMaket.Commands
             {
                 case "Tilføj":
                     inv = commandInv.AddItems(TestItem,inv);
+                    AddItems(room);
                     break;
                 case "Fjern":
                     inv = commandInv.Remove(TestItem,inv);
@@ -46,9 +54,14 @@ namespace WorldOfSuperMaket.Commands
                     commandInv.ShowInv(inv);
                     //ShowInv();
                     break;
+                case "Checkout":
+                    //checkout(context);
+                    break;
             }
         }
         /*public void addStock()
+        
+        public void addStock()
         {
             var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
             description = "alle de ting, som du kan gøre i dette rum ";
@@ -57,14 +70,75 @@ namespace WorldOfSuperMaket.Commands
         
         
         /*public void AddItems()
+            if (Stock.Count > 0) 
+            { 
+                var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,30);
+                Stock.Add(TestItem);
+            }
+/*            if (Stock.Count == 0)
+            {
+                LoadCsv();
+            }
+            List<Items> LoadCsv(string filePath)
+            {
+                var items = new List<Items>();
+            
+                var csvPath = @"data\items.csv";
+
+                if (!File.Exists(csvPath))
+                {
+                    Stock=LoadCsv(filePath);
+                }
+                else
+                {
+                    Console.WriteLine("CSV File Not Found, HerbDeDerp");
+                }
+            
+                using (var reader = new StreamReader(filePath))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                {
+                    csv.Read();
+                    csv.ReadHeader();
+                    while (csv.Read())
+                    {
+                        var item = new Items(
+                            csv.GetField("Name"),
+                            csv.GetField("Description"),
+                            csv.GetField("Type"),
+                            csv.GetField<double>("Calorie"),
+                            csv.GetField<double>("Carbo"),
+                            csv.GetField<double>("Protien"),
+                            csv.GetField<double>("Fat"),
+                            csv.GetField<double>("C02"),
+                            csv.GetField<double>("Price")
+                        );
+
+                        items.Add(item);
+                        
+                        
+                    
+                    }
+            
+                    return items;
+                }
+            }
+            
+            //var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
+            
+*/            description = "alle de ting, som du kan gøre i dette rum ";
+            
+            
+            
+        }
+        public void AddItems(string room)
         {
-            if (Stock.Count()==0)
+            if (Stock.Count == 0)
             {
                 addStock();
             }
-            List<Items> roomsItem = new List<Items>();
+             List<Items> roomsItem = new List<Items>();
             Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
-            string anwser = "";
+            string anwser = ">";
             bool right = false;
             while (right==false) 
             {
@@ -175,6 +249,11 @@ namespace WorldOfSuperMaket.Commands
             Console.WriteLine("Den ønskede vare er nu fjernet fra din kurv");
             return inv;*/
         }
+        //public void checkout(Context context)
+        //{
+        //    context.GetCurrent().Checkout(inv,User);
+        //    check.DoCheckOut(inv,User);
+        //}
         //public static void Checkout(Items[] inv, Context context)
         //{
 

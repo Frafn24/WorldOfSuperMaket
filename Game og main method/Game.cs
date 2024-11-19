@@ -3,6 +3,7 @@
 
 using WorldOfSuperMaket;
 using WorldOfSuperMaket.Commands;
+using WorldOfSuperMaket.data;
 
 class Game {
   Items[] items = new Items[1];
@@ -18,7 +19,7 @@ class Game {
   
   private void InitRegistry () 
   {
-
+        ICommand commandAction = new CommandActios(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
         registry.Register("exit", cmdExit);
@@ -26,7 +27,8 @@ class Game {
         registry.Register("bye", cmdExit);
         registry.Register("go", new CommandGo());
         registry.Register("help", new CommandHelp(registry));
-        registry.Register("Actions", new CommandActions(user));
+        registry.Register("Actions", commandAction);
+        registry.Register("Checkout", commandAction);
         //registry.Register("Items", new CommandItem(items));
         
 
@@ -116,6 +118,10 @@ class Game {
                     Console.Write(">");
                     var line2 = Console.ReadLine();
                     line = line +" "+ line2;
+                }
+                if (line == "Checkout")
+                {
+                    line = line + " Checkout";
                 }
                 registry.Dispatch(line);
                 //Console.WriteLine(context.GetCurrent().GetName());
