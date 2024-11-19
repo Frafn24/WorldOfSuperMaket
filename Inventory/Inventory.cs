@@ -1,4 +1,6 @@
-﻿namespace WorldOfSuperMaket.Inventory;
+﻿using WorldOfSuperMaket.data;
+
+namespace WorldOfSuperMaket.Inventory;
 
 public class Inventory
 {

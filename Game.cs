@@ -3,6 +3,7 @@
 
 using WorldOfSuperMaket;
 using WorldOfSuperMaket.Commands;
+using WorldOfSuperMaket.data;
 
 class Game {
   Items[] items = new Items[1];

@@ -1,5 +1,5 @@
 using System.Security.Cryptography;
-using WorldOfSuperMaket;
+using WorldOfSuperMaket.data;
 
 class InventoryCommand : BaseCommand, ICommand {
     Items[] Items;

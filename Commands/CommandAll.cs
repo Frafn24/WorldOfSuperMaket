@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using CsvHelper;
+using WorldOfSuperMaket.data;
 
 namespace WorldOfSuperMaket.Commands
 {

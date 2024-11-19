@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace WorldOfSuperMaket;
+namespace WorldOfSuperMaket.data;
 
 public class Items
 {
@@ -32,7 +32,7 @@ public class Items
     public string GetName()
     {
         return Name;
-        
+
     }
     public string GEtDescription()
     {
@@ -40,7 +40,7 @@ public class Items
     }
     public double[] GetMacros()
     {
-        double[] Macros = {Calorie, Carbo, Protien, Fat};
+        double[] Macros = { Calorie, Carbo, Protien, Fat };
         return Macros;
     }
     public double GetC02()

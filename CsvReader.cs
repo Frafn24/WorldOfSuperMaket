@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldOfSuperMaket.data;
 
 namespace WorldOfSuperMaket
 {
@@ -11,7 +12,7 @@ namespace WorldOfSuperMaket
         public void csvTest()
         {
 
-            List<Items> value = File.ReadAllLines(@"C:\\Users\\Frederik\\source\\repos\\TestKodeTilProjekt\\data\\Mappe1.csv").Skip(1).Select(x => Value(x)).ToList();
+            List<Items> value = File.ReadAllLines(getPlaceMent("Mappe1.csv")).Skip(1).Select(x => Value(x)).ToList();
             //string filename = "Mappe1.csv";
 
             foreach (var item in value)
@@ -35,6 +36,12 @@ namespace WorldOfSuperMaket
             Items items = new Items(name, description, type, Calorie, Carbo, Protien, Fat, C02, Price);
             return items;
 
+        }
+        public string getPlaceMent(string filename)
+        {
+            string placement = Path.GetFullPath(filename);
+            var update = placement.Replace(@"bin\Debug", "data");
+            return update;
         }
     }
 
