@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CsvHelper;
 using WorldOfSuperMaket.data;
+using WorldOfSuperMaket.Inventory;
 
 namespace WorldOfSuperMaket.Commands
 {
@@ -15,17 +16,18 @@ namespace WorldOfSuperMaket.Commands
     {
         CheckOut check = new CheckOut();
         List<Items> Stock = new List<Items>();
+        InventoryActions inventoryActions = new InventoryActions();
         //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
         UserInfo User { get; set; }
         string description;
         
         // Bruger bare en TestItem
-        Items TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
+        Items TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,100);
+
+        
 
         public CommandActions(UserInfo userInfo)
-
-        public CommandActios(UserInfo userInfo)
         {
             description = "Her kan du tilføje og fjerne varer i rummet";
             User = userInfo;
@@ -43,15 +45,15 @@ namespace WorldOfSuperMaket.Commands
             switch (parameters[0])
             {
                 case "Tilføj":
-                    inv = commandInv.AddItems(TestItem,inv);
-                    AddItems(room);
+                    inv = inventoryActions.Add(inv,TestItem);
+                    //AddItems(room);
                     break;
                 case "Fjern":
-                    inv = commandInv.Remove(TestItem,inv);
+                    inv = inventoryActions.Remove(inv,TestItem);
                     //Remove(Stock[0]);
                     break;
                 case "Kurv":
-                    commandInv.ShowInv(inv);
+                    inventoryActions.Show(inv);
                     //ShowInv();
                     break;
                 case "Checkout":
@@ -125,45 +127,45 @@ namespace WorldOfSuperMaket.Commands
             
             //var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
             
-*/            description = "alle de ting, som du kan gøre i dette rum ";
+*/            //description = "alle de ting, som du kan gøre i dette rum ";
             
             
             
         }
-        public void AddItems(string room)
-        {
-            if (Stock.Count == 0)
-            {
-                addStock();
-            }
-             List<Items> roomsItem = new List<Items>();
-            Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
-            string anwser = ">";
-            bool right = false;
-            while (right==false) 
-            {
-                Console.WriteLine("Du skal vælge mellem Ja eller Nej");
-                Console.Write(">");
-                var line = Console.ReadLine();
-                if (line == "Ja")
-                {
-                    AddItem(Stock.First());
-                    Console.WriteLine("der er nu tilføjet en vare til din kurv");
-                    right = true;
-                }
-                else if (line =="Nej")
-                {
-                    Console.WriteLine("der er ikke tilføjet en vare til din kurv");
-                    right= true;
-                }
-                else
-                {
-                    Console.WriteLine("Du skal vælge mellem Ja eller Nej");
-                }
-            }
-            Items[] items = new Items[1];
-            //return items;
-        }*/
+        //public void AddItems(string room)
+        //{
+        //    if (Stock.Count == 0)
+        //    {
+        //        addStock();
+        //    }
+        //     List<Items> roomsItem = new List<Items>();
+        //    Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
+        //    string anwser = ">";
+        //    bool right = false;
+        //    while (right==false) 
+        //    {
+        //        Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+        //        Console.Write(">");
+        //        var line = Console.ReadLine();
+        //        if (line == "Ja")
+        //        {
+        //            AddItem(Stock.First());
+        //            Console.WriteLine("der er nu tilføjet en vare til din kurv");
+        //            right = true;
+        //        }
+        //        else if (line =="Nej")
+        //        {
+        //            Console.WriteLine("der er ikke tilføjet en vare til din kurv");
+        //            right= true;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+        //        }
+        //    }
+        //    Items[] items = new Items[1];
+        //    //return items;
+        //}
         
         
         
@@ -261,4 +263,3 @@ namespace WorldOfSuperMaket.Commands
 
 
     //}
-}

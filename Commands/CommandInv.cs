@@ -1,3 +1,5 @@
+using WorldOfSuperMaket.data;
+
 namespace WorldOfSuperMaket.Commands;
 
 class CommandInv

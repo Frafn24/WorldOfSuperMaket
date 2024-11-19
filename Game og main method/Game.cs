@@ -19,7 +19,7 @@ class Game {
   
   private void InitRegistry () 
   {
-        ICommand commandAction = new CommandActios(user);
+        ICommand commandAction = new CommandActions(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
         registry.Register("exit", cmdExit);
