@@ -4,6 +4,7 @@
 using WorldOfSuperMaket;
 using WorldOfSuperMaket.data;
 using WorldOfSuperMaket.Inventory;
+using WorldOfSuperMaket.Models;
 
 class Space : Node
 {

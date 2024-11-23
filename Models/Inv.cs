@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WorldOfSuperMaket.data;
 
-namespace WorldOfSuperMaket
+namespace WorldOfSuperMaket.Models
 {
     public class Inv
     {

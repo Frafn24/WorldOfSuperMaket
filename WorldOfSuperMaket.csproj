@@ -10,6 +10,7 @@
   <ItemGroup>
     <Folder Include="https:\github.com\FrederikThy\" />
     <Folder Include="data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>

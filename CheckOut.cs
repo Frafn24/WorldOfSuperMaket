@@ -1,4 +1,6 @@
-﻿namespace WorldOfSuperMaket;
+﻿using WorldOfSuperMaket.Models;
+
+namespace WorldOfSuperMaket;
 
 public class CheckOut
 {
