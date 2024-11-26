@@ -8,17 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="https:\github.com\FrederikThy\" />
-    <Folder Include="data\" />
+    <Compile Remove="ACtions\**" />
+    <Compile Remove="Csv Readers\**" />
+    <Compile Remove="https:\**" />
+    <EmbeddedResource Remove="ACtions\**" />
+    <EmbeddedResource Remove="Csv Readers\**" />
+    <EmbeddedResource Remove="https:\**" />
+    <None Remove="ACtions\**" />
+    <None Remove="Csv Readers\**" />
+    <None Remove="https:\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="https:\github.com\FrederikThy\SemesterProjekt.git" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="33.0.1" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="System.Windows.Extensions" Version="9.0.0" />
   </ItemGroup>
 
 </Project>

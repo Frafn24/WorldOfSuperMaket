@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WorldOfSuperMaket.data;
+using WorldOfSuperMaket.Models;
 
 namespace WorldOfSuperMaket
 {
     internal class CsvReader
     {
-        public void csvTest()
+        public List<Items> csvTest()
         {
+            List<Items> value = new List<Items>();
+            try
+            {
+                value = File.ReadAllLines(getPlaceMent("Mappe1.csv")).Skip(1).Select(x => Value(x)).ToList();
 
-            List<Items> value = File.ReadAllLines(getPlaceMent("Mappe1.csv")).Skip(1).Select(x => Value(x)).ToList();
+            }
+            catch (Exception e)
+            {
+
+                
+            }
+            return value;
             //string filename = "Mappe1.csv";
 
-            foreach (var item in value)
-            {
-                Console.WriteLine(item.Name);
-            }
         }
         public Items Value(string csvLine)
         {

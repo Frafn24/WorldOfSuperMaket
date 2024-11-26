@@ -7,8 +7,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using CsvHelper;
-using WorldOfSuperMaket.data;
 using WorldOfSuperMaket.Models;
+using WorldOfSuperMaket.Inventory;
 
 namespace WorldOfSuperMaket.Commands
 {
@@ -16,6 +16,7 @@ namespace WorldOfSuperMaket.Commands
     {
         CheckOut check = new CheckOut();
         List<Items> Stock = new List<Items>();
+        InventoryActions InvActions = new InventoryActions();
         //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
         UserInfo User { get; set; }
@@ -44,13 +45,13 @@ namespace WorldOfSuperMaket.Commands
             switch (parameters[0])
             {
                 case "Tilføj":
-                    AddItems(room);
+                    inv = InvActions.Add(inv, Test);
                     break;
                 case "Fjern":
-                    Remove(Stock[0]);
+                    inv = InvActions.Remove(inv,Stock[0]);
                     break;
                 case "Kurv":
-                    ShowInv();
+                    InvActions.Show(inv);
                     break;
                 case "Checkout":
                     //checkout(context);
@@ -137,7 +138,7 @@ namespace WorldOfSuperMaket.Commands
                 var line = Console.ReadLine();
                 if (line == "Yes")
                 {
-                    AddItem(Stock.First());
+                    //Inv(Stock.First());
                     Console.WriteLine("der er nu tilføjet en vare til din kurv");
                     right = true;
                 }
@@ -153,7 +154,7 @@ namespace WorldOfSuperMaket.Commands
             }
             Items[] items = new Items[1];
             //return items;
-        }*/
+        }
         
         
         

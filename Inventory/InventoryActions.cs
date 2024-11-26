@@ -1,5 +1,4 @@
-﻿using WorldOfSuperMaket.data;
-using WorldOfSuperMaket.Models;
+﻿using WorldOfSuperMaket.Models;
 
 namespace WorldOfSuperMaket.Inventory;
 
@@ -25,10 +24,6 @@ public class InventoryActions
                 return inv;
         }
         return inv; 
-        //int count = inv.Count;
-        //var newarray = new Items[count + 1];
-        //newarray[inv.Count + 1] = item;
-        //return newarray;
     }
     public List<Inv> Remove(List<Inv> inv, Items item)
     {
@@ -63,11 +58,18 @@ public class InventoryActions
     public void Show(List<Inv> inv)
     {
         Console.Clear();
-        Console.WriteLine("Vare i din kurv:");
-        foreach (var itm in inv)
+        if (inv.Count() > 0)
         {
-            Console.WriteLine($"Vare: {itm.item.Name}, Mængde: ");
+            Console.WriteLine("Varer er i din Kurv.");
+            foreach (var itm in inv)
+            {
+                Console.WriteLine($"Mængde:{itm.Number} ,Vare: {itm.item.Name} ");
 
+            }
+        }
+        else
+        {
+            Console.WriteLine("Der er ingen items i dit inventory");
         }
     }
 }

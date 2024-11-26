@@ -1,6 +1,6 @@
 using System.Data;
 using System.Threading.Channels;
-using WorldOfSuperMaket.data;
+using WorldOfSuperMaket.Models;
 
 namespace WorldOfSuperMaket;
 

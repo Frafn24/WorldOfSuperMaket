@@ -1,4 +1,3 @@
-using WorldOfSuperMaket.data;
 using WorldOfSuperMaket.Models;
 
 namespace WorldOfSuperMaket.Commands;

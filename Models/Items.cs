@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace WorldOfSuperMaket.data;
+namespace WorldOfSuperMaket.Models;
 
 public class Items
 {

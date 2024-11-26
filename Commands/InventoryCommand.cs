@@ -1,5 +1,5 @@
 using System.Security.Cryptography;
-using WorldOfSuperMaket.data;
+using WorldOfSuperMaket.Models;
 
 class InventoryCommand : BaseCommand, ICommand {
     Items[] Items;
@@ -27,7 +27,7 @@ class InventoryCommand : BaseCommand, ICommand {
     }
     public void Show()
     {
-        if (Items!=null)
+        if (Items.Count()>0)
         {
             Console.WriteLine("Vis varer i dit inventory.");
             for (int i = 0; i < Items.Length; i++)

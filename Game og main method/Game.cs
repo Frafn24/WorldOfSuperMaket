@@ -3,23 +3,29 @@
 
 using WorldOfSuperMaket;
 using WorldOfSuperMaket.Commands;
-using WorldOfSuperMaket.data;
+using WorldOfSuperMaket.Models;
+using WorldOfSuperMaket.Sounds;
+
+
 
 class Game {
   Items[] items = new Items[1];
     Items[] inv = new Items[0];
   static World    world    = new World();
   static Context  context  = new Context(world.GetEntry());
+  TextCommand TextC = new TextCommand();
   static ICommand fallback = new CommandUnknown();
   static Registry registry = new Registry(context, fallback);
   UserInfo user;
   bool whil = false;
   TextAnime text = new TextAnime();
+  Sounds sounds = new Sounds();
   //SoundsClass sound = new SoundsClass();
   
   private void InitRegistry () 
   {
-        ICommand commandAction = new CommandActions(user);
+
+        ICommand commandAction = new CommandActios(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
         registry.Register("exit", cmdExit);
@@ -36,72 +42,11 @@ class Game {
   
     public void run()
     {
-        //int Age=0;
-        //int height = 0;
-        //int Weaght = 0;
-        //string Gender = "";
-        
-        //Console.WriteLine("Skriv dit og dine infomationer nede under");
-        //text.printText("Hvad er dit Navn:");
-        //var name = Console.ReadLine();
-        //    Console.WriteLine("Du må kun skrive dit alder ifrom af hele tal");
-        //while (whil == false)
-        //{
-        //   text.printText("Hvad er din alder:");
-        //   var inputAge = Console.ReadLine();
-        //    try
-        //    {
-        //        Age = int.Parse(inputAge);
-        //        whil = true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Console.WriteLine("Du må kun skrive tal!!!");
-        //    }
-        //}
-        //whil = false;
-        //    Console.WriteLine("Du må kun skrive dit vægt ifrom af hele tal");
-        //while (whil == false)
-        //{
-        //    text.printText("Hvad er din din vægt:");
-        //    var InputWeaght = Console.ReadLine();
-        //    try
-        //    {
-        //        Weaght = int.Parse(InputWeaght);
-        //        whil = true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Console.WriteLine("Du må kun skrive tal!!!");
-        //    }
-        //}
-        //whil = false;
-        //    Console.WriteLine("Du må kun skrive dit højde ifrom af hele tal");
-        //while (whil == false)
-        //{
-        //    text.printText("Hvad er din din højde:");
-        //    var inputHøjde = Console.ReadLine();
-        //    try
-        //    {
-        //        height = int.Parse(inputHøjde);
-        //        whil = true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Console.WriteLine("Du må kun skrive tal!!!");
-        //    }
-        //}
-        //text.printText("Hvad er din din Køn:");
-        //var gender = Console.ReadLine();
-        //user = new UserInfo(name, Age,height,Weaght,gender);
-
-            Console.Clear();
-            Console.WriteLine("Velkommen til supermarkedet.");
-            Console.WriteLine("Du kan skrive 'go' + 'lokation' for at bevæge dig igennem supermarkedet");
-            Console.WriteLine("Skriv 'Actions' for at tilføje eller fjerne en vare");
-            Console.WriteLine("Skriv 'help' for at se alle kommandoer");
+        Console.Clear();
+        Console.WriteLine("Velkommen til supermarkedet.");
+        TextC.InfoText();
         InitRegistry();
-            context.GetCurrent().Welcome();
+        context.GetCurrent().Welcome();
         while (context.IsDone() == false)
         {
             //context.
@@ -109,12 +54,13 @@ class Game {
             var line = Console.ReadLine();
             if (line != null)
             {
+                if (line =="lol")
+                {
+                    sounds.LOL();
+                }
                 if (line=="Actions")
                 {
-                    Console.WriteLine("Disse Action du kan vælge imellem her er");
-                    Console.WriteLine(" Tilføj vare - Tilføj");
-                    Console.WriteLine(" Fjern vare - Fjern");
-                    Console.WriteLine(" Se kurv - Kurv");
+                    TextC.ActionsText();
                     Console.Write(">");
                     var line2 = Console.ReadLine();
                     line = line +" "+ line2;
@@ -127,12 +73,13 @@ class Game {
                 //Console.WriteLine(context.GetCurrent().GetName());
                 
             }
-            if (string.IsNullOrEmpty(line))
+            /*if (string.IsNullOrEmpty(line))
             {
                 context.MakeDone();
-            }
+            }*/
         }
         //sound.Play();
+        sounds.GameOver();
         Console.WriteLine("Game Over 😥");
 
 

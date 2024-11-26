@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorldOfSuperMaket
+namespace WorldOfSuperMaket.Models
 {
     public class UserInfo
     {
@@ -45,28 +45,28 @@ namespace WorldOfSuperMaket
             double calo = 0;
             if (gender == true)
             {
-                calo = (Weaght * 30.43) + (Height * 1.97) + (67 - (Age * 6.8));
+                calo = Weaght * 30.43 + Height * 1.97 + (67 - Age * 6.8);
                 return calo;
             }
             else
             {
-                calo = (Weaght * 21.17) + (Height * 0.71) + (655 - (Age * 4.7));
+                calo = Weaght * 21.17 + Height * 0.71 + (655 - Age * 4.7);
                 return calo;
             }
         }
         double caleKulhydrat(double daliyCalo, int weaght)
         {
-            var inventory = ((daliyCalo / 100) * 30) / 4.2;
+            var inventory = daliyCalo / 100 * 30 / 4.2;
             return inventory;
         }
         double caleProtien(double daliyCalo)
         {
-            var inventory = ((daliyCalo / 100) * 55) / 4.2;
+            var inventory = daliyCalo / 100 * 55 / 4.2;
             return inventory;
         }
         double caleFat(double daliyCalo)
         {
-            var inventory = ((daliyCalo / 100) * 10) / 9.1;
+            var inventory = daliyCalo / 100 * 10 / 9.1;
             return inventory;
         }
     }
