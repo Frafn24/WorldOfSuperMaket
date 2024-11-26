@@ -21,7 +21,7 @@ public class InventoryActions
                 inv[index] = inve;
                 
             }
-                return inv;
+            return inv;
         }
         return inv;
         //int count = inv.Count;

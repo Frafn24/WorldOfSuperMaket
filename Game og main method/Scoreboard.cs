@@ -1,6 +1,6 @@
 namespace WorldOfSuperMaket;
 
-internal class ScoreBoard
+/*internal class ScoreBoard
 {
     public void LoadScores()
     {
@@ -55,4 +55,4 @@ public class Data
         EnvironmentScore = environmentScore;
     }
     
-}
+}*/
