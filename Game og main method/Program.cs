@@ -7,9 +7,9 @@ public class Program
 {
     static void Main(string[] args)
     {
-        CsvReader csvReader = new CsvReader();
-        csvReader.csvTest();
-        //RunGame();
+        //CsvReader csvReader = new CsvReader();
+        //csvReader.csvTest();
+        RunGame();
         Console.ReadLine();
 
     }
@@ -17,6 +17,7 @@ public class Program
     {
         Game game = new Game();
         game.run();
+        
     }
 }
 

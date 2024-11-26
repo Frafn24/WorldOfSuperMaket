@@ -11,32 +11,32 @@ namespace WorldOfSuperMaket
         public string Username { get; set; }
         public int Age { get; set; }
         public int Height { get; set; }
-        public int Weaght { get; set; }
+        public int Weight { get; set; }
         public string Gender { get; set; }
-        public double DaliyCalo { get; set; }
-        public double DaliyKullhydrat { get; set; }
-        public double DaliyProtien { get; set; }
-        public double DaliyFat { get; set; }
+        public double DailyCalo { get; set; }
+        public double DailyKulhydrat { get; set; }
+        public double DailyProtien { get; set; }
+        public double DailyFat { get; set; }
 
-        public UserInfo(string x_Username, int x_Age, int x_Height, int x_Weaght, string x_Gender)
+        public UserInfo(string x_Username, int x_Age, int x_Height, int xWeight, string x_Gender)
         {
             Username = x_Username;
             Age = x_Age;
             Height = x_Height;
-            Weaght = x_Weaght;
+            Weight = xWeight;
             Gender = x_Gender;
             if (Gender.Length > 4)
             {
-                DaliyCalo = calcCalo(true, x_Height, x_Weaght);
+                DailyCalo = calcCalo(true, x_Height, xWeight);
 
             }
             else
             {
-                DaliyCalo = calcCalo(false, x_Height, x_Weaght);
+                DailyCalo = calcCalo(false, x_Height, xWeight);
             }
-            DaliyKullhydrat = caleKulhydrat(DaliyCalo, x_Weaght);
-            DaliyProtien = caleProtien(DaliyCalo);
-            DaliyFat = caleFat(DaliyCalo);
+            DailyKulhydrat = caleKulhydrat(DailyCalo, xWeight);
+            DailyProtien = caleProtien(DailyCalo);
+            DailyFat = caleFat(DailyCalo);
 
         }
 

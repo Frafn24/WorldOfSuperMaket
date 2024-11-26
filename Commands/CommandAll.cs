@@ -8,20 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using CsvHelper;
 using WorldOfSuperMaket.data;
+using WorldOfSuperMaket.Inventory;
 
 namespace WorldOfSuperMaket.Commands
 {
-    public class CommandActios:BaseCommand,ICommand
+    public class CommandActions:BaseCommand,ICommand
     {
         CheckOut check = new CheckOut();
         List<Items> Stock = new List<Items>();
+        InventoryActions inventoryActions = new InventoryActions();
         //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
         UserInfo User { get; set; }
+        string description;
+        
+        // Bruger bare en TestItem
+        Items TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,100);
 
-        public CommandActios(UserInfo userInfo)
+        
+
+        public CommandActions(UserInfo userInfo)
         {
-            description = "Her kan du lave alle dine actions i rummet";
+            description = "Her kan du tilføje og fjerne varer i rummet";
             User = userInfo;
         }
 
@@ -37,22 +45,33 @@ namespace WorldOfSuperMaket.Commands
             switch (parameters[0])
             {
                 case "Tilføj":
-                    AddItems(room);
+                    inv = inventoryActions.Add(inv,TestItem);
+                    //AddItems(room);
                     break;
                 case "Fjern":
-                    Remove(Stock[0]);
+                    inv = inventoryActions.Remove(inv,TestItem);
+                    //Remove(Stock[0]);
                     break;
                 case "Kurv":
-                    ShowInv();
+                    inventoryActions.Show(inv);
+                    //ShowInv();
                     break;
                 case "Checkout":
                     //checkout(context);
                     break;
             }
         }
+        /*public void addStock()
         
         public void addStock()
         {
+            var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
+            description = "alle de ting, som du kan gøre i dette rum ";
+            Stock.Add(TestItem);
+        }*/
+        
+        
+        /*public void AddItems()
             if (Stock.Count > 0) 
             { 
                 var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,30);
@@ -108,46 +127,50 @@ namespace WorldOfSuperMaket.Commands
             
             //var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100);
             
-*/            description = "alle de ting, som du kan gøre i dette rum ";
+*/            //description = "alle de ting, som du kan gøre i dette rum ";
             
             
             
         }
-        public void AddItems(string room)
-        {
-            if (Stock.Count == 0)
-            {
-                addStock();
-            }
-             List<Items> roomsItem = new List<Items>();
-            Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
-            string anwser = ">";
-            bool right = false;
-            while (right==false) 
-            {
-                Console.WriteLine("Du skal vælge mellem Ja eller Nej");
-                Console.Write(">");
-                var line = Console.ReadLine();
-                if (line == "Yes")
-                {
-                    AddItem(Stock.First());
-                    Console.WriteLine("der er nu tilføjet en vare til din kurv");
-                    right = true;
-                }
-                else if (line =="No")
-                {
-                    Console.WriteLine("der er ikke tilføjet en vare til din kurv");
-                    right= true;
-                }
-                else
-                {
-                    Console.WriteLine("Du skal vælge mellem Ja eller Nej");
-                }
-            }
-            Items[] items = new Items[1];
-            //return items;
-        }
-        public void ShowInv()
+        //public void AddItems(string room)
+        //{
+        //    if (Stock.Count == 0)
+        //    {
+        //        addStock();
+        //    }
+        //     List<Items> roomsItem = new List<Items>();
+        //    Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
+        //    string anwser = ">";
+        //    bool right = false;
+        //    while (right==false) 
+        //    {
+        //        Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+        //        Console.Write(">");
+        //        var line = Console.ReadLine();
+        //        if (line == "Ja")
+        //        {
+        //            AddItem(Stock.First());
+        //            Console.WriteLine("der er nu tilføjet en vare til din kurv");
+        //            right = true;
+        //        }
+        //        else if (line =="Nej")
+        //        {
+        //            Console.WriteLine("der er ikke tilføjet en vare til din kurv");
+        //            right= true;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+        //        }
+        //    }
+        //    Items[] items = new Items[1];
+        //    //return items;
+        //}
+        
+        
+        
+        // New Command 
+       /* public void ShowInv()
         {
             if (inv != null)
             {
@@ -162,8 +185,10 @@ namespace WorldOfSuperMaket.Commands
             {
                 Console.WriteLine("Der er ingen items i dit inventory");
             }
-        }
-        public void AddItem(Items item)
+        }*/
+        
+        // 
+        /*public void AddItem(Items item)
         {
 
             if (item !=null)
@@ -199,8 +224,9 @@ namespace WorldOfSuperMaket.Commands
                 Console.WriteLine("Der er ingen items i dit inventory");
                 //eturn inv;
             }
-        }
-        public void Remove(Items item)
+        }*/
+        
+        /*public void Remove(Items item)
         {
             if (inv.Count(x=> x.item == item) > 1)
             {
@@ -233,8 +259,7 @@ namespace WorldOfSuperMaket.Commands
         //public static void Checkout(Items[] inv, Context context)
         //{
 
-        //}
+        //}*/
 
 
-    }
-}
+    //}
