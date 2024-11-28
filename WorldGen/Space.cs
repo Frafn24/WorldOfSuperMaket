@@ -2,11 +2,13 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.Commands;
 using WorldOfSuperMaket.Inventory;
 using WorldOfSuperMaket.Models;
 
 class Space : Node
 {
+    TextCommand TextC = new TextCommand();
     private CheckOut checkOut = new CheckOut();
     public Space(String name) : base(name)
     {
@@ -36,13 +38,17 @@ class Space : Node
         //}
         //else
         //{
-        Console.WriteLine("Du er nu ved: " + name);
+        TextC.InfoText();
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine($"Du er nu ved: " + name);
         HashSet<string> exits = edges.Keys.ToHashSet();
-        Console.WriteLine("Udgangene er nu ved: ");
+        Console.WriteLine("Det er nu ved: ");
         foreach (String exit in exits)
         {
             Console.WriteLine(" - " + exit);
         }
+        
         //}
 
     }

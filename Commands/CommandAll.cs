@@ -12,40 +12,51 @@ using WorldOfSuperMaket.Inventory;
 
 namespace WorldOfSuperMaket.Commands
 {
-    public class CommandActios:BaseCommand,ICommand
+    public class CommandActions : BaseCommand,ICommand
     {
         CheckOut check = new CheckOut();
         List<Items> Stock = new List<Items>();
         InventoryActions InvActions = new InventoryActions();
         //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
+        CsvReader reader = new CsvReader();
         UserInfo User { get; set; }
         string description;
         Items Test;
+        TextCommand TextC = new TextCommand();
 
         // Bruger bare en TestItem
 
 
-        public CommandActios(UserInfo userInfo)
+        public CommandActions()
         {
             Test = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,10);
             description = "Her kan du lave alle dine actions i rummet";
-            User = userInfo;
+            //User = userInfo;
         }
 
         void ICommand.Execute(Context context, string command, string[] parameters)
         {
+  
             context.GetCurrent().GetName();
             var room = context.GetCurrent().GetName();
-            if (GuardEq(parameters, 1))
+            //if (GuardEq(parameters, 1))
+            //{
+            //    Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
+            //    return;
+            //}
+            TextC.ActionsText();
+            Console.Write(">");
+            var line2 = Console.ReadLine();
+            //parameters= line2;
+            if (Stock.Count == 0)
             {
-                Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
-                return;
+                addStock();
             }
-            switch (parameters[0])
+            switch (line2)
             {
                 case "Tilføj":
-                    inv = InvActions.Add(inv, Test);
+                    inv = InvActions.Add(inv, Stock);
                     break;
                 case "Fjern":
                     inv = InvActions.Remove(inv,Stock[0]);
@@ -61,11 +72,7 @@ namespace WorldOfSuperMaket.Commands
         
         public void addStock()
         {
-            if (Stock.Count > 0) 
-            { 
-                var TestItem = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,30);
-                Stock.Add(TestItem);
-            }
+                Stock.AddRange(reader.csvTest());
 /*            if (Stock.Count == 0)
             {
                 LoadCsv();

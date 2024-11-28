@@ -5,16 +5,50 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldOfSuperMaket", "WorldOfSuperMaket.csproj", "{705C6D83-BA37-4652-86A7-0B996A3BB0E5}"
 EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "TestConsole", "..\TestConsole\TestConsole\bin\Debug\TestConsole.exe", "{08E879FB-7DDD-4DD7-A47F-B14A324D81B7}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\frede\source\repos\TestConsole\TestConsole\bin\Debug\TestConsole.exe
+		RemoteMachine = RAFN
+		StartingDirectory = C:\Users\frede\source\repos\TestConsole\TestConsole\bin\Debug
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+		IORedirection = Auto
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTesterv2", "..\CodeTesterv2\CodeTesterv2.csproj", "{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Debug|x86.Build.0 = Debug|Any CPU
 		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Release|x86.ActiveCfg = Release|Any CPU
+		{705C6D83-BA37-4652-86A7-0B996A3BB0E5}.Release|x86.Build.0 = Release|Any CPU
+		{08E879FB-7DDD-4DD7-A47F-B14A324D81B7}.Debug|Any CPU.ActiveCfg = Release|x86
+		{08E879FB-7DDD-4DD7-A47F-B14A324D81B7}.Debug|x86.ActiveCfg = Release|x86
+		{08E879FB-7DDD-4DD7-A47F-B14A324D81B7}.Release|Any CPU.ActiveCfg = Release|x86
+		{08E879FB-7DDD-4DD7-A47F-B14A324D81B7}.Release|x86.ActiveCfg = Release|x86
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Debug|x86.Build.0 = Debug|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Release|x86.ActiveCfg = Release|Any CPU
+		{95C9A902-7EC8-4EB5-805F-FBBA18EC854D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

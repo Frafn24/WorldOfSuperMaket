@@ -19,7 +19,7 @@ public class CheckOut
         }
 
         double totalCalories = inv.Sum(i => i.item.Calorie);
-        double totalPrice = inv.Sum(i => i.item.Price);
+        //double totalPrice = inv.Sum(i => i.item.Price);
         double totalCO2 = inv.Sum(i => i.item.C02);
         double totalFat = inv.Sum(i => i.item.Fat);
         double totalCarbs = inv.Sum(i => i.item.Carbo);

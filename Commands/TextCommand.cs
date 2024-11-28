@@ -10,6 +10,7 @@ namespace WorldOfSuperMaket.Commands
     {
         public void InfoText()
         {
+
             Console.WriteLine("Du kan skrive 'go' + 'lokation' for at bevæge dig igennem supermarkedet");
             Console.WriteLine("Skriv 'Actions' for at tilføje eller fjerne en vare samt også for at se din kurv");
             Console.WriteLine("Skriv 'help' for at se alle kommandoer");

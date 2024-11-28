@@ -7,8 +7,12 @@ public class Program
 {
     static void Main(string[] args)
     {
-        //CsvReader csvReader = new CsvReader();
-        //csvReader.csvTest();
+        /*CsvReader csvReader = new CsvReader();
+        var s =csvReader.csvTest();
+        foreach (var item in s)
+        {
+            Console.WriteLine(item.Name);
+        }*/
         RunGame();
         Console.ReadLine();
 
