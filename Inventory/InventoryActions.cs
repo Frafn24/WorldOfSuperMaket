@@ -7,24 +7,24 @@ public class InventoryActions
     public List<Inv> Add(List<Inv> inv, List<Items> itm)
     {
 
-        //if(inv.Count != 0)
-        //{
-        //    if (inv.Count(x => x.item == itm) == 0)
-        //    {
-        //        var newitem = new Inv{ Number=1, item=itm};
-        //        inv.Add(newitem);
-        //    }
-        //    else
-        //    {
-        //        int index = inv.FindIndex(x=>x.item==itm);
-        //        var inve = inv.FirstOrDefault(x => x.item == itm);
-        //        inve.Number++;
-        //        inv[index] = inve;
-                
-        //    }
-        //        return inv;
-        //}
-        //return inv; 
+        if (inv.Count != 0)
+        {
+            //if (inv.Count(x => x.item == itm) == 0)
+            //{
+            //    var newitem = new Inv { Number = 1, item = itm };
+            //    inv.Add(newitem);
+            //}
+            //else
+            //{
+            //    int index = inv.FindIndex(x => x.item == itm);
+            //    var inve = inv.FirstOrDefault(x => x.item == itm);
+            //    inve.Number++;
+            //    inv[index] = inve;
+
+            //}
+            return inv;
+        }
+        return inv;
     }
     public List<Inv> Remove(List<Inv> inv, Items item)
     {
