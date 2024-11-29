@@ -7,7 +7,7 @@ using WorldOfSuperMaket.Models;
 
 namespace WorldOfSuperMaket
 {
-    internal class CsvReader
+    public class CsvItems
     {
         public List<Items> csvTest()
         {
@@ -47,12 +47,13 @@ namespace WorldOfSuperMaket
         {
             string update = "";
             string placement = Path.GetFullPath(filename);
+            //string xmlFile = HostingEnvironment.MapPath("filename");
             if (placement.Contains(@"\\data\\net8.0\"))
             {
                 update = placement.Replace(@"bin\Debug", "data");
             }
             update = placement.Replace(@"bin\Debug\net8.0", "data");
-            return update;
+            return update = @"C:\\Users\\frede\\source\\repos\\WorldOfSuperMaket\\Data\\Items.csv";
         }
     }
 
