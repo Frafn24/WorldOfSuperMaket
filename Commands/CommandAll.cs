@@ -19,7 +19,7 @@ namespace WorldOfSuperMaket.Commands
         InventoryActions InvActions = new InventoryActions();
         //List<Items> StockInRoom = new List<Items>();
         List<Inv> inv = new List<Inv>();
-        CsvReader reader = new CsvReader();
+        CsvItems reader = new CsvItems();
         UserInfo User { get; set; }
         string description;
         Items Test;
@@ -56,7 +56,7 @@ namespace WorldOfSuperMaket.Commands
             switch (line2)
             {
                 case "Tilføj":
-                    inv = InvActions.Add(inv, Stock);
+                    inv = InvActions.Add(inv, Stock,context.GetCurrent().Name);
                     break;
                 case "Fjern":
                     inv = InvActions.Remove(inv,Stock[0]);
