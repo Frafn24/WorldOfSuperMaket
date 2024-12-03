@@ -8,6 +8,7 @@ using WorldOfSuperMaket.Sounds;
 
 
 
+
 class Game {
     Items[] items = new Items[1];
     Items[] inv = new Items[0];
@@ -20,6 +21,8 @@ class Game {
     bool whil = false;
     TextAnime text = new TextAnime();
     Sounds sounds = new Sounds();
+    Translate translate = new Translate();
+    private string? language;
   
   //SoundsClass sound = new SoundsClass();
   
@@ -29,13 +32,21 @@ class Game {
         ICommand commandAction = new CommandActions(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
-        registry.Register("exit", cmdExit);
         registry.Register("quit", cmdExit);
-        registry.Register("bye", cmdExit);
+        registry.Register("Afslut", cmdExit);
+        
         registry.Register("go", new CommandGo());
+        registry.Register("gå", new CommandGo());
+        
         registry.Register("help", new CommandHelp(registry));
+        registry.Register("hjælp", new CommandHelp(registry));
+        
         registry.Register("Actions", new CommandActions(user));
+        registry.Register("Handlinger", new CommandActions(user));
+        
         registry.Register("Checkout", commandAction);
+        registry.Register("Kassen", commandAction);
+        
         //registry.Register("Items", new CommandItem(items));
 
 
@@ -44,13 +55,31 @@ class Game {
     public void run()
     {
         Console.Clear();
-        Console.WriteLine("Velkommen til supermarkedet.");
+        
+        Console.WriteLine("Before we start, please type what language you want to play in.");
+        Console.WriteLine("You can either play in danish or english");
+        Console.WriteLine("Type 'danish' or 'english'");
+        language = Console.ReadLine();
+        if (language == "english")
+        {
+            translate.SetLanguage("english");
+        }
+        else
+        {
+            translate.SetLanguage("danish");
+        }
         Console.WriteLine("Hvad er dit navn");
         Console.Write(">");
         string playerName = Console.ReadLine();
         user = new UserInfo(playerName);
         InitRegistry();
         Console.WriteLine();
+        Console.WriteLine(translate.GetTranslation("Welcome1"));
+        Console.WriteLine(translate.GetTranslation("Welcome2"));
+        Console.WriteLine(translate.GetTranslation("Welcome3"));
+        Console.WriteLine(translate.GetTranslation("Welcome4"));
+        Console.WriteLine(translate.GetTranslation("Welcome5"));
+        
         while (context.IsDone() == false)
         {
             context.GetCurrent().Welcome();

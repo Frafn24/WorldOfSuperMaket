@@ -1,0 +1,51 @@
+Key,Danish,English
+Welcome1,Du er en ung software ingeniør studerende som skal ud og handle ind til den kommende uge.,You're a young software developer who's going shopping for the upcoming week.
+Welcome2,"Dit mål er at få en masse forskellige varer så du kan dække dine kostbehov.",Your goal is to get a lot of different items and to cover your dietary needs.
+Welcome3,Udfordringen ved spillet er at du også skal have fokus på at have et så lavt CO2-aftryk som muligt.,The challenge of the game is to get a low CO2 footprint while covering your dietary needs.
+Welcome4,Jo lavere dit CO2 aftryk jo bedre en score får du til sidst.,"The lower your footprint the better score at the end of the game."
+Welcome5,Velkommen til supermarkedet.,Welcome to the supermarket.
+Welcome6,Du kan skrive 'go' + 'lokation' for at bevæge dig.,You can type 'go' + 'location' to move.
+Welcome7,Skriv 'Actions' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
+Welcome8,Skriv 'help' for at se alle kommandoer.,Type 'help' to see all commands.
+Wrong Input,Jeg kan ikke finde ud af hvor det er henne ??,I don't seem to know where that is ??
+Add_item,Ønsker du at tilføje denne vare til kurven?,Do you want to add this item to your cart?
+Add_Choose,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
+If_Add_Yes,Der er nu tilføjet en vare til din kurv.,An item has benne added to your cart.
+If_Add_No,Varen blev ikke tilføjet til din kurv.,The item didn't get added to your cart.
+If_Add_WrongInput,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
+Show_Inventory,Varer i din kurv:,Items in your cart:
+If_No_Items,Der er ingen varer i din kurv.,There are no items in your cart.
+Help,Kommandoer:,Commands:
+CommandUnknown,Woopsie jeg forstår ikke 'command',Woopsie i don't understand 'command'
+Actions1,De handlinger du kan vælge imellem er:,The actions you can do are:
+Actions2,Tilføj vare - Tilføj,Add item - Add
+Actions3,Fjern vare - Fjern,Remove item - Remove
+Actions4,Se kurv - Kurv,See inventory - Inventory
+Checkout1,Varer:,Items:
+Checkout2,Kalorier:,Calories:
+Checkout3,Kulhydrater:,Carbs:
+Checkout4,Protein:,Proteins:
+Checkout5,Fedt:,Fat:
+Checkout6,CO2:,CO2:
+Checkout_total1,Total Kalorier:,Total calories:
+Checkout_total2,Total CO2:,Total CO2:
+Checkout_total3,Total fedt:,Total fat:
+Checkout_total4,Total kulhydrater:,Total carbs:
+Checkout_total5,Total protein:,Total proteins:
+Checkout_total6,Varene i din kurv dækker over {foodscore} % af de påkrævet macros.,The items in your inventory covers {foodscore} % of the required macros.
+Checkout_total7,Hvis alle handlede som dig skulle vi bruge {EnvironmentScore} jordkloder kun til at handle madvarer.,If everyone shopped like you we would use {EnvironmentScore} Earths just for shopping food.
+Room1,Indgang,Entrance
+Room2,Køleafdeling,Refrigerator
+Room3,Kødafdeling,Meats
+Room4,Frostafdeling,Frozen
+Room5,Grøntafdeling,Vegetables
+Room6,Bager,Brød
+Room7,Konserves,Preserves
+Room8,Kassen,Checkout
+Kommando1,Forlad,Exit
+Kommando2,Afslut,Quit
+Kommando3,Farvel,Bye
+Kommando4,Gå,Go
+Kommando5,Hjælp,Help
+Kommando6,Handing,Actions
+Kommando7,Kassen,Checkout
