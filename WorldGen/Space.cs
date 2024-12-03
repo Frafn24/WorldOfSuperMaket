@@ -8,6 +8,7 @@ using WorldOfSuperMaket.Models;
 
 class Space : Node
 {
+    private double DailyCalo = 2000;
     TextCommand TextC = new TextCommand();
     private CheckOut checkOut = new CheckOut();
     public Space(String name) : base(name)
@@ -64,9 +65,9 @@ class Space : Node
         var info = userInfo;
         double CaloriesInCart = inv.Sum(i => i.item.Calorie);
 
-        bool EnoughCalories = CaloriesInCart >= userInfo.DailyCalo;
+        bool EnoughCalories = CaloriesInCart >= DailyCalo;
         
-        double Calodif = CaloriesInCart - userInfo.DailyCalo;
+        double Calodif = CaloriesInCart - DailyCalo;
 
         if (name.Equals("Checkout") && EnoughCalories)
         {

@@ -4,6 +4,9 @@ namespace WorldOfSuperMaket;
 
 public class CheckOut
 {
+    double carbsPercentage = 1.0;
+    double proteinsPercentage = 1.0;
+    double fatPercentage = 1.0;
     public void DoCheckOut(List<Inv> inv, UserInfo userInfo)
     {
         foreach (var item in inv)
@@ -25,9 +28,9 @@ public class CheckOut
         double totalCarbs = inv.Sum(i => i.item.Carbo);
         double totalProteins = inv.Sum(i => i.item.Protien);
 
-        double carbsPercentage = (totalCarbs / userInfo.DailyKulhydrat) * 100;
-        double proteinsPercentage = (totalProteins / userInfo.DailyProtien) * 100;
-        double fatPercentage = (totalFat / userInfo.DailyFat) * 100;
+       // double carbsPercentage = (totalCarbs / userInfo.DailyKulhydrat) * 100;
+      //  double proteinsPercentage = (totalProteins / userInfo.DailyProtien) * 100;
+        //double fatPercentage = (totalFat / userInfo.DailyFat) * 100;
 
         if (fatPercentage > 100)
         {
