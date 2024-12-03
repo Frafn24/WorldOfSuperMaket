@@ -53,7 +53,7 @@ namespace WorldOfSuperMaket
                 update = placement.Replace(@"bin\Debug", "data");
             }
             update = placement.Replace(@"bin\Debug\net8.0", "data");
-            return update = @"C:\\Users\\frede\\source\\repos\\WorldOfSuperMaket\\Data\\Items.csv";
+            return update;
         }
     }
 

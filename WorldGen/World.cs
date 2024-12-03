@@ -5,13 +5,13 @@ class World
 {
 
     Space entry = new Space("Indgang");
-    Space refrigerator = new Space("Koleafdeling");
-    Space meats = new Space("Kødafdeling");
-    Space frozen = new Space("Frostafdeling");
-    Space groceries = new Space("Grøntafdeling");
-    Space bakery = new Space("Brød");
-    Space preserves = new Space("Konserves");
-    Space checkout = new Space("Kassen");
+    Space refrigerator = new Space("Refrigerator");
+    Space meats = new Space("Meats");
+    Space frozen = new Space("Frozen");
+    Space groceries = new Space("Groceries");
+    Space bakery = new Space("Bakery");
+    Space preserves = new Space("*Preserves");
+    Space checkout = new Space("Checkout");
     
     private Dictionary<string, Space> spaces;
     

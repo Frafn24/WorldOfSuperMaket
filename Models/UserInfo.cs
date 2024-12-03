@@ -13,10 +13,10 @@ namespace WorldOfSuperMaket.Models
         public double Height { get; set; }
         public int Weaght { get; set; }
         public string Gender { get; set; }
-        public double DaliyCalo { get; set; }
-        public double DaliyKullhydrat { get; set; }
-        public double DaliyProtien { get; set; }
-        public double DaliyFat { get; set; }
+        public int DaliyCalo { get; set; }
+        public int DaliyKullhydrat { get; set; }
+        public int DaliyProtien { get; set; }
+        public int DaliyFat { get; set; }
 
         public UserInfo(string x_Username)
         {
@@ -25,7 +25,8 @@ namespace WorldOfSuperMaket.Models
             Height = 1.65;
             Weaght = 70;
             Gender = "none";
-            DaliyCalo = calcCalo(1.65, 70);
+            DaliyCalo = Convert.ToInt32(Math.Round(calcCalo(1.65, 70), 0));
+
             //if (Gender.Length > 4)
             //{
             //    DaliyCalo = calcCalo(true, x_Height, x_Weaght);
@@ -35,9 +36,9 @@ namespace WorldOfSuperMaket.Models
             //{
             //    DaliyCalo = calcCalo(false, x_Height, x_Weaght);
             //}
-            DaliyKullhydrat = caleKulhydrat(DaliyCalo, 70);
-            DaliyProtien = caleProtien(DaliyCalo);
-            DaliyFat = caleFat(DaliyCalo);
+            DaliyKullhydrat = Convert.ToInt32(Math.Round(caleKulhydrat(DaliyCalo, 70),0));
+            DaliyProtien = Convert.ToInt32(Math.Round(caleProtien(DaliyCalo),0));
+            DaliyFat = Convert.ToInt32(Math.Round(caleFat(DaliyCalo),0));
 
         }
 
