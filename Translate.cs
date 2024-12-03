@@ -3,7 +3,8 @@ namespace WorldOfSuperMaket;
 public class Translate
 {
     // Variable
-    private string filename = "/Users/frederikthygesen/Downloads";
+    private string filename = @"C:\\Users\\frede\\RiderProjects\\WorldOfSuperMaket\\Data";
+
     // Dictionary der gemmer oversættelser
     private Dictionary<string, string> ActiveTranslations = new Dictionary<string, string>();
 
@@ -13,21 +14,21 @@ public class Translate
         // .Skip(1) skipper den første linje
         // .Select(ParseCsvLine) parser de forskellige parametre, så det er læsbart
         // .ToList() konverterer det til en liste
-        var translations = File.ReadAllLines(GetPlacement("Translation.csv")).Skip(1).Select(ParseCsvLine).ToList();
+        var translations = File.ReadAllLines(GetPlacement("Language.csv")).Skip(1).Select(ParseCsvLine).ToList();
 
         // Tømmer dictionary når vi skifter sprog, så der ikke sker fejl.
         ActiveTranslations.Clear();
-        
+
         // tjekker hvilket sporg der ønskes, og vælger det i csv filen.
         foreach (var translation in translations)
         {
             if (language.ToLower() == "danish")
             {
-                ActiveTranslations[translation.Key] = translation.danish;
+                ActiveTranslations[translation.Key] = translation.Danish;
             }
             else if (language.ToLower() == "english")
             {
-                ActiveTranslations[translation.Key] = translation.english;
+                ActiveTranslations[translation.Key] = translation.English;
             }
             else
             {
@@ -35,45 +36,49 @@ public class Translate
             }
         }
 
-        string GetTranslations(string key)
-        {
-            // Tjekker om key'en findes i vores dictionary "ActiveTranslations"
-            if (!ActiveTranslations.ContainsKey(key))
-            {
-                return ActiveTranslations[key];
-            }
-            else
-            {
-                return $"Missing translation for {key}";
-            }
-        }
-        // En metode der kan sikrer sig, at den rigtige sti bliver kaldt uanset
-        // operativsystem. 
-        // Måske vi skal gøre det på samme måde som de andre CSV-filer?
-        string GetPlacement(string Filename) => Path.Combine(filename, Filename);
+    }
 
-        // Deler filen op efter hvor der er et komma. 
-        // Den gør det muligt for os at lave metoden "TranslationData" og
-        // Constructoren "TranslationData".
-        TranslationData ParseCsvLine(string line)
+    public string GetTranslation(string key)
+    {
+        // Tjekker om key'en findes i vores dictionary "ActiveTranslations"
+        if (ActiveTranslations.ContainsKey(key))
         {
-            var parts = line.Split(',');
-            return new TranslationData(parts[0], parts[1], parts[2]);
+            return ActiveTranslations[key];
+        }
+        else
+        {
+            return $"Missing translation for {key}";
         }
     }
 
-    // Metode der instansierer vores variable, og laver en constructor. 
+    // En metode der kan sikrer sig, at den rigtige sti bliver kaldt uanset
+    // operativsystem. 
+    // Måske vi skal gøre det på samme måde som de andre CSV-filer?
+    string GetPlacement(string Filename) => Path.Combine(filename, Filename);
+
+    // Deler filen op efter hvor der er et komma. 
+    // Den gør det muligt for os at lave metoden "TranslationData" og
+    // Constructoren "TranslationData".
+    TranslationData ParseCsvLine(string line)
+    {
+        var parts = line.Split(',');
+        return new TranslationData(parts[0], parts[1], parts[2]);
+    }
+
+
+
+// Metode der instansierer vores variable, og laver en constructor. 
     public class TranslationData
     {
         public string Key { get; set; }
-        public string danish { get; set; }
-        public string english { get; set; }
+        public string Danish { get; set; }
+        public string English { get; set; }
 
         public TranslationData(string key, string danish, string english)
         {
             Key = key;
-            danish = danish;
-            english = english;
+            Danish = danish;
+            English = english;
         }
     }
 }
