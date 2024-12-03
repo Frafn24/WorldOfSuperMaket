@@ -1,7 +1,10 @@
 namespace WorldOfSuperMaket;
 
-/*internal class ScoreBoard
+internal class ScoreBoard
 {
+    
+    private string filename = "/Users/frederikthygesen/Downloads";
+
     public void LoadScores()
     {
         List<Data> lines = File.ReadAllLines(GetPlacement("Scoreboard.csv")).Skip(1).Select(x => ParseCsvLine(x)).ToList();
@@ -9,9 +12,9 @@ namespace WorldOfSuperMaket;
         foreach (var line in lines)
         {
             Console.WriteLine($"Player: {line.Username}, Food Score: {line.FoodScore}, Environment Score: {line.EnvironmentScore}");
-            
         }  
     }
+      
     
     private Data ParseCsvLine(string csvLine)
     {
@@ -25,19 +28,8 @@ namespace WorldOfSuperMaket;
 
     public string GetPlacement(string FilePath)
     {
-        string update = "";
-        //frederikthygesen/RiderProjects/Scoreboard test/Scoreboard test/Data/Scoreboard.csv
         string placement = Path.GetFullPath(FilePath);
-        if (placement.Contains("bin/Debug/net8.0"))
-        {
-            
-            update = placement.Replace(@"bin/Debug/net8.0", "data");
-             
-        }
-        else
-        {
-            update = placement.Replace(@"bin\Debug\", "data");
-        }
+        var update = placement.Replace(@"bin\Debug\", "data");
         return update;
     }
 }
@@ -54,5 +46,4 @@ public class Data
         FoodScore = foodScore;
         EnvironmentScore = environmentScore;
     }
-    
-}*/
+}

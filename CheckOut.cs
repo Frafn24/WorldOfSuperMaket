@@ -25,9 +25,9 @@ public class CheckOut
         double totalCarbs = inv.Sum(i => i.item.Carbo);
         double totalProteins = inv.Sum(i => i.item.Protien);
 
-        double carbsPercentage = (totalCarbs / userInfo.DaliyKullhydrat) * 100;
-        double proteinsPercentage = (totalProteins / userInfo.DaliyProtien) * 100;
-        double fatPercentage = (totalFat / userInfo.DaliyFat) * 100;
+        double carbsPercentage = (totalCarbs / userInfo.DailyKulhydrat) * 100;
+        double proteinsPercentage = (totalProteins / userInfo.DailyProtien) * 100;
+        double fatPercentage = (totalFat / userInfo.DailyFat) * 100;
 
         if (fatPercentage > 100)
         {

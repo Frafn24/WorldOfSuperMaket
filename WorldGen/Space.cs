@@ -64,9 +64,9 @@ class Space : Node
         var info = userInfo;
         double CaloriesInCart = inv.Sum(i => i.item.Calorie);
 
-        bool EnoughCalories = CaloriesInCart >= userInfo.DaliyCalo;
+        bool EnoughCalories = CaloriesInCart >= userInfo.DailyCalo;
         
-        double Calodif = CaloriesInCart - userInfo.DaliyCalo;
+        double Calodif = CaloriesInCart - userInfo.DailyCalo;
 
         if (name.Equals("Checkout") && EnoughCalories)
         {
