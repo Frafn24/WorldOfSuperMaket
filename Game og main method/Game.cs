@@ -26,7 +26,7 @@ class Game {
   private void InitRegistry () 
   {
 
-        ICommand commandAction = new CommandActions();
+        ICommand commandAction = new CommandActions(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
         registry.Register("exit", cmdExit);
@@ -34,21 +34,22 @@ class Game {
         registry.Register("bye", cmdExit);
         registry.Register("go", new CommandGo());
         registry.Register("help", new CommandHelp(registry));
-        registry.Register("Actions", new CommandActions());
+        registry.Register("Actions", new CommandActions(user));
         registry.Register("Checkout", commandAction);
         //registry.Register("Items", new CommandItem(items));
-        
 
-  }
+
+    }
   
     public void run()
     {
         Console.Clear();
         Console.WriteLine("Velkommen til supermarkedet.");
-        InitRegistry();
         Console.WriteLine("Hvad er dit navn");
         Console.Write(">");
         string playerName = Console.ReadLine();
+        user = new UserInfo(playerName);
+        InitRegistry();
         Console.WriteLine();
         while (context.IsDone() == false)
         {
@@ -58,30 +59,27 @@ class Game {
             var line = Console.ReadLine();
             if (line != null)
             {
-                if (line =="lol")
+                if (line == "lol")
                 {
                     sounds.LOL();
                 }
-               /* if (line=="Actions")
-                {
-                    TextC.ActionsText();
-                    Console.Write(">");
-                    var line2 = Console.ReadLine();
-                    line = line +" "+ line2;
-                }*/
+                /* if (line=="Actions")
+                 {
+                     TextC.ActionsText();
+                     Console.Write(">");
+                     var line2 = Console.ReadLine();
+                     line = line +" "+ line2;
+                 }*/
                 if (line == "Checkout")
                 {
                     line = line + " Checkout";
                 }
                 registry.Dispatch(line);
-                
+
             }
             Console.Clear();
-
         }
         sounds.GameOver();
         Console.WriteLine("Game Over 😥");
-
-
     }
 }

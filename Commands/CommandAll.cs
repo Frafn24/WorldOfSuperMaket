@@ -28,11 +28,11 @@ namespace WorldOfSuperMaket.Commands
         // Bruger bare en TestItem
 
 
-        public CommandActions()
+        public CommandActions(UserInfo userInfo)
         {
-            Test = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100,10);
+            Test = new Items("HakkeKød", "Hakkekød 7-12%", "Meats", 198, 28, 16, 8, 100, 10);
             description = "Her kan du lave alle dine actions i rummet";
-            //User = userInfo;
+            User = userInfo;
         }
 
         void ICommand.Execute(Context context, string command, string[] parameters)
@@ -56,13 +56,13 @@ namespace WorldOfSuperMaket.Commands
             switch (line2)
             {
                 case "Tilføj":
-                    inv = InvActions.Add(inv, Stock,context.GetCurrent().Name);
+                    inv = InvActions.Add(inv, Stock,room);
                     break;
                 case "Fjern":
                     inv = InvActions.Remove(inv,Stock[0]);
                     break;
                 case "Kurv":
-                    InvActions.Show(inv);
+                    InvActions.Show(inv,User);
                     break;
                 case "Checkout":
                     //checkout(context);
