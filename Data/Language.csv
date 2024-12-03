@@ -1,0 +1,32 @@
+Titel,Dansk,English
+Welcome,Velkommen til supermarkedet.,Welcome to the supermarket.
+Welcome,"Du kan skrive ""go"" + ""lokation"" for at bevæge dig.",You can type 'go' + 'location' to move.
+Welcome,Skriv 'Actions' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
+Welcome,Skriv 'help' for at se alle kommandoer.,Type 'help' to see all commands.
+Wrong Input,Jeg kan ikke finde ud af hvor det er henne ??,I don't seem to know where that is ??
+Add_item,Ønsker du at tilføje denne vare til kurven?,Do you want to add this item to your cart?
+Add_Choose,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
+If_Add_Yes,Der er nu tilføjet en vare til din kurv.,An item has benne added to your cart.
+If_Add_No,Varen blev ikke tilføjet til din kurv.,The item didn't get added to your cart.
+If_Add_WrongInput,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
+Show_Inventory,Varer i din kurv:,Items in your cart:
+If_No_Items,Der er ingen varer i din kurv.,There are no items in your cart.
+Help,Kommandoer:,Commands:
+CommandUnknown,"Woopsie, jeg forstår ikke 'command'","Woopsie, i don't understand 'command'"
+Actions,De handlinger du kan vælge imellem er:,The actions you can do are:
+Actions,Tilføj vare - Tilføj,Add item - Add
+Actions,Fjern vare - Fjern,Remove item - Remove
+Actions,Se kurv - Kurv,See inventory - Inventory
+Checkout,Varer:,Items:
+Checkout,Kalorier:,Calories:
+Checkout,Kulhydrater:,Carbs:
+Checkout,Protein:,Proteins:
+Checkout,Fedt:,Fat:
+Checkout,CO2:,CO2:
+Checkout_total,Total Kalorier:,Total calories:
+Checkout_total,Total CO2:,Total CO2:
+Checkout_total,Total fedt:,Total fat:
+Checkout_total,Total kulhydrater:,Total carbs:
+Checkout_total,Total protein:,Total proteins:
+Checkout_print,Varene i din kurv dækker over {foodscore} % af de påkrævet macros.,The items in your inventory covers {foodscore} % of the required macros.
+Checkout_print,"Hvis alle handlede som dig, skulle vi bruger {EnvironmentScore} jordkloder, kun til at handle madvarer.","If everyone did their shoppings like you, we would use {EnvironmentScore} Earths just for shopping food."
