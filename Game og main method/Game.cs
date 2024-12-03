@@ -51,6 +51,12 @@ class Game {
         user = new UserInfo(playerName);
         InitRegistry();
         Console.WriteLine();
+        Console.WriteLine("Du er en ung software ingeniør studerende, som skal ud og handle ind til den kommende uge. ");
+        Console.WriteLine("Dit mål er, at få en masse forskellige varer, så du kan dække dine kostbehov.");
+        Console.WriteLine("Udfordringen ved spillet er, at du også skal have fokus på at have et så lavt CO2-aftryk som muligt.");
+        Console.WriteLine("Jo lavere dit CO2 aftryk, jo bedre en score får du til sidst. ");
+        Console.WriteLine("");
+        
         while (context.IsDone() == false)
         {
             context.GetCurrent().Welcome();

@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d18087f-5835-4260-835d-a6f04f5016ef" name="Changes" comment="" />
+    <list default="true" id="6d18087f-5835-4260-835d-a6f04f5016ef" name="Changes" comment="Added language.csv">
+      <change beforePath="$PROJECT_DIR$/Data/Language.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Language.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game og main method/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game og main method/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +89,17 @@
       <workItem from="1733216981927" duration="2127000" />
       <workItem from="1733221357585" duration="320000" />
       <workItem from="1733221692404" duration="69000" />
+      <workItem from="1733221771966" duration="437000" />
     </task>
+    <task id="LOCAL-00001" summary="Added language.csv">
+      <option name="closed" value="true" />
+      <created>1733221818655</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733221818655</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,5 +109,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added language.csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added language.csv" />
   </component>
 </project>

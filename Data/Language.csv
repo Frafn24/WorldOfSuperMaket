@@ -3,7 +3,7 @@ Welcome,Velkommen til supermarkedet.,Welcome to the supermarket.
 Welcome,"Du kan skrive ""go"" + ""lokation"" for at bevæge dig.",You can type 'go' + 'location' to move.
 Welcome,Skriv 'Actions' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
 Welcome,Skriv 'help' for at se alle kommandoer.,Type 'help' to see all commands.
-Wrong Input,Jeg kan ikke finde ud af hvor det er henne ??,I don't seem to know where that is ??
+Wrong_Input,Jeg kan ikke finde ud af hvor det er henne ??,I don't seem to know where that is ??
 Add_item,Ønsker du at tilføje denne vare til kurven?,Do you want to add this item to your cart?
 Add_Choose,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
 If_Add_Yes,Der er nu tilføjet en vare til din kurv.,An item has benne added to your cart.
