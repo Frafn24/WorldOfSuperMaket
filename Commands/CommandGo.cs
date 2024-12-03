@@ -1,6 +1,8 @@
 /* Command for transitioning between spaces
  */
 
+using WorldOfSuperMaket;
+
 class CommandGo : BaseCommand, ICommand {
   public CommandGo () {
     description = "Følg en udgang";
@@ -8,7 +10,7 @@ class CommandGo : BaseCommand, ICommand {
   
   public void Execute (Context context, string command, string[] parameters) {
     if (GuardEq(parameters, 1)) {
-      Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
+      Console.WriteLine(Translate.Instance.GetTranslation("Wrong Input"));
       return;
     }
     context.Transition(parameters[0]);

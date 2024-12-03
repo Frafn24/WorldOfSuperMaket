@@ -13,7 +13,7 @@
         {
             if (GuardEq(parameters, 1))
             {
-                Console.WriteLine("Jeg kan ikke finde ud af hvor det er henne? 🤔");
+                Console.WriteLine(Translate.Instance.GetTranslation("Wrong Input"));
                 return;
             }
             context.Transition(parameters[0]);

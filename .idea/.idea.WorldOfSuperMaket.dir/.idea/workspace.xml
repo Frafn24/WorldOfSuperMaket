@@ -9,10 +9,19 @@
   <component name="ChangeListManager">
     <list default="true" id="6d18087f-5835-4260-835d-a6f04f5016ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldOfSuperMaket.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldOfSuperMaket.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/CommandAll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandAll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/CommandGo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandGo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/CommandInv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandInv.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/CommandItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/CommandPickUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandPickUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/CommandUnknown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandUnknown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Commands/InventoryCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/InventoryCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Commands/TextCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/TextCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Language.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Language.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game og main method/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory/InventoryActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/InventoryActions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Translate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Translate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorldGen/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorldGen/Context.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +32,11 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -46,19 +60,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.WorldOfSuperMaket.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.WorldOfSuperMaket.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Frederik-og-Mads&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="WorldOfSuperMaket" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -96,7 +110,8 @@
       <workItem from="1733225574225" duration="24000" />
       <workItem from="1733225607562" duration="1341000" />
       <workItem from="1733226973031" duration="141000" />
-      <workItem from="1733227124725" duration="1848000" />
+      <workItem from="1733227124725" duration="5995000" />
+      <workItem from="1733233148424" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="Added language.csv">
       <option name="closed" value="true" />
@@ -114,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733222541202</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Tilføjede Language.csv og ændrede nogle få CW så de virker">
+      <option name="closed" value="true" />
+      <created>1733229042934</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733229042934</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,38 +149,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added language.csv" />
     <MESSAGE value="Tilføjede velkomstbesked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tilføjede velkomstbesked" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Translate.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\Users\frede\RiderProjects\WorldOfSuperMaket\Translate.cs" containingFunctionPresentation="Method 'GetTranslation'">
-            <startOffsets>
-              <option value="1521" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1561" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Game og main method/Game.cs</url>
-          <line>40</line>
-          <properties documentPath="C:\Users\frede\RiderProjects\WorldOfSuperMaket\Game og main method\Game.cs" containingFunctionPresentation="Method 'InitRegistry'">
-            <startOffsets>
-              <option value="1150" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1203" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Tilføjede Language.csv og ændrede nogle få CW så de virker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjede Language.csv og ændrede nogle få CW så de virker" />
   </component>
 </project>

@@ -1,20 +1,28 @@
 Key,Danish,English
 Welcome1,Du er en ung software ingeniør studerende som skal ud og handle ind til den kommende uge.,You're a young software developer who's going shopping for the upcoming week.
-Welcome2,"Dit mål er at få en masse forskellige varer så du kan dække dine kostbehov.",Your goal is to get a lot of different items and to cover your dietary needs.
+Welcome2,Dit mål er at få en masse forskellige varer så du kan dække dine kostbehov.,Your goal is to get a lot of different items and to cover your dietary needs.
 Welcome3,Udfordringen ved spillet er at du også skal have fokus på at have et så lavt CO2-aftryk som muligt.,The challenge of the game is to get a low CO2 footprint while covering your dietary needs.
-Welcome4,Jo lavere dit CO2 aftryk jo bedre en score får du til sidst.,"The lower your footprint the better score at the end of the game."
+Welcome4,Jo lavere dit CO2 aftryk jo bedre en score får du til sidst.,The lower your footprint the better score at the end of the game.
 Welcome5,Velkommen til supermarkedet.,Welcome to the supermarket.
-Welcome6,Du kan skrive 'go' + 'lokation' for at bevæge dig.,You can type 'go' + 'location' to move.
-Welcome7,Skriv 'Actions' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
+Welcome6,Du kan skrive 'gå' + 'lokation' for at bevæge dig.,You can type 'go' + 'location' to move.
+Welcome7,Skriv 'Handlinger' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
 Welcome8,Skriv 'help' for at se alle kommandoer.,Type 'help' to see all commands.
 Wrong Input,Jeg kan ikke finde ud af hvor det er henne ??,I don't seem to know where that is ??
 Add_item,Ønsker du at tilføje denne vare til kurven?,Do you want to add this item to your cart?
 Add_Choose,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
-If_Add_Yes,Der er nu tilføjet en vare til din kurv.,An item has benne added to your cart.
+If_Add_Yes,Der er nu tilføjet en vare til din kurv.,An item has been added to your cart.
 If_Add_No,Varen blev ikke tilføjet til din kurv.,The item didn't get added to your cart.
 If_Add_WrongInput,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
 Show_Inventory,Varer i din kurv:,Items in your cart:
 If_No_Items,Der er ingen varer i din kurv.,There are no items in your cart.
+Inventory,Vis vare i din kurv.,Show items in cart.
+Inventory_Print,Antal: {inv[i].Number} stk. {inv[i].item.Name},Number: {inv[i].Number} pieces {inv[i].item.Name}
+Your_Name,Hvad er dit navn?,What is your name?
+Arrow_Keys_Add,Brug piletasterne til at vælge hvad du vil tilføje til kurven. Tryk enter når du vil tiløje varen.,Use your arrow keys to choose which items you want to add to your cart. Press enter when you want to add the item.
+Returning,Du vender nu tilbage.,You're now returning.
+Inv_No_Choice,Der er ikke noget i dit inventory eller du har ikke valgt noget item :(,Either you don't have anything in your inventory or you haven't picked an item :(
+Arrow_Keys_Remove,Brug piletasterne til at vælge hvad du vil fjerne fra kurven og tryk Enter:,Use your arrow keys to choose what you want to remove and press Enter:
+Cart_Empty,Din kurv er nu tom.,Your cart is now empty.
 Help,Kommandoer:,Commands:
 CommandUnknown,Woopsie jeg forstår ikke 'command',Woopsie i don't understand 'command'
 Actions1,De handlinger du kan vælge imellem er:,The actions you can do are:
@@ -45,7 +53,7 @@ Room8,Kassen,Checkout
 Kommando1,Forlad,Exit
 Kommando2,Afslut,Quit
 Kommando3,Farvel,Bye
-Kommando4,Gå,Go
+Kommando4,gå,go
 Kommando5,Hjælp,Help
-Kommando6,Handing,Actions
+Kommando6,Handling,Actions
 Kommando7,Kassen,Checkout

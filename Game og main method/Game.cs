@@ -21,7 +21,6 @@ class Game {
     bool whil = false;
     TextAnime text = new TextAnime();
     Sounds sounds = new Sounds();
-    Translate translate = new Translate();
     private string? language;
   
   //SoundsClass sound = new SoundsClass();
@@ -62,23 +61,26 @@ class Game {
         language = Console.ReadLine();
         if (language == "english")
         {
-            translate.SetLanguage("english");
+            Translate.Instance.SetLanguage("english");
         }
         else
         {
-            translate.SetLanguage("danish");
+            Translate.Instance.SetLanguage("danish");
         }
-        Console.WriteLine("Hvad er dit navn");
+        Console.WriteLine(Translate.Instance.GetTranslation("Your_Name"));
         Console.Write(">");
         string playerName = Console.ReadLine();
         user = new UserInfo(playerName);
         InitRegistry();
         Console.WriteLine();
-        Console.WriteLine(translate.GetTranslation("Welcome1"));
-        Console.WriteLine(translate.GetTranslation("Welcome2"));
-        Console.WriteLine(translate.GetTranslation("Welcome3"));
-        Console.WriteLine(translate.GetTranslation("Welcome4"));
-        Console.WriteLine(translate.GetTranslation("Welcome5"));
+        Console.WriteLine(Translate.Instance.GetTranslation("Welcome5"));
+        Console.WriteLine("");
+        Console.WriteLine(Translate.Instance.GetTranslation("Welcome1"));
+        Console.WriteLine(Translate.Instance.GetTranslation("Welcome2"));
+        Console.WriteLine(Translate.Instance.GetTranslation("Welcome3"));
+        Console.WriteLine(Translate.Instance.GetTranslation("Welcome4"));
+        Console.WriteLine("");
+     
         
         while (context.IsDone() == false)
         {

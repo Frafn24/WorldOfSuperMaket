@@ -18,7 +18,7 @@ public class InventoryActions
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Brug piletasterne til at vælge, hvad du vil Tilføje en vare fra kurven, og tryk Enter:");
+                Console.WriteLine(Translate.Instance.GetTranslation("Arrow_Keys_Add"));
 
                 // Vis listen med vare i din kurv
                 for (int i = 0; i < stock.Count; i++)
@@ -87,7 +87,7 @@ public class InventoryActions
                         Console.ReadKey();
                         break;
                     case ConsoleKey.Escape:
-                        Console.WriteLine("Du vender nu tilbage");
+                        Console.WriteLine(Translate.Instance.GetTranslation("Returning"));
                         return inv;
                 }
             }
@@ -111,7 +111,7 @@ public class InventoryActions
         {
             if (inv.Count() == 0)
             {
-                Console.WriteLine("Der er ikke noget i dit inventory eller du har ikke valgt noget item:(");
+                Console.WriteLine(Translate.Instance.GetTranslation("Inv_No_Choice"));
             }
             else
             {
@@ -121,7 +121,7 @@ public class InventoryActions
                 while (back)
                 {
                     Console.Clear();
-                    Console.WriteLine("Brug piletasterne til at vælge, hvad du vil fjerne vare fra kurven, og tryk Enter:");
+                    Console.WriteLine(Translate.Instance.GetTranslation("Arrow_Keys_Remove"));
 
                     // Vis listen med vare i din kurv
                     item.Name = "afslut";
@@ -192,7 +192,7 @@ public class InventoryActions
                             // Håndter tom liste
                             if (inv.Count() == 0)
                             {
-                                Console.WriteLine("din kurn er nu tom.");
+                                Console.WriteLine(Translate.Instance.GetTranslation("Cart_Empty"));
 
                             }
 
@@ -231,7 +231,7 @@ public class InventoryActions
         }
         else
         {
-            Console.WriteLine("Der er ingen items i dit inventory");
+            Console.WriteLine(Translate.Instance.GetTranslation("If_No_Items"));
         }
     }
 }

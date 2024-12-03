@@ -9,28 +9,28 @@ class CommandInv
     public List<Inv> AddItems(Items item, List<Inv> inv)
     {
         List<Items> roomsItem = new List<Items>();
-        Console.WriteLine($"ønsker du at tilføje denne vare til din kurv?");
+        Console.WriteLine(Translate.Instance.GetTranslation("Add_item"));
         string anwser = "";
         bool right = false;
         while (right==false) 
         {
-            Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+            Console.WriteLine(Translate.Instance.GetTranslation("Add_Choose"));
             Console.Write(">");
             var line = Console.ReadLine();
             if (line == "Ja")
             {
                 inv = AddItem(item,inv);
-                Console.WriteLine("der er nu tilføjet en vare til din kurv");
+                Console.WriteLine(Translate.Instance.GetTranslation("If_Add_Yes"));
                 right = true;
             }
             else if (line =="Nej")
             {
-                Console.WriteLine("der er ikke tilføjet en vare til din kurv");
+                Console.WriteLine(Translate.Instance.GetTranslation("If_Add_No"));
                 right= true;
             }
             else
             {
-                Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+                Console.WriteLine(Translate.Instance.GetTranslation("If_Add_WrongInput"));
             }
         }
         return inv;
@@ -71,7 +71,7 @@ class CommandInv
         }
         else
         {
-            Console.WriteLine("Der er ingen varer i din kurv");
+            Console.WriteLine(Translate.Instance.GetTranslation("If_No_Items"));
             return inv;
         }
     }
@@ -116,16 +116,16 @@ class CommandInv
        {
            if (inv != null)
            {
-               Console.WriteLine("Vis vare i din kurv.");
-               Console.WriteLine("Vare i din kurv: ");
+               Console.WriteLine(Translate.Instance.GetTranslation("Inventory"));
+               Console.WriteLine(Translate.Instance.GetTranslation("Show_Inventory"));
                for (int i = 0; i < inv.Count(); i++)
                {
-                   Console.WriteLine($"antal:{inv[i].Number} stk. " + inv[i].item.Name);
+                   Console.WriteLine(Translate.Instance.GetTranslation("Inventory_Print"));
                }
            }
            else
            {
-               Console.WriteLine("Der er ingen varer i din kurv");
+               Console.WriteLine(Translate.Instance.GetTranslation("If_No_Items"));
            }
            
        }

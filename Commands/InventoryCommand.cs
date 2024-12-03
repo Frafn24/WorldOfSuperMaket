@@ -1,7 +1,8 @@
 using System.Security.Cryptography;
+using WorldOfSuperMaket;
 using WorldOfSuperMaket.Models;
 
-class InventoryCommand : BaseCommand, ICommand {
+/*class InventoryCommand : BaseCommand, ICommand {
     Items[] Items;
     public InventoryCommand()
     {
@@ -29,10 +30,11 @@ class InventoryCommand : BaseCommand, ICommand {
     {
         if (Items.Count()>0)
         {
-            Console.WriteLine("Vis varer i dit inventory.");
+            Console.WriteLine(Translate.Instance.GetTranslation("Inventory"));
             for (int i = 0; i < Items.Length; i++)
             {
-                Console.WriteLine("Varer i din kurv: " + Items[i].Name);
+                //Console.WriteLine(Translate.Instance.GetTranslation("Inventory_Print"));
+               Console.WriteLine($"Antal: {inv[i].Number} stk. {inv[i].Item.Name}");
             }
         }
         else

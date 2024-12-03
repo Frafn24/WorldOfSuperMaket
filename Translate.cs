@@ -4,9 +4,14 @@ public class Translate
 {
     // Variable
     private string filename = @"C:\\Users\\frede\\RiderProjects\\WorldOfSuperMaket\\Data";
-
+    
+    // Singleton-instans
+    public static Translate Instance { get; } = new Translate();
     // Dictionary der gemmer oversættelser
     private Dictionary<string, string> ActiveTranslations = new Dictionary<string, string>();
+    
+    // constructor som sikrer vi kun har denne ene instans
+    private Translate() {}
 
     // Indlæser oversættelserne
     public void SetLanguage(string language)

@@ -24,7 +24,8 @@
     }
   }
   
-  public void MakeDone () {
+  public void 
+    MakeDone () {
     done = true;
   }
   
