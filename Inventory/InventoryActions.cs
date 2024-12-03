@@ -133,13 +133,13 @@ public class InventoryActions
                             if (inv[i].item.Name == "afslut")
                             {
                                 Console.ForegroundColor = ConsoleColor.Green; // Markér valget
-                                Console.WriteLine($"> {inv[i].item}");
+                                Console.WriteLine($"> {inv[i].item.Name}");
                                 Console.ResetColor();
                             }
                             else
                             {
                                 Console.ForegroundColor = ConsoleColor.Green; // Markér valget
-                                Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item}");
+                                Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item.Name}");
                                 Console.ResetColor();
                             }
                         }
