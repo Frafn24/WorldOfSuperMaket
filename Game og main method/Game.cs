@@ -57,6 +57,23 @@ class Game {
             //context.
             Console.Write("> ");
             var line = Console.ReadLine();
+            var result = Lowercap(line);
+            
+            String Lowercap(string? input)
+            {
+                string[] words = input.ToLower().Split(' ');
+                if (words.Length < 2)
+                {
+                    words[0] = char.ToUpper(words[0][0]) + words[0].Substring(1);
+                    return String.Join(" ", words);
+                }
+
+                words [1] = char.ToUpper(words[1][0]) + words[1].Substring(1);
+                return String.Join(" ", words);
+            }
+
+            line = result;
+            
             if (line != null)
             {
                 if (line == "lol")

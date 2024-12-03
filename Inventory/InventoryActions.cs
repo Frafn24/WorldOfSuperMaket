@@ -215,6 +215,7 @@ public class InventoryActions
         Console.Clear();
         if (inv.Count() > 0)
         {
+            
             int selectedIndex = 0;
             Console.WriteLine($"Daglige mål er Kalorier: {user.DaliyCalo}/{Math.Round(inv.Sum(x => x.item.Calorie), 0)}");
             Console.WriteLine($"Kullhydrat:{user.DaliyKullhydrat}/{inv.Sum(x => x.item.Carbo)}");
@@ -232,6 +233,24 @@ public class InventoryActions
         else
         {
             Console.WriteLine("Der er ingen items i dit inventory");
+        }
+    }
+    public void CheckOut (List<Inv> inv, UserInfo userInfo)
+    {
+        double CaloriesInCart = Convert.ToInt32(Math.Round(inv.Sum(x => x.item.Calorie), 0));                       
+        bool EnoughCalories = CaloriesInCart >= userInfo.DaliyCalo;
+        double Calodif = userInfo.DaliyCalo - CaloriesInCart;
+
+        if (EnoughCalories)
+        {
+            InventoryCommand checkOut = new InventoryCommand();
+            checkOut.DoCheckOut(inv, userInfo);
+        }
+        else
+        {
+            Console.WriteLine(
+                $"Du mangler at tilføje flere kalorier til din kurv, før du kan gå til Kurv du mangler {Calodif} Kalorier");
+            Console.ReadLine();
         }
     }
 }

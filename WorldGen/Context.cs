@@ -12,18 +12,30 @@
   public Space GetCurrent() {
     return current;
   }
-  
-  public void Transition (string direction) {
-    Space next = current.FollowEdge(direction);
-    if (next==null) {
-      Console.WriteLine("Du er forvirret, og går rundt i en cirkel imens du leder efter '"+direction+"'. Til sidst giver du op. 😩");
-    } else {
-      current.Goodbye();
-      current = next;
-      current.Welcome();
+
+  public void Transition(string direction)
+  {
+    try
+    {
+      Space next = current.FollowEdge(direction);
+      if (next == null)
+      {
+        Console.WriteLine("Du er forvirret, og går rundt i en cirkel imens du leder efter '" + direction +
+                          "'. Til sidst giver du op. 😩");
+      }
+      else
+      {
+        current.Goodbye();
+        current = next;
+        current.Welcome();
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine("Du er forvirret, og går rundt i en cirkel imens du leder efter den afdeling, til sidst giver du op");
     }
   }
-  
+
   public void MakeDone () {
     done = true;
   }

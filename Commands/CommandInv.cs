@@ -4,7 +4,7 @@ namespace WorldOfSuperMaket.Commands;
 
 class CommandInv
 {
-    
+
     //Metode, der tilføjer en item til listen inv.
     public List<Inv> AddItems(Items item, List<Inv> inv)
     {
@@ -12,49 +12,50 @@ class CommandInv
         Console.WriteLine($"ønsker du at tilføje denne vare til din kurv?");
         string anwser = "";
         bool right = false;
-        while (right==false) 
+        while (right == false)
         {
             Console.WriteLine("Du skal vælge mellem Ja eller Nej");
             Console.Write(">");
             var line = Console.ReadLine();
             if (line == "Ja")
             {
-                inv = AddItem(item,inv);
+                inv = AddItem(item, inv);
                 Console.WriteLine("der er nu tilføjet en vare til din kurv");
                 right = true;
             }
-            else if (line =="Nej")
+            else if (line == "Nej")
             {
                 Console.WriteLine("der er ikke tilføjet en vare til din kurv");
-                right= true;
+                right = true;
             }
             else
             {
                 Console.WriteLine("Du skal vælge mellem Ja eller Nej");
             }
         }
+
         return inv;
     }
-    
+
     // Metoden AddItem arbejder sammen med ovenstående metode AddItems.
-    
-    public List<Inv> AddItem(Items item,List<Inv> inv)
+
+    public List<Inv> AddItem(Items item, List<Inv> inv)
     {
 
-        if (item !=null)
+        if (item != null)
         {
-            if (inv.Count(x=>x.item ==item) == 0) 
+            if (inv.Count(x => x.item == item) == 0)
             {
                 Inv inve = new Inv();
                 inve.Number = 1;
                 inve.item = item;
                 inv.Add(inve);
                 //inv = new Items[1];
-                    
+
             }
             else
             {
-                var index = inv.FindIndex(x=>x.item == item);
+                var index = inv.FindIndex(x => x.item == item);
                 var number = inv[index].Number + 1;
                 inv[index].Number = number;
                 //for (int i = 0; i < inv.Count(); i++)
@@ -67,7 +68,7 @@ class CommandInv
             }
 
             return inv;
-                
+
         }
         else
         {
@@ -75,12 +76,12 @@ class CommandInv
             return inv;
         }
     }
-    
+
     // Metode, der fjerner en item fra listen inv.
-    
+
     public List<Inv> Remove(Items item, List<Inv> inv)
     {
-        if (inv.Count(x=> x.item == item) > 1)
+        if (inv.Count(x => x.item == item) > 1)
         {
             var index = inv.FindIndex(x => x.item == item);
             var number = inv[index].Number - 1;
@@ -109,25 +110,24 @@ class CommandInv
     //{
 
     //}
-    
+
     //Metode, der viser alle items i listen inv.
-    
+
     public void ShowInv(List<Inv> inv)
-       {
-           if (inv != null)
-           {
-               Console.WriteLine("Vis vare i din kurv.");
-               Console.WriteLine("Vare i din kurv: ");
-               for (int i = 0; i < inv.Count(); i++)
-               {
-                   Console.WriteLine($"antal:{inv[i].Number} stk. " + inv[i].item.Name);
-               }
-           }
-           else
-           {
-               Console.WriteLine("Der er ingen varer i din kurv");
-           }
-           
-       }
+    {
+        if (inv != null)
+        {
+            Console.WriteLine("Vis vare i din kurv.");
+            Console.WriteLine("Vare i din kurv: ");
+            for (int i = 0; i < inv.Count(); i++)
+            {
+                Console.WriteLine($"antal:{inv[i].Number} stk. " + inv[i].item.Name);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Der er ingen varer i din kurv");
+        }
+
+    }
 }
-  
