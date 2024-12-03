@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="https:\github.com\FrederikThy\" />
+    <Folder Include="data\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,12 +1,13 @@
 using System.Data;
 using System.Threading.Channels;
+using WorldOfSuperMaket.data;
 
 namespace WorldOfSuperMaket;
 
-class ItemsInfo : BaseCommand, ICommand
+class CommandItemsInfo : BaseCommand, ICommand
 {
     private Items[] Itm;
-    public ItemsInfo(Items[] items)
+    public CommandItemsInfo(Items[] items)
     {
         description = "Information omkring varer.";
         Itm = items;

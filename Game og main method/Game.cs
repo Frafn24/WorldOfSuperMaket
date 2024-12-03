@@ -3,6 +3,7 @@
 
 using WorldOfSuperMaket;
 using WorldOfSuperMaket.Commands;
+using WorldOfSuperMaket.data;
 
 class Game {
   Items[] items = new Items[1];
@@ -18,7 +19,7 @@ class Game {
   
   private void InitRegistry () 
   {
-
+        ICommand commandAction = new CommandActions(user);
         //items = CommandItem.AddItems();
         ICommand cmdExit = new CommandExit();
         registry.Register("exit", cmdExit);
@@ -26,19 +27,20 @@ class Game {
         registry.Register("bye", cmdExit);
         registry.Register("go", new CommandGo());
         registry.Register("help", new CommandHelp(registry));
-        registry.Register("Actions", new CommandActios(user));
+        registry.Register("Actions", commandAction);
+        registry.Register("Checkout", commandAction);
         //registry.Register("Items", new CommandItem(items));
-        registry.Register("Inventory",new InventoryCommand());
+        
 
   }
-
+  
     public void run()
     {
         //int Age=0;
         //int height = 0;
         //int Weaght = 0;
         //string Gender = "";
-        Console.WriteLine("Velkommen til supermarkedet.");
+        
         //Console.WriteLine("Skriv dit og dine infomationer nede under");
         //text.printText("Hvad er dit Navn:");
         //var name = Console.ReadLine();
@@ -94,12 +96,16 @@ class Game {
         //user = new UserInfo(name, Age,height,Weaght,gender);
 
             Console.Clear();
+            Console.WriteLine("Velkommen til supermarkedet.");
+            Console.WriteLine("Du kan skrive 'go' + 'lokation' for at bevæge dig igennem supermarkedet");
+            Console.WriteLine("Skriv 'Actions' for at tilføje eller fjerne en vare");
+            Console.WriteLine("Skriv 'help' for at se alle kommandoer");
         InitRegistry();
             context.GetCurrent().Welcome();
         while (context.IsDone() == false)
         {
             //context.
-            //Console.Write("> ");
+            Console.Write("> ");
             var line = Console.ReadLine();
             if (line != null)
             {
@@ -112,6 +118,10 @@ class Game {
                     Console.Write(">");
                     var line2 = Console.ReadLine();
                     line = line +" "+ line2;
+                }
+                if (line == "Checkout")
+                {
+                    line = line + " Checkout";
                 }
                 registry.Dispatch(line);
                 //Console.WriteLine(context.GetCurrent().GetName());
