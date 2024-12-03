@@ -9,19 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6d18087f-5835-4260-835d-a6f04f5016ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldOfSuperMaket.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldOfSuperMaket.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/CommandAll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandAll.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/CommandGo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandGo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/CommandInv.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandInv.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/CommandItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/CommandPickUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandPickUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/CommandUnknown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/CommandUnknown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/InventoryCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/InventoryCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands/TextCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Commands/TextCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckOut.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CheckOut.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Language.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Language.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game og main method/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game og main method/Scoreboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Scoreboard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory/InventoryActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/InventoryActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Translate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Translate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scoreboard.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WorldGen/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorldGen/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorldGen/Space.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorldGen/Space.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,19 +54,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.WorldOfSuperMaket.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Frederik-og-Mads&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.WorldOfSuperMaket.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Frederik-og-Mads",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="WorldOfSuperMaket" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -111,7 +106,10 @@
       <workItem from="1733225607562" duration="1341000" />
       <workItem from="1733226973031" duration="141000" />
       <workItem from="1733227124725" duration="5995000" />
-      <workItem from="1733233148424" duration="327000" />
+      <workItem from="1733233148424" duration="1285000" />
+      <workItem from="1733234447310" duration="344000" />
+      <workItem from="1733234803805" duration="968000" />
+      <workItem from="1733235945883" duration="1855000" />
     </task>
     <task id="LOCAL-00001" summary="Added language.csv">
       <option name="closed" value="true" />
@@ -137,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733229042934</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ændrede Console.WriteLine så de kan tilgå Translate.cs">
+      <option name="closed" value="true" />
+      <created>1733233771422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733233771422</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +156,7 @@
     <MESSAGE value="Added language.csv" />
     <MESSAGE value="Tilføjede velkomstbesked" />
     <MESSAGE value="Tilføjede Language.csv og ændrede nogle få CW så de virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tilføjede Language.csv og ændrede nogle få CW så de virker" />
+    <MESSAGE value="Ændrede Console.WriteLine så de kan tilgå Translate.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ændrede Console.WriteLine så de kan tilgå Translate.cs" />
   </component>
 </project>

@@ -1,7 +1,9 @@
 /* Context class to hold all context relevant to a session.
  */
 
- class Context {
+using WorldOfSuperMaket;
+
+class Context {
   Space current;
   bool done = false;
   
@@ -16,7 +18,7 @@
   public void Transition (string direction) {
     Space next = current.FollowEdge(direction);
     if (next==null) {
-      Console.WriteLine("Du er forvirret, og går rundt i en cirkel imens du leder efter '"+direction+"'. Til sidst giver du op. 😩");
+      Console.WriteLine(Translate.Instance.GetTranslation("Direction_Confused"), direction);
     } else {
       current.Goodbye();
       current = next;

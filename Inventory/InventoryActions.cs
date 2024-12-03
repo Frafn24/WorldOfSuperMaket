@@ -51,8 +51,8 @@ public class InventoryActions
                         {
                             return inv;
                         }
-                        Console.WriteLine($"{stock[selectedIndex].Name} er tilføjet til din kurv");
-
+                        //Console.WriteLine($"{stock[selectedIndex].Name} er tilføjet til din kurv");
+                        Console.WriteLine(Translate.Instance.GetTranslation("Added_To_Cart"), stock[selectedIndex].Name);
                         if (inv.Count(x => x.item.Name == stock[selectedIndex].Name) > 0)
                         {
                             int index = inv.FindIndex(x => x.item == stock[selectedIndex]);

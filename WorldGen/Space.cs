@@ -42,9 +42,9 @@ class Space : Node
         TextC.InfoText();
         Console.WriteLine();
         Console.WriteLine();
-        Console.WriteLine($"Du er nu ved: " + name);
+        Console.WriteLine(Translate.Instance.GetTranslation("Youre_At"), name);
         HashSet<string> exits = edges.Keys.ToHashSet();
-        Console.WriteLine("Det er nu ved: ");
+        Console.WriteLine(Translate.Instance.GetTranslation("Its_At"));
         foreach (String exit in exits)
         {
             Console.WriteLine(" - " + exit);

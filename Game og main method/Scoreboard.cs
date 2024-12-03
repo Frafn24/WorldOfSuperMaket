@@ -1,14 +1,14 @@
 namespace WorldOfSuperMaket;
 
-/*internal class ScoreBoard
+public class ScoreBoard
 {
     public void LoadScores()
     {
         List<Data> lines = File.ReadAllLines(GetPlacement("Scoreboard.csv")).Skip(1).Select(x => ParseCsvLine(x)).ToList();
-        //string[] lines = File.ReadAllLines(FilePath);
+        //string[] lines = File.ReadAllLines("Scoreboard");
         foreach (var line in lines)
         {
-            Console.WriteLine($"Player: {line.Username}, Food Score: {line.FoodScore}, Environment Score: {line.EnvironmentScore}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Scoreboard"), line.Username,line.FoodScore,line.EnvironmentScore);
             
         }  
     }
@@ -44,9 +44,9 @@ namespace WorldOfSuperMaket;
 
 public class Data
 {
-    public string Username { get; }
-    public double FoodScore { get; }
-    public double EnvironmentScore { get; }
+    public string Username { get; set; }
+    public double FoodScore { get; set; }
+    public double EnvironmentScore { get; set; }
 
     public Data(string username, double foodScore, double environmentScore)
     {
@@ -55,4 +55,4 @@ public class Data
         EnvironmentScore = environmentScore;
     }
     
-}*/
+}

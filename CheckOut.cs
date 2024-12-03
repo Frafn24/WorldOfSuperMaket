@@ -11,14 +11,15 @@ public class CheckOut
     {
         foreach (var item in inv)
         {
-            Console.WriteLine($"Vare: {item.item.GetName()}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Vare"), item.item.GetName());
             var info = item.item.GetMacros();
-            Console.WriteLine($"Kalorier: {info[0]}");
-            Console.WriteLine($"Kulhydrater: {info[1]}");
-            Console.WriteLine($"Protein: {info[2]}");
-            Console.WriteLine($"Fedt: {info[3]}");
-            Console.WriteLine($"CO2: {info[4]}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Kalorier"), info[0]);
+            Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Kulhydrater"), info[1]);
+            Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Protein"), info[2]);
+            Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Fedt"), info[3]);
+            Console.WriteLine(Translate.Instance.GetTranslation("Checkout_CO2"), info[4]);
             Console.WriteLine();
+           
         }
 
         double totalCalories = inv.Sum(i => i.item.Calorie);
