@@ -55,16 +55,16 @@ namespace WorldOfSuperMaket.Commands
             }
             switch (line2)
             {
-                case "Tilføj":
+                case "Tilføj" or "add":
                     inv = InvActions.Add(inv, Stock,room);
                     break;
-                case "Fjern":
+                case "Fjern" or "remove":
                     inv = InvActions.Remove(inv,Stock[0]);
                     break;
-                case "Kurv":
+                case "Kurv" or "cart":
                     InvActions.Show(inv,User);
                     break;
-                case "Checkout":
+                case "Checkout" or "kassen":
                     //checkout(context);
                     break;
             }

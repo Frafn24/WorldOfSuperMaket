@@ -29,12 +29,6 @@ Actions1,De handlinger du kan vælge imellem er:,The actions you can do are:
 Actions2,Tilføj vare - Tilføj,Add item - Add
 Actions3,Fjern vare - Fjern,Remove item - Remove
 Actions4,Se kurv - Kurv,See inventory - Inventory
-Checkout1,Varer:,Items:
-Checkout2,Kalorier:,Calories:
-Checkout3,Kulhydrater:,Carbs:
-Checkout4,Protein:,Proteins:
-Checkout5,Fedt:,Fat:
-Checkout6,CO2:,CO2:
 Checkout_total1,Total Kalorier:,Total calories:
 Checkout_total2,Total CO2:,Total CO2:
 Checkout_total3,Total fedt:,Total fat:
@@ -59,3 +53,13 @@ Kommando6,Handling,Actions
 Kommando7,Kassen,Checkout
 Direction_Confused,Du er forvirret og går rundt i en cirkel imens du leder efter {0}. Til sidst giver du op.,You're confused and walk around in a circle while looking for {0}. Eventually you give up.
 Added_To_Cart,{0} er tilføjet til kurven.,{0} has been added to your cart.
+Scoreboard,Spiller: {0}; Mad Score: {1}; Miljø Score: {3},Player: {0}; Food Score: {1}; Environment Score: {3}
+Youre_At,Du er nu ved {0},You're now at {0}
+Its_At,Det er nu ved:,It's now at:
+Not_Enough_Calories,Du mangler at tilføje flere kalorier til din kurv før du kan gå til kurv. Du manger {0} kalorier,You need to add more calories to your cart. Before you can go to checkout you need to add {0} calories
+Checkout_Vare,Vare: {0},Items: {0}
+Checkout_Kalorier,Kalorier: {0},Carbs: {0}
+Checkout_Kulhydrater,Kulhydrater: {0},Calories: {0}
+Checkout_Protein,Proteiner: {0},Proteins: {0}
+Checkout_Fedt,Fedt: {0},Fat: {0}
+Checkout_CO2,CO2: {0},CO2: {0}

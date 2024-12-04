@@ -73,6 +73,7 @@ class Game {
         user = new UserInfo(playerName);
         InitRegistry();
         Console.WriteLine();
+        Console.WriteLine($"Hello {UserInfo.Username}!");
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome5"));
         Console.WriteLine("");
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome1"));
@@ -114,3 +115,4 @@ class Game {
         Console.WriteLine("Game Over 😥");
     }
 }
+

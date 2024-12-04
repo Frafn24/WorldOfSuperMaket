@@ -8,7 +8,7 @@ namespace WorldOfSuperMaket.Models
 {
     public class UserInfo
     {
-        public string Username { get; set; }
+        public static string Username { get; set; }
         public int Age { get; set; }
         public double Height { get; set; }
         public int Weaght { get; set; }

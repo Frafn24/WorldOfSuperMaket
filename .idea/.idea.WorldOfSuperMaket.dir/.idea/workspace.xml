@@ -9,13 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6d18087f-5835-4260-835d-a6f04f5016ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldOfSuperMaket.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldOfSuperMaket.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckOut.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CheckOut.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Language.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Language.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game og main method/Scoreboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Scoreboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory/InventoryActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory/InventoryActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scoreboard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorldGen/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorldGen/Context.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorldGen/Space.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorldGen/Space.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game og main method/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game og main method/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/UserInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/UserInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Translate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Translate.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,9 @@
   </component>
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/Frederik-og-Mads" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -45,6 +45,10 @@
     &quot;accountId&quot;: &quot;4bf83de7-aea6-4aee-bf65-c0b2ef927744&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/frede/RiderProjects/WorldOfSuperMaket/Inventory/InventoryActions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/frede/RiderProjects/WorldOfSuperMaket/Inventory/InventoryActions.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -54,20 +58,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.WorldOfSuperMaket.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Frederik-og-Mads",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.WorldOfSuperMaket.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="WorldOfSuperMaket" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -110,6 +114,8 @@
       <workItem from="1733234447310" duration="344000" />
       <workItem from="1733234803805" duration="968000" />
       <workItem from="1733235945883" duration="1855000" />
+      <workItem from="1733238199696" duration="831000" />
+      <workItem from="1733251395515" duration="1220000" />
     </task>
     <task id="LOCAL-00001" summary="Added language.csv">
       <option name="closed" value="true" />
@@ -151,6 +157,17 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added language.csv" />

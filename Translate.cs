@@ -100,7 +100,7 @@ Console.WriteLine(translator.GetTranslation("key: show_items_in_inv"), command);
 
 I dette tilfælde behøver vi faktisk ikke skrive "command" til sidst, fordi der er
 ikke noget, som brugeren selv kan have skrevet ind. Hvis vi kigger på en anden 
-Console.WriteLine som fx "Woopsie, jeg forstår ikke {command}"
+Console.WriteLine"Woopsie, jeg forstår ikke {command}"
 ville command kunne hente kommandoen fra csv-filen
 
 Grunden til vi kan gøre det er fordi, vi starter med at istantisere:
