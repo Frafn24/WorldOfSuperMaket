@@ -243,7 +243,7 @@ public class InventoryActions
 
         if (EnoughCalories)
         {
-            InventoryCommand checkOut = new InventoryCommand();
+            var checkOut = new CheckOut();
             checkOut.DoCheckOut(inv, userInfo);
         }
         else
