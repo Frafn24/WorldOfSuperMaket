@@ -153,28 +153,28 @@ namespace WorldOfSuperMaket.Commands
             }
 
             List<Items> roomsItem = new List<Items>();
-            Console.WriteLine($"ønsker du at tilføje denne varer til din kurv?");
+            Console.WriteLine(Translate.Instance.GetTranslation("Add_item"));
             string anwser = ">";
             bool right = false;
             while (right == false)
             {
-                Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+                Console.WriteLine(Translate.Instance.GetTranslation("If_Add_WrongInput"));
                 Console.Write(">");
                 var line = Console.ReadLine();
                 if (line == "Yes")
                 {
                     //Inv(Stock.First());
-                    Console.WriteLine("der er nu tilføjet en vare til din kurv");
+                    Console.WriteLine(Translate.Instance.GetTranslation("If_Add_Yes"));
                     right = true;
                 }
                 else if (line == "No")
                 {
-                    Console.WriteLine("der er ikke tilføjet en vare til din kurv");
+                    Console.WriteLine(Translate.Instance.GetTranslation("If_Add_No"));
                     right = true;
                 }
                 else
                 {
-                    Console.WriteLine("Du skal vælge mellem Ja eller Nej");
+                    Console.WriteLine(Translate.Instance.GetTranslation("If_Add_WrongInput"));
                 }
             }
 

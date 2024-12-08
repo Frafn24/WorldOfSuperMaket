@@ -23,6 +23,7 @@ namespace WorldOfSuperMaket.Commands
             Console.WriteLine(Translate.Instance.GetTranslation("Actions2"));
             Console.WriteLine(Translate.Instance.GetTranslation("Actions3"));
             Console.WriteLine(Translate.Instance.GetTranslation("Actions4"));
+            Console.WriteLine(Translate.Instance.GetTranslation("Actions5"));
         }
 
     }
