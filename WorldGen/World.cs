@@ -21,7 +21,7 @@ class World
         spaces = new Dictionary<string, Space>
         {
             { "Indgang", entry },
-            { "Koleafdeling", refrigerator },
+            { "Køleafdeling", refrigerator },
             { "Kødafdeling", meats },
             { "Frostafdeling", frozen },
             { "Grøntafdeling", groceries },

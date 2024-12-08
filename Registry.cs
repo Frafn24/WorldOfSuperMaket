@@ -23,6 +23,7 @@ class Registry {
   }
   
   public ICommand GetCommand (string commandName) {
+   
     return commands[commandName];
   }
   
@@ -40,4 +41,3 @@ class Registry {
     return output;
   }
 }
-

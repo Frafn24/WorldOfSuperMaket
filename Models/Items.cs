@@ -32,9 +32,17 @@ public class Items
     public string GetName()
     {
         return Name;
-
     }
-    public string GEtDescription()
+
+    public double GetPrice()
+    {
+        return Price;
+    }
+    public double GetCO2()
+    {
+        return C02;
+    }
+    public string GetDescription()
     {
         return Description;
     }
@@ -43,10 +51,8 @@ public class Items
         double[] Macros = { Calorie, Carbo, Protien, Fat };
         return Macros;
     }
-    public double GetC02()
-    {
-        return C02;
-    }
+
+    
 
 
 
