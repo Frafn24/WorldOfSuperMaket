@@ -18,7 +18,16 @@ class Node {
   }
   
   public virtual Node FollowEdge (string direction) {
-    return edges[direction];
+		try
+		{
+
+            return edges[direction];
+        }
+		catch (Exception)
+		{
+            Console.WriteLine("Tjek om du har skrevet forkert og prøv igen");
+            return null;
+		}
   }
 }
 

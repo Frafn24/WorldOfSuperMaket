@@ -1,4 +1,6 @@
-﻿namespace WorldOfSuperMaket
+﻿using WorldOfSuperMaket.Readers;
+
+namespace WorldOfSuperMaket
 {
     public class CommandPickUp : BaseCommand, ICommand
     {

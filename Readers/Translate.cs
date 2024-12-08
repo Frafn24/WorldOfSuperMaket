@@ -1,17 +1,19 @@
-namespace WorldOfSuperMaket;
+using System.Linq;
+
+namespace WorldOfSuperMaket.Readers;
 
 public class Translate
 {
     // Variable
     private string filename = @"C:\\Users\\frede\\RiderProjects\\WorldOfSuperMaket\\Data";
-    
+
     // Singleton-instans
     public static Translate Instance { get; } = new Translate();
     // Dictionary der gemmer oversættelser
     private Dictionary<string, string> ActiveTranslations = new Dictionary<string, string>();
-    
+
     // constructor som sikrer vi kun har denne ene instans
-    private Translate() {}
+    private Translate() { }
 
     // Indlæser oversættelserne
     public void SetLanguage(string language)
@@ -19,7 +21,7 @@ public class Translate
         // .Skip(1) skipper den første linje
         // .Select(ParseCsvLine) parser de forskellige parametre, så det er læsbart
         // .ToList() konverterer det til en liste
-        var translations = File.ReadAllLines(GetPlacement("Language.csv")).Skip(1).Select(ParseCsvLine).ToList();
+        var translations = File.ReadAllLines(getPlaceMent("Language.csv")).Skip(1).Select(ParseCsvLine).ToList();
 
         // Tømmer dictionary når vi skifter sprog, så der ikke sker fejl.
         ActiveTranslations.Clear();
@@ -59,7 +61,23 @@ public class Translate
     // En metode der kan sikrer sig, at den rigtige sti bliver kaldt uanset
     // operativsystem. 
     // Måske vi skal gøre det på samme måde som de andre CSV-filer?
-    string GetPlacement(string Filename) => Path.Combine(filename, Filename);
+    public string getPlaceMent(string filename)
+    {
+        string update = "";
+        string placement = Path.GetFullPath(filename);
+        //string xmlFile = HostingEnvironment.MapPath("filename");
+        if (placement.Contains(@"\\data\\net8.0\"))
+        {
+            update = placement.Replace(@"bin\Debug", "data");
+        }
+        else if (placement.Contains(@"bin\Debug\net8.0"))
+        {
+            update = placement.Replace(@"bin\Debug\net8.0", "data");
+        }
+        else { update = placement; }
+        return update;
+    }
+    //string GetPlacement(string Filename) => Path.Combine(filename, Filename);
 
     // Deler filen op efter hvor der er et komma. 
     // Den gør det muligt for os at lave metoden "TranslationData" og
@@ -72,7 +90,7 @@ public class Translate
 
 
 
-// Metode der instansierer vores variable, og laver en constructor. 
+    // Metode der instansierer vores variable, og laver en constructor. 
     public class TranslationData
     {
         public string Key { get; set; }

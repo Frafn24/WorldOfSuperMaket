@@ -4,6 +4,7 @@
 using WorldOfSuperMaket;
 using WorldOfSuperMaket.Commands;
 using WorldOfSuperMaket.Models;
+using WorldOfSuperMaket.Readers;
 using WorldOfSuperMaket.Sounds;
 
 
@@ -20,7 +21,7 @@ class Game {
     UserInfo user;
     bool whil = false;
     TextAnime text = new TextAnime();
-    Sounds sounds = new Sounds();
+    Lyd sounds = new Lyd();
     private string? language;
   
   //SoundsClass sound = new SoundsClass();
@@ -96,7 +97,7 @@ class Game {
                 string[] words = input.ToLower().Split(' ');
                 if (words.Length < 2)
                 {
-                    words[0] = char.ToUpper(words[0][0]) + words[0].Substring(1);
+                     words[0] = char.ToUpper(words[0][0]) + words[0].Substring(1);
                     return String.Join(" ", words);
                 }
 
@@ -126,7 +127,10 @@ class Game {
                 registry.Dispatch(line);
 
             }
-            Console.Clear();
+            if(line.ToLower()!= Translate.Instance.GetTranslation("Kommando5").ToLower())
+            {
+                Console.Clear();
+            }
         }
         sounds.GameOver();
         Console.WriteLine("Game Over 😥");

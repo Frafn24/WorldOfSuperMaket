@@ -1,9 +1,14 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using NAudio.Wave;
 
 namespace WorldOfSuperMaket.Sounds
 {
-    public class Sounds
+    public  class Lyd
     {
         public string gameOver = $"C:\\Users\\frede\\source\\repos\\WorldOfSuperMaket\\Sounds\\GOM.mp3"; // Replace with your audio file path
         public void GameOver()

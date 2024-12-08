@@ -61,13 +61,25 @@ namespace WorldOfSuperMaket.Commands
                 case "Tilføj":
                     inv = InvActions.Add(inv, Stock, room);
                     break;
+                case "tilføj":
+                    inv = InvActions.Add(inv, Stock, room);
+                    break;
                 case "Fjern":
+                    inv = InvActions.Remove(inv, Stock[0]);
+                    break;
+                case "fjern":
                     inv = InvActions.Remove(inv, Stock[0]);
                     break;
                 case "Kurv":
                     InvActions.Show(inv, User);
                     break;
+                case "kurv":
+                    InvActions.Show(inv, User);
+                    break;
                 case "Checkout":
+                    InvActions.CheckOut(inv, User);
+                    break;
+                case "checkout":
                     InvActions.CheckOut(inv, User);
                     break;
             }

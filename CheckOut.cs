@@ -1,4 +1,5 @@
 ﻿using WorldOfSuperMaket.Models;
+using WorldOfSuperMaket.Sounds;
 
 namespace WorldOfSuperMaket;
 
@@ -6,6 +7,8 @@ public class CheckOut
 {
     public void DoCheckOut(List<Inv> inv, UserInfo userInfo)
     {
+        var sounds = new Lyd();
+        Console.Clear();
         foreach (var item in inv)
         {
             Console.WriteLine($"Vare: {item.item.GetName()}");
@@ -18,12 +21,12 @@ public class CheckOut
             Console.WriteLine();
         }
 
-        double totalCalories = inv.Sum(i => i.item.Calorie);
-        double totalPrice = inv.Sum(i => i.item.Price);
-        double totalCO2 = inv.Sum(i => i.item.C02);
-        double totalFat = inv.Sum(i => i.item.Fat);
-        double totalCarbs = inv.Sum(i => i.item.Carbo);
-        double totalProteins = inv.Sum(i => i.item.Protien);
+        double totalCalories = inv.Sum(x => x.item.Calorie*x.Number);
+        double totalPrice = inv.Sum(x => x.item.Price*x.Number);
+        double totalCO2 = inv.Sum(x => x.item.C02 * x.Number);
+        double totalFat = inv.Sum(x => x.item.Fat * x.Number);
+        double totalCarbs = inv.Sum(x => x.item.Carbo * x.Number);
+        double totalProteins = inv.Sum(x => x.item.Protien * x.Number);
 
         double carbsPercentage = (totalCarbs / userInfo.DaliyKullhydrat) * 100;
         double proteinsPercentage = (totalProteins / userInfo.DaliyProtien) * 100;
@@ -65,11 +68,18 @@ public class CheckOut
         }
 
         Console.WriteLine("");
-        Console.WriteLine($"Varene i din kurv dækker over {foodScore} % af de påkrævet macros.");
+        Console.WriteLine($"Varene i din kurv dækker over {Math.Round(foodScore,2)} % af de påkrævet macros.");
         Console.WriteLine(
-            $"Hvis alle handlede som dig, skulle vi bruge {EnviromentScore} jordkloder, kun til at handle madvarer.");
+            $"Hvis alle handlede som dig, skulle vi bruge {Math.Round(EnviromentScore,2)} jordkloder, kun til at handle madvarer.");
         Console.WriteLine("");
 
         Console.WriteLine(new string('-', 50));
+        Console.ReadKey();
+        Console.Clear();
+        sounds.GameOver();
+        Console.WriteLine("Game Over 😥");
+        Console.WriteLine("Håber du eller de, somm spiller vores spil");
+        Thread.Sleep(1000);
+        Environment.Exit(0);
     }
 }

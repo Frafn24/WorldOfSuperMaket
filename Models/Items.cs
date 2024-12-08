@@ -48,7 +48,7 @@ public class Items
     }
     public double[] GetMacros()
     {
-        double[] Macros = { Calorie, Carbo, Protien, Fat };
+        double[] Macros = { Calorie,Price, Carbo, Protien, Fat,C02 };
         return Macros;
     }
 

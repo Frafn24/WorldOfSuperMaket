@@ -1,4 +1,5 @@
 ﻿using WorldOfSuperMaket.Models;
+using WorldOfSuperMaket.Readers;
 
 namespace WorldOfSuperMaket.Inventory;
 
@@ -115,43 +116,48 @@ public class InventoryActions
             }
             else
             {
+                var newinv = inv;
                 int selectedIndex = 0;
                 bool back = true;
                 bool exMark = false;
+                var afslut = new Items("afslut", "", "", 0, 0, 0, 0, 0, 0);
+                newinv.Add(new Inv { Number = 1, item = afslut });
                 while (back)
                 {
                     Console.Clear();
                     Console.WriteLine(Translate.Instance.GetTranslation("Arrow_Keys_Remove"));
 
                     // Vis listen med vare i din kurv
-                    item.Name = "afslut";
-                    inv.Add(new Inv { Number = 1, item = item });
-                    for (int i = 0; i < inv.Count; i++)
+                    for (int i = 0; i < inv.Count(); i++)
                     {
                         if (i == selectedIndex)
                         {
-                            if (inv[i].item.Name == "afslut")
-                            {
-                                Console.ForegroundColor = ConsoleColor.Green; // Markér valget
-                                Console.WriteLine($"> {inv[i].item.Name}");
-                                Console.ResetColor();
-                            }
-                            else
+                            if (inv[i].item.Name != "afslut")
                             {
                                 Console.ForegroundColor = ConsoleColor.Green; // Markér valget
                                 Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item.Name}");
                                 Console.ResetColor();
                             }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green; // Markér valget
+                                Console.WriteLine($"> {inv[i].item.Name}");
+                                Console.ResetColor();
+                            }
                         }
                         else
                         {
-                            if (inv[i].item.Name == "afslut")
+                            if (inv[i].item.Name != "afslut")
                             {
-                                Console.WriteLine($">{inv[i].item}");
+                                
+                                Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item.Name}");
+                               
                             }
                             else
                             {
-                                Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item}");
+                                 // Markér valget
+                                Console.WriteLine($"> {inv[i].item.Name}");
+                                
                             }
                         }
 
@@ -185,7 +191,8 @@ public class InventoryActions
                             }
                             else
                             {
-                                return inv;
+                                var res = newinv.Where(x => x.item.Name != "afslut").ToList();
+                                return res;
                             }
                             //Console.WriteLine($"Fjerner: {inv[selectedIndex]}");
 
@@ -216,7 +223,6 @@ public class InventoryActions
         if (inv.Count() > 0)
         {
             
-            int selectedIndex = 0;
             Console.WriteLine($"Daglige mål er Kalorier: {user.DaliyCalo}/{Math.Round(inv.Sum(x => x.item.Calorie), 0)}");
             Console.WriteLine($"Kullhydrat:{user.DaliyKullhydrat}/{inv.Sum(x => x.item.Carbo)}");
             Console.WriteLine($"Fedt:{user.DaliyFat}/{inv.Sum(x => x.item.Fat)}");
@@ -243,13 +249,15 @@ public class InventoryActions
 
         if (EnoughCalories)
         {
+
             var checkOut = new CheckOut();
             checkOut.DoCheckOut(inv, userInfo);
         }
         else
         {
+            Console.WriteLine();
             Console.WriteLine(
-                $"Du mangler at tilføje flere kalorier til din kurv, før du kan gå til Kurv du mangler {Calodif} Kalorier");
+                $"du mangler at tilføje flere kalorier til din kurv, før du kan gå til kurv du mangler {Math.Round(Calodif,2)} kalorier");
             Console.ReadLine();
         }
     }

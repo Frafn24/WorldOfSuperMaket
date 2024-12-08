@@ -2,6 +2,7 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.Readers;
 
 class Context {
   Space current;

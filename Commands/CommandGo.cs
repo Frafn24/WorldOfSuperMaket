@@ -2,6 +2,7 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.Readers;
 
 class CommandGo : BaseCommand, ICommand {
   public CommandGo () {

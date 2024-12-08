@@ -2,6 +2,7 @@
  */
 
 using WorldOfSuperMaket;
+using WorldOfSuperMaket.Readers;
 
 class CommandUnknown : BaseCommand, ICommand {
   public void Execute (Context context, string command, string[] parameters) {
