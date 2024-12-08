@@ -1,5 +1,4 @@
 ﻿using WorldOfSuperMaket.Models;
-
 namespace WorldOfSuperMaket;
 
 public class CheckOut
@@ -7,6 +6,9 @@ public class CheckOut
     double carbsPercentage = 1.0;
     double proteinsPercentage = 1.0;
     double fatPercentage = 1.0;
+    private string linkDanish = "https://da.surveymonkey.com/r/KKH5KRY";
+   // string linkEnglish = "";
+    
     public void DoCheckOut(List<Inv> inv, UserInfo userInfo)
     {
         foreach (var item in inv)
@@ -69,6 +71,10 @@ public class CheckOut
         Console.WriteLine("");
         
         Console.WriteLine(new string('-', 50));
+        Console.WriteLine($"Thank you for playing. If you wouldn't mind, we would love for you to answer a survey");
+        Console.WriteLine("to tell us what you've learned so far!");
+        Console.WriteLine($"link to danish survey --> " +linkDanish);
+        //Console.WriteLine($"Link to english survey --> " +linkEnglish);
     }
 }
 
