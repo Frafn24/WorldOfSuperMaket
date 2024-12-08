@@ -29,6 +29,7 @@ Actions1,De handlinger du kan vælge imellem er:,The actions you can do are:
 Actions2,Tilføj vare - Tilføj,Add item - Add
 Actions3,Fjern vare - Fjern,Remove item - Remove
 Actions4,Se kurv - Kurv,See inventory - Inventory
+Actions5,Gå til kassen - Kassen, Go to checkout - Checkout
 Checkout_total1,Total Kalorier:,Total calories:
 Checkout_total2,Total CO2:,Total CO2:
 Checkout_total3,Total fedt:,Total fat:
