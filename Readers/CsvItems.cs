@@ -52,7 +52,15 @@ namespace WorldOfSuperMaket
             {
                 update = placement.Replace(@"bin\Debug", "data");
             }
-            update = placement.Replace(@"bin\Debug\net8.0", "data");
+            else if (placement.Contains(@"bin\Debug\net8.0"))
+            {
+                update = placement.Replace(@"bin\Debug\net8.0", "data");
+            }
+            else if (placement.Contains(@"bin/Debug/net8.0"))
+            {
+                update = placement.Replace(@"bin/Debug/net8.0", "Data");
+            }
+            else { update = placement; }
             return update;
         }
     }
