@@ -32,11 +32,11 @@ namespace WorldOfSuperMaket
             var name = Convert.ToString(lines[0]);
             var description = Convert.ToString(lines[1]);
             var type = Convert.ToString(lines[2]);
-            var Calorie = Convert.ToDouble(lines[3]);
-            var Carbo = Convert.ToDouble(lines[4]);
-            var Protien = Convert.ToDouble(lines[5]);
-            var Fat = Convert.ToDouble(lines[6]);
-            var C02 = Convert.ToDouble(lines[7]);
+            var Calorie = Convert.ToDecimal(lines[3]);
+            var Carbo = Convert.ToDecimal(lines[4]);
+            var Protien = Convert.ToDecimal(lines[5]);
+            var Fat = Convert.ToDecimal(lines[6]);
+            var C02 = Convert.ToDecimal(lines[7]);
             //var Price = Convert.ToDouble(lines[8]);
 
             Items items = new Items(name, description, type, Calorie, Carbo, Protien, Fat, C02,0);

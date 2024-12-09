@@ -65,9 +65,10 @@ Checkout_Protein,Proteiner: {0},Proteins: {0}
 Checkout_Fedt,Fedt: {0},Fat: {0}
 Checkout_CO2,CO2: {0},CO2: {0}
 Fjerner,Fjerner: {0},Removing: {0}
-Calorie_Goal, Daglige kalorie mål er: {0}/{1}:,Daily calorie goal is: {0}
-Kulhydrat,Kulhydrat: {0}/{1},Carbs: {0}/{1}
-Fedt,Fedt: {0}/{1},Fat: {0}/{1}
+Calorie_Goal,Ugentlige kalorie mål er: {1}/{0} g:,Weekly calorie goal is: {1}/{0} g
+Carbs_Goal,Ugentlige kulhydrater mal er: {1}/{0} g,Weekly carbs goal is: {1}/{0} g
+Kulhydrat,Kulhydrat: {1}/{0},Carbs: {1}/{0} g
+Fat_Goal,Fedt: {1}/{0} g,Fat: {1}/{0} g
 Items_In_Cart,Varer i din kurv.,Items in your cart.
 Missing_Items_In_Cart,Du mangler at tilføje varer til din kurv før du kan gå til kassen. Du mangler {0} kalorier,You need to add more carbs to your cart before going to checkout. You are missing {0} carbs.
 Checkout_Item, Varer: {0},Items: {0}
@@ -83,3 +84,4 @@ Fedt,Fedt,Fat
 Protein,Protein,Protein
 Kulhydrater,Kulhydrater,Carbs
 CO2,CO2,CO2
+KviteringSamlet,Samlet:,In all:

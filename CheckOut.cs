@@ -12,30 +12,26 @@ public class CheckOut
         Console.Clear();
         foreach (var item in inv)
         {
-           // Console.WriteLine($"Vare: {item.item.GetName()}");
             Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Item"),item.item.GetName());
             var info = item.item.GetMacros();
-           // Console.WriteLine($"Kalorier: {info[0]}");
             Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Calories"),info[0]);
-            //Console.WriteLine($"Kulhydrater: {info[1]}");
             Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Carbs"),info[1]);
             Console.WriteLine($"Protein: {info[2]}");
-           // Console.WriteLine($"Fedt: {info[3]}");
             Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Fat"),info[3]);
             Console.WriteLine($"CO2: {info[4]}");
             Console.WriteLine();
         }
+        
+        decimal totalPrice = inv.Sum(x => x.item.Price*x.Number);
+        decimal totalCO2 = inv.Sum(x => x.item.C02 * x.Number);
+        decimal totalFat = inv.Sum(x => x.item.Fat * x.Number);
+        decimal totalCarbs = inv.Sum(x => x.item.Carbo * x.Number);
+        decimal totalProteins = inv.Sum(x => x.item.Protien * x.Number);
+        decimal totalCal = inv.Sum(x=> x.item.Calorie * x.Number);
 
-        double totalCalories = inv.Sum(x => x.item.Calorie*x.Number);
-        double totalPrice = inv.Sum(x => x.item.Price*x.Number);
-        double totalCO2 = inv.Sum(x => x.item.C02 * x.Number);
-        double totalFat = inv.Sum(x => x.item.Fat * x.Number);
-        double totalCarbs = inv.Sum(x => x.item.Carbo * x.Number);
-        double totalProteins = inv.Sum(x => x.item.Protien * x.Number);
-
-        double carbsPercentage = (totalCarbs / userInfo.DaliyKullhydrat) * 100;
-        double proteinsPercentage = (totalProteins / userInfo.DaliyProtien) * 100;
-        double fatPercentage = (totalFat / userInfo.DaliyFat) * 100;
+        decimal carbsPercentage = (totalCarbs / userInfo.DaliyKullhydrat) * 100;
+        decimal proteinsPercentage = (totalProteins / userInfo.DaliyProtien) * 100;
+        decimal fatPercentage = (totalFat / userInfo.DaliyFat) * 100;
 
         if (fatPercentage > 100)
         {
@@ -52,13 +48,13 @@ public class CheckOut
             proteinsPercentage = 100;
         }
 
-        double foodScore = (fatPercentage + carbsPercentage + proteinsPercentage) / 3;
-
-        double EnviromentScore = totalCO2 / (0.55 / 52);
+        decimal foodScore = (fatPercentage + carbsPercentage + proteinsPercentage) / 3;
+        
+        decimal EnviromentScore = (totalCO2 / 100) / (decimal)(0.55 / 52.0);
         Console.Clear();
-        Console.WriteLine("**********************************************");
-        Console.WriteLine("                 KVITTERING");
-        Console.WriteLine("**********************************************");
+        Console.WriteLine("****************************************************************************************************");
+        Console.WriteLine("                                         KVITTERING");
+        Console.WriteLine("****************************************************************************************************");
         Console.WriteLine();
 
         Console.WriteLine(
@@ -68,18 +64,25 @@ public class CheckOut
             $"{Translate.Instance.GetTranslation("Fedt").PadLeft(8)}" +
             $"{Translate.Instance.GetTranslation("Protein").PadLeft(10)}" +
             $"{Translate.Instance.GetTranslation("Kulhydrater").PadLeft(14)}" +
-            $"{Translate.Instance.GetTranslation("CO2").PadLeft(7)})");
+            $"{Translate.Instance.GetTranslation("CO2").PadLeft(7)}");
 
         Console.WriteLine(new string('-', 100));
 
         foreach (var item in inv)
         {
             var info = item.item.GetMacros();
-            Console.WriteLine($"{item.item.GetName()}".PadRight(30) + $"{info[4]}".PadLeft(10) +
-                              $"{info[0]}".PadLeft(10) + $"{info[3]}".PadLeft(10) + $"{info[2]}".PadLeft(10) +
-                              $"{info[1]}".PadLeft(10) + $"{info[5]}".PadLeft(10));
+            Console.WriteLine($"{item.item.GetName()}".PadRight(30) + $"{info[1 / 100]} Kr.".PadLeft(10) +
+                              $"{info[0 ]} g".PadLeft(10) + $"{info[4]} g".PadLeft(10) + $"{info[3]} g".PadLeft(10) +
+                              $"{info[2]} g".PadLeft(10) + $"{info[5 / 100]} kg".PadLeft(20));
         }
+        Console.WriteLine(new string('-', 100));
 
+        Console.Write(
+            $"{Translate.Instance.GetTranslation("KviteringSamlet").PadRight(30)}");
+        
+        Console.WriteLine($"{totalPrice} Kr.".PadLeft(10) +$"{totalCal} g".PadLeft(10) + $"{totalFat} g".PadLeft(10) + $"{totalProteins} g".PadLeft(10) +
+                           $"{totalCarbs} g".PadLeft(10) + $"{totalCO2 / 100} kg".PadLeft(20));                
+        
         Console.WriteLine("");
         Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Items_In_Cart"),Math.Round(foodScore,2));
         Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2));
@@ -117,7 +120,6 @@ public class CheckOut
         Console.WriteLine("Tak fordi du spillede spillet!");
         sounds.GameOver();
         Console.WriteLine("Game Over 😥");
-        //Console.WriteLine("Håber du eller de, somm spiller vores spil");
         Thread.Sleep(1000);
         Environment.Exit(0);
     }

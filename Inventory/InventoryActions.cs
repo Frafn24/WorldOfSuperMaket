@@ -204,15 +204,11 @@ public class InventoryActions
         Console.Clear();
         if (inv.Count() > 0)
         {
-            
-           // Console.WriteLine($"Daglige mål er Kalorier: {user.DaliyCalo}/{Math.Round(inv.Sum(x => x.item.Calorie), 0)}");
-            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"), user.DaliyCalo, Math.Round(inv.Sum(x => x.item.Calorie), 0));
-            //Console.WriteLine($"Kullhydrat:{user.DaliyKullhydrat}/{inv.Sum(x => x.item.Carbo)}");
-            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"),user.DaliyKullhydrat,inv.Sum(x => x.item.Carbo));
-            //Console.WriteLine($"Fedt:{user.DaliyFat}/{inv.Sum(x => x.item.Fat)}");
-            Console.WriteLine(Translate.Instance.GetTranslation("Fedt"),user.DaliyFat,inv.Sum(x => x.item.Fat));
-            Console.WriteLine($"Protien:{user.DaliyProtien}/{inv.Sum(x => x.item.Protien)}");
-            Console.WriteLine($"C02:{inv.Sum(x => x.item.C02)}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"), user.DaliyCalo, Math.Round(inv.Sum(x => x.item.Calorie ), 0));
+            Console.WriteLine(Translate.Instance.GetTranslation("Carbs_Goal"),user.DaliyKullhydrat,inv.Sum(x => x.item.Carbo ));
+            Console.WriteLine(Translate.Instance.GetTranslation("Fat_Goal"),user.DaliyFat,inv.Sum(x => x.item.Fat ));
+            Console.WriteLine($"Protein: {inv.Sum(x => x.item.Protien / 100)} / {user.DaliyProtien} g");
+            Console.WriteLine($"C02: {inv.Sum(x => x.item.C02 / 100)} Kg");
             Console.WriteLine(Translate.Instance.GetTranslation("Items_In_Cart"));
             foreach (var itm in inv)
             {

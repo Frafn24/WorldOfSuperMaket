@@ -9,14 +9,14 @@ public class Items
     public string Name { get; set; }
     public string Description { get; set; }
     public string Type { get; set; }
-    public double Calorie { get; set; }
-    public double Carbo { get; set; }
-    public double Protien { get; set; }
-    public double Fat { get; set; }
-    public double C02 { get; set; }
-    public double Price { get; set; }
+    public decimal Calorie { get; set; }
+    public decimal Carbo { get; set; }
+    public decimal Protien { get; set; }
+    public decimal Fat { get; set; }
+    public decimal C02 { get; set; }
+    public decimal Price { get; set; }
 
-    public Items(string x_Name, string x_Description, string x_Type, double x_Calorie, double x_Carbo, double x_Protien, double x_Fat, double x_C02, double X_Price)
+    public Items(string x_Name, string x_Description, string x_Type, decimal x_Calorie, decimal x_Carbo, decimal x_Protien, decimal x_Fat, decimal x_C02, decimal X_Price)
     {
         Name = x_Name;
         Description = x_Description;
@@ -34,11 +34,11 @@ public class Items
         return Name;
     }
 
-    public double GetPrice()
+    public decimal GetPrice()
     {
         return Price;
     }
-    public double GetCO2()
+    public decimal GetCO2()
     {
         return C02;
     }
@@ -46,9 +46,9 @@ public class Items
     {
         return Description;
     }
-    public double[] GetMacros()
+    public decimal[] GetMacros()
     {
-        double[] Macros = { Calorie,Price, Carbo, Protien, Fat,C02 };
+        decimal[] Macros = { Calorie,Price, Carbo, Protien, Fat, C02 };
         return Macros;
     }
 
