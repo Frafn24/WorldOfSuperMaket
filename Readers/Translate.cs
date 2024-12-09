@@ -74,6 +74,10 @@ public class Translate
         {
             update = placement.Replace(@"bin\Debug\net8.0", "data");
         }
+        else if (placement.Contains(@"bin/Debug/net8.0"))
+        {
+            update = placement.Replace(@"bin/Debug/net8.0", "Data/Language.csv");
+        }
         else { update = placement; }
         return update;
     }
