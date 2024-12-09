@@ -80,7 +80,7 @@ public class CheckOut
         Console.Write(
             $"{Translate.Instance.GetTranslation("KviteringSamlet").PadRight(30)}");
         
-        Console.WriteLine($"{totalPrice} Kr.".PadLeft(10) +$"{totalCal} g".PadLeft(10) + $"{totalFat} g".PadLeft(10) + $"{totalProteins} g".PadLeft(10) +
+        Console.WriteLine($"{totalPrice / 100} Kr.".PadLeft(10) +$"{totalCal} g".PadLeft(10) + $"{totalFat} g".PadLeft(10) + $"{totalProteins} g".PadLeft(10) +
                            $"{totalCarbs} g".PadLeft(10) + $"{totalCO2 / 100} kg".PadLeft(20));                
         
         Console.WriteLine("");

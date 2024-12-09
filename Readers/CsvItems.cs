@@ -37,9 +37,9 @@ namespace WorldOfSuperMaket
             var Protien = Convert.ToDecimal(lines[5]);
             var Fat = Convert.ToDecimal(lines[6]);
             var C02 = Convert.ToDecimal(lines[7]);
-            //var Price = Convert.ToDouble(lines[8]);
+            var Price = Convert.ToDecimal(lines[8]);
 
-            Items items = new Items(name, description, type, Calorie, Carbo, Protien, Fat, C02,0);
+            Items items = new Items(name, description, type, Calorie, Carbo, Protien, Fat, C02, Price);
             return items;
 
         }
