@@ -50,7 +50,6 @@ class CommandInv
                 inve.Number = 1;
                 inve.item = item;
                 inv.Add(inve);
-                //inv = new Items[1];
                     
             }
             else
@@ -58,13 +57,6 @@ class CommandInv
                 var index = inv.FindIndex(x=>x.item == item);
                 var number = inv[index].Number + 1;
                 inv[index].Number = number;
-                //for (int i = 0; i < inv.Count(); i++)
-                //{
-                //    newArray[i] = inv[i];
-                //}
-
-                //newArray[newLenght - 1] = item;
-                //inv = newArray;
             }
 
             return inv;
@@ -95,21 +87,9 @@ class CommandInv
         }
 
         return inv;
-
-        /*if (inv.Length==0)
-        {
-            Console.WriteLine("Der er ingen ting du kan fjerne i din kurv");
-            return inv;
-        }
-        var NewArray = inv.Where(x => x.Name != item.Name).ToArray();
-        inv = NewArray;
-        Console.WriteLine("Den ønskede vare er nu fjernet fra din kurv");
-        return inv;*/
+        
     }
-    //public static void Checkout(Items[] inv, Context context)
-    //{
 
-    //}
     
     //Metode, der viser alle items i listen inv.
     

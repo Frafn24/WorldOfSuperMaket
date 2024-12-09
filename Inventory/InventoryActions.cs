@@ -52,7 +52,7 @@ public class InventoryActions
                         {
                             return inv;
                         }
-                        //Console.WriteLine($"{stock[selectedIndex].Name} er tilføjet til din kurv");
+                       
                         Console.WriteLine(Translate.Instance.GetTranslation("Added_To_Cart"), stock[selectedIndex].Name);
                         if (inv.Count(x => x.item.Name == stock[selectedIndex].Name) > 0)
                         {
@@ -65,24 +65,7 @@ public class InventoryActions
                         {
                             inv.Add(new Inv { Number = 1, item = stock[selectedIndex] });
                         }
-                        //if (inv[selectedIndex].Number > 1)
-                        //{
-                        //    Console.WriteLine($"Fjerner: {inv[selectedIndex].Number - 1}");
-                        //    inv[selectedIndex].Number--;
-                        //}
-                        //else
-                        //{
-                        //    Console.WriteLine($"Fjerner: {inv[selectedIndex]}");
-                        //    inv.RemoveAt(selectedIndex);
-                        //}
-                        ////Console.WriteLine($"Fjerner: {inv[selectedIndex]}");
-
-                        //// Håndter tom liste
-                        //if (inv.Count() == 0)
-                        //{
-                        //    Console.WriteLine("Listen er nu tom.");
-                        //    return;
-                        //}
+                      
 
                         selectedIndex = Math.Min(selectedIndex, stock.Count() - 1); // Juster index
                         Console.ReadKey();
@@ -180,12 +163,12 @@ public class InventoryActions
                             {
                                 if (inv[selectedIndex].Number > 1)
                                 {
-                                    Console.WriteLine($"Fjerner: {inv[selectedIndex].Number - 1}");
+                                    Console.WriteLine(Translate.Instance.GetTranslation("Fjerner"),inv[selectedIndex].Number - 1);
                                     inv[selectedIndex].Number--;
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"Fjerner: {inv[selectedIndex]}");
+                                    Console.WriteLine(Translate.Instance.GetTranslation("Fjerner"),inv[selectedIndex]);
                                     inv.RemoveAt(selectedIndex);
                                 }
                             }
@@ -194,7 +177,6 @@ public class InventoryActions
                                 var res = newinv.Where(x => x.item.Name != "afslut").ToList();
                                 return res;
                             }
-                            //Console.WriteLine($"Fjerner: {inv[selectedIndex]}");
 
                             // Håndter tom liste
                             if (inv.Count() == 0)
@@ -223,12 +205,15 @@ public class InventoryActions
         if (inv.Count() > 0)
         {
             
-            Console.WriteLine($"Daglige mål er Kalorier: {user.DaliyCalo}/{Math.Round(inv.Sum(x => x.item.Calorie), 0)}");
-            Console.WriteLine($"Kullhydrat:{user.DaliyKullhydrat}/{inv.Sum(x => x.item.Carbo)}");
-            Console.WriteLine($"Fedt:{user.DaliyFat}/{inv.Sum(x => x.item.Fat)}");
+           // Console.WriteLine($"Daglige mål er Kalorier: {user.DaliyCalo}/{Math.Round(inv.Sum(x => x.item.Calorie), 0)}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"), user.DaliyCalo, Math.Round(inv.Sum(x => x.item.Calorie), 0));
+            //Console.WriteLine($"Kullhydrat:{user.DaliyKullhydrat}/{inv.Sum(x => x.item.Carbo)}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"),user.DaliyKullhydrat,inv.Sum(x => x.item.Carbo));
+            //Console.WriteLine($"Fedt:{user.DaliyFat}/{inv.Sum(x => x.item.Fat)}");
+            Console.WriteLine(Translate.Instance.GetTranslation("Fedt"),user.DaliyFat,inv.Sum(x => x.item.Fat));
             Console.WriteLine($"Protien:{user.DaliyProtien}/{inv.Sum(x => x.item.Protien)}");
             Console.WriteLine($"C02:{inv.Sum(x => x.item.C02)}");
-            Console.WriteLine("Varer er i din Kurv.");
+            Console.WriteLine(Translate.Instance.GetTranslation("Items_In_Cart"));
             foreach (var itm in inv)
             {
                 Console.WriteLine($"Mængde:{itm.Number} ,Vare: {itm.item.Name} ");
@@ -246,19 +231,20 @@ public class InventoryActions
         double CaloriesInCart = Convert.ToInt32(Math.Round(inv.Sum(x => x.item.Calorie), 0));                       
         bool EnoughCalories = CaloriesInCart >= userInfo.DaliyCalo;
         double Calodif = userInfo.DaliyCalo - CaloriesInCart;
+        var checkOut = new CheckOut();
+        checkOut.DoCheckOut(inv, userInfo);
 
-        if (EnoughCalories)
+       /* if (EnoughCalories)
         {
 
-            var checkOut = new CheckOut();
-            checkOut.DoCheckOut(inv, userInfo);
+            
         }
         else
         {
             Console.WriteLine();
-            Console.WriteLine(
-                $"du mangler at tilføje flere kalorier til din kurv, før du kan gå til kurv du mangler {Math.Round(Calodif,2)} kalorier");
+           // Console.WriteLine($"du mangler at tilføje flere kalorier til din kurv, før du kan gå til kurv du mangler {Math.Round(Calodif,2)} kalorier");
+            Console.WriteLine(Translate.Instance.GetTranslation("Missing_Items_In_Cart"),Math.Round(Calodif,2));
             Console.ReadLine();
-        }
+        }*/
     }
 }

@@ -31,15 +31,7 @@ class Space : Node
 
     public void Welcome()
     {
-        //Items[] inv = // her skal der være en metode som får fat i spillerens inventory
-        //UserInfo userInfo = //her skal der være den metode som får fat i spillerinfo
 
-        //if (name == "checkout")
-        //{
-        //    Checkout(inv, userInfo);
-        //}
-        //else
-        //{
         TextC.InfoText();
         Console.WriteLine();
         Console.WriteLine();
@@ -61,7 +53,7 @@ class Space : Node
     public void Goodbye()
     {
     }
-    public void Checkout(List<Inv> inv,UserInfo userInfo)
+   /* public void Checkout(List<Inv> inv,UserInfo userInfo)
     {
         var info = userInfo;
         double CaloriesInCart = inv.Sum(i => i.item.Calorie);
@@ -79,7 +71,7 @@ class Space : Node
         {
             Console.WriteLine($"Du mangler at tilføje flere kalorier til din kurv, før du kan gå til Kurv du mangler {Calodif} Kalorier");
         }
-    }
+    }*/
 
     public Space FollowEdge(string direction)
     {

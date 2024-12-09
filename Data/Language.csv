@@ -56,7 +56,7 @@ Direction_Confused,Du er forvirret og går rundt i en cirkel imens du leder efte
 Added_To_Cart,{0} er tilføjet til kurven.,{0} has been added to your cart.
 Scoreboard,Spiller: {0}; Mad Score: {1}; Miljø Score: {3},Player: {0}; Food Score: {1}; Environment Score: {3}
 Youre_At,Du er nu ved {0},You're now at {0}
-Its_At,Det er nu ved:,It's now at:
+Its_At,Du kan nu gå til:,You can go to:
 Not_Enough_Calories,Du mangler at tilføje flere kalorier til din kurv før du kan gå til kurv. Du manger {0} kalorier,You need to add more calories to your cart. Before you can go to checkout you need to add {0} calories
 Checkout_Vare,Vare: {0},Items: {0}
 Checkout_Kalorier,Kalorier: {0},Carbs: {0}
@@ -64,3 +64,21 @@ Checkout_Kulhydrater,Kulhydrater: {0},Calories: {0}
 Checkout_Protein,Proteiner: {0},Proteins: {0}
 Checkout_Fedt,Fedt: {0},Fat: {0}
 Checkout_CO2,CO2: {0},CO2: {0}
+Fjerner,Fjerner: {0},Removing: {0}
+Calorie_Goal, Daglige kalorie mål er: {0}/{1}:,Daily calorie goal is: {0}
+Kulhydrat,Kulhydrat: {0}/{1},Carbs: {0}/{1}
+Fedt,Fedt: {0}/{1},Fat: {0}/{1}
+Items_In_Cart,Varer i din kurv.,Items in your cart.
+Missing_Items_In_Cart,Du mangler at tilføje varer til din kurv før du kan gå til kassen. Du mangler {0} kalorier,You need to add more carbs to your cart before going to checkout. You are missing {0} carbs.
+Checkout_Item, Varer: {0},Items: {0}
+Checkout_Calories,Kalorier: {0},Calories: {0}
+Checkout_Carbs,Kulhydrater: {0},Carbs: {0}
+Checkout_Fat,Fedt: {0},Fat: {0}
+Checkout_Items_In_Cart,Varene i din kurv dækker over {0} % af de påkrævet macros.,The items in your cart covers {0} of your required macros.
+Earths,Hvis alle handlede som dig skulle vi bruge {0} jordkloder kun til at handle madvarer,If everyone did their shoppings like you we would have to use {0} only for grocery shoppings.
+Varer,Varer,Items
+Pris,Pris,Price
+Kalorier,Kalorier,Calories
+Fedt,Fedt,Fat
+Protein,Protein,Protein
+Kulhydrater,Kulhydrater,Carbs

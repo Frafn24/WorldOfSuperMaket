@@ -113,13 +113,7 @@ class Game {
                 {
                     sounds.LOL();
                 }
-                /* if (line=="Actions")
-                 {
-                     TextC.ActionsText();
-                     Console.Write(">");
-                     var line2 = Console.ReadLine();
-                     line = line +" "+ line2;
-                 }*/
+             
                 if (line == "Checkout")
                 {
                     line = line + " Checkout";

@@ -1,4 +1,4 @@
-using WorldOfSuperMaket.Readers;
+/*using WorldOfSuperMaket.Readers;
 
 namespace WorldOfSuperMaket;
 
@@ -57,4 +57,4 @@ public class Data
         EnvironmentScore = environmentScore;
     }
     
-}
+}*/

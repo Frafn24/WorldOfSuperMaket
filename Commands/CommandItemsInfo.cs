@@ -17,9 +17,4 @@ class CommandItemsInfo : BaseCommand, ICommand
     {
         
     }
-
-    public void Show()
-    {
-        //Console.WriteLine($"{Itm[0].Getname()}");
-    }
 }

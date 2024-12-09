@@ -25,7 +25,7 @@ namespace WorldOfSuperMaket.Commands
                 return;
             }
 
-            //Console.WriteLine(Info);
+            
         }
 
 
