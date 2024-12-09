@@ -8,6 +8,12 @@ public class CheckOut
 {
     public void DoCheckOut(List<Inv> inv, UserInfo userInfo)
     {
+        decimal totalPrice = 0;
+        decimal totalFat = 0;
+        decimal totalCO2 = 0;
+        decimal totalCarbs = 0;
+        decimal totalProteins=0;
+        decimal totalCal =0;
         var sounds = new Lyd();
         Console.Clear();
         foreach (var item in inv)
@@ -21,15 +27,18 @@ public class CheckOut
             Console.WriteLine($"CO2: {info[4]}");
             Console.WriteLine();
         }
-        
-        decimal totalPrice = inv.Sum(x => x.item.Price*x.Number);
-        decimal totalCO2 = inv.Sum(x => x.item.C02 * x.Number);
-        decimal totalFat = inv.Sum(x => x.item.Fat * x.Number);
-        decimal totalCarbs = inv.Sum(x => x.item.Carbo * x.Number);
-        decimal totalProteins = inv.Sum(x => x.item.Protien * x.Number);
-        decimal totalCal = inv.Sum(x=> x.item.Calorie * x.Number);
+        foreach (var item in inv)
+        {
+            totalPrice = totalPrice+item.Number * item.item.Price;
+            totalFat = totalFat+item.Number * item.item.Fat;
+            totalCO2 = totalCO2+item.Number * item.item.C02;
+            totalCarbs = totalCarbs+item.Number * item.item.Carbo;
+            totalProteins= totalProteins+item.Number * item.item.Protien;
+            totalCal = totalCal+item.Number * item.item.Calorie;
+        }
 
-        decimal carbsPercentage = (totalCarbs / userInfo.DaliyKullhydrat) * 100;
+
+        decimal carbsPercentage = Convert.ToDecimal((totalCarbs / userInfo.DaliyKullhydrat) * 100);
         decimal proteinsPercentage = (totalProteins / userInfo.DaliyProtien) * 100;
         decimal fatPercentage = (totalFat / userInfo.DaliyFat) * 100;
 
@@ -71,9 +80,9 @@ public class CheckOut
         foreach (var item in inv)
         {
             var info = item.item.GetMacros();
-            Console.WriteLine($"{item.item.GetName()}".PadRight(30) + $"{info[1 / 100]} Kr.".PadLeft(10) +
-                              $"{info[0 ]} g".PadLeft(10) + $"{info[4]} g".PadLeft(10) + $"{info[3]} g".PadLeft(10) +
-                              $"{info[2]} g".PadLeft(10) + $"{info[5 / 100]} kg".PadLeft(20));
+            Console.WriteLine($"{item.item.GetName()}".PadRight(30) + $"{info[1]/100} Kr.".PadLeft(10) +
+                              $"{info[0]} g".PadLeft(10) + $"{info[4]} g".PadLeft(10) + $"{info[3]} g".PadLeft(10) +
+                              $"{info[2]} g".PadLeft(10) + $"{info[5]/100} kg".PadLeft(20));
         }
         Console.WriteLine(new string('-', 100));
 
@@ -85,7 +94,7 @@ public class CheckOut
         
         Console.WriteLine("");
         Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Items_In_Cart"),Math.Round(foodScore,2));
-        Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2));
+        Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2)/1000);
         Console.WriteLine("");
 
         Console.WriteLine(new string('-', 100));

@@ -1,66 +1,27 @@
-Navn,Beskrivelse,Name,Description,Type,kcal,Kulhydrat (g),Protein (g),Fedt (g),CO2e,Pris (kr)
-Mælk 1L,Minimælk,Milk 1L,Mini milk,Refrigerator,380,47,35,5,00.55,11.50
-Smør 200g,"Smør, saltet",Butter 200g,"Butter, salted",Refrigerator,1432,0.2,1.8,162,01.17,30.35.00
-Hakket oksekød 500g,5-10% fedt,Ground beef 500g,5-10% fat,Meats,1120,0,96.5,80,21.00,47.28.00
-Æg 10stk,Skrabeæg,Eggs 10pcs,Scratch Eggs,Refrigerator,832,6.6,73.8,57,00.59,27.25.00
-Ost 500g,Danbo ost,Cheese 500g,Danbo cheese,Refrigerator,1585,4,116,125,03.32,40.35.00
-Kyllingekød 500g,"Bryst, kød og skind",Chicken meat 500g,"Breast, meat and skin",Meats,745,0.5,108,35,02.59,50.35.00
-Creme fraiche 500g,18% fedt,Sour cream 500g,18% fat,Refrigerator,933,14.5,14,93,01.33,19.35
-Kikærter 400g,Konserveskikærter,Chickpeas 400g,Canned chickpeas,Preserves,453,48,28.8,9.2,04.00,06.50
-Flødeis 1L,Premier Vaniljeis,Ice cream 1L,Vanilla,Refrigerator,1551,277,40,30,03.31,35.50.00
-Yoghurt 1L,"Naturel, sødmælk",Yogurt 1L,"Natural, whole milk",Refrigerator,624,45,34,35,01.05,16.00
-Frysepizza,"Oksekød, tomat og ost, 420g",Freezer pizza,"Beef, tomato and cheese, 420g",Frozen,1085,"123,9","49,6","41,2",02.22,27.35.00
-Havregryn 1kg,Havregryn,Oatmeal 1kg,Oatmeal,Preserves,3683,570,142,67,01.48,09.50
-Agurk 300g,1 Agurk,Cucumber 300g,1 cucumber,Groceries,36,5.4,2.1,0,00.11,10.00
-Kartofler 1kg,Kartofler,Potatoes 1kg,Potatoes,Groceries,779,159,20,0.9,00.39,15.00
-Salat 100g,1 Iceberghoved,Salad 100g,1 Iceberg head,Groceries,16,2.4,0.8,0.1,00.04,11.00
-Toastbrød 300g,Fint hvedebrød,Toast bread 300g,Fine wheat bread,Bakery,772,141,26.1,8.4,00.28,05.00
-Rugbrød 500 g,Fuldkornsrugbrød,Rye bread 500 g,Whole grain rye bread,Bakery,1007,185,27.5,7,00.40,13.25
-Ærter  1Kg,Frosne ærter,Peas 1Kg,Frozen peas,Frozen,684,50,57,9,01.52,50.00.00
-Spinat 500g,Frossent hakket spinat,Spinach 500g,Frozen chopped spinach,Frozen,129,11,10.5,2.5,00.29,29.00.00
-Bønner 500g,Frosne bønner,Beans 500g,Frozen beans,Frozen,147,14,11,1.5,01.26,15.50
-Kødboller 500g,Frosne okse/gris kødboller,Meatballs 500g,Frozen beef/pork meatballs,Frozen,811,45,52.5,47,07.01,30.00.00
-Hindbær 200g,Frosne hindbær,Raspberries 200g,Frozen raspberries,Frozen,76,15.4,2.4,0.8,00.22,15.20
-Jordbær 200g,Frosne jordbær,Strawberries 200g,Frozen strawberries,Frozen,39,12.6,0,0,00.11,07.50
-Bacon  100g,Bacon i skiver,Bacon 100g,Bacon in slices,Frozen,424,0,13,42,01.04,12.00
-Tortillabrød 300g,"Tortillabrød, hvede",Tortilla bread 300g,"Tortilla bread, wheat",Bakery,760,"148,8",22.8,4.8,28.00.00,20.00
-Grovboller 8stk,Grovboller 500g,Wholemeal buns 8pcs,Wholemeal Balls 500g,Bakery,1442,247,52.5,20,00.47,25.00.00
-Mandeldrik 1L,Usødet mandelmælk,Almond drink 1L,Unsweetened almond milk,Refrigerator,130,2,2,10,00.53,23.35
-Rismælk 1L,"Plantemælk, usødet",Rice milk 1L,"Plant milk, unsweetened",Refrigerator,470,53,8.4,10,01.40,27.50.00
-Pasta 500g,Fuldkornspasta,Pasta 500g,Wholemeal pasta,Groceries,1745,354,65,7,01.03,15.00
-Ris 1kg,Hvide ris,Rice 1kg,White rice,Groceries,3440,780,70,2.5,05.09,18.35
-Tomater 500g,Friske tomater,Tomatoes 500g,Fresh tomatoes,Groceries,90,14,4.5,0.4,01.36,20.00
-Bananer 1kg,Modne bananer,Bananas 1kg,Ripe bananas,Groceries,890,200,8,0.5,01.25,25.00.00
-Æbler 1kg,Røde æbler,Apples 1kg,Red apples,Groceries,520,118,4.5,1.5,00.58,20.00
-Sukker 1kg,Hvidt sukker,Sugar 1kg,White sugar,Groceries,4000,1000,0,0,03.06,13.35
-Tun 185g,Tun på dåse i vand,Tuna 185g,Canned tuna in water,Preserves,195,0,42,2.5,01.15,24.35.00
-Fuldkornskiks 200g,Rug- og havrekiks,Whole wheat biscuits 200g,Rye and oat biscuits,Bakery,895,148,12,22,00.56,24.35.00
-Leverpostej 250g,Bagte leverpostej,Liver pâté 250g,Baked liver pâté,Refrigerator,560,12,20,50,01.39,30.35.00
-Olivenolie 500ml,Koldpresset ekstra jomfru,Olive Oil 500ml,Cold-pressed extra virgin,Groceries,4500,0,0,500,02.32,68.35.00
-Chokolade 100g,"Mørk chokolade, 70% kakao",Chocolate 100g,"Dark chocolate, 70% cocoa",Groceries,540,54,7.3,32,01.03,12.35
-Kaffe 250g,Formalet kaffe,Coffee 250g,Pre-ground coffee,Groceries,0,0,0,0,"1,35",28.00.00
-Kål 500g,Hvidkål,Cabbage 500g,White cabbage,Groceries,125,15,8,1,00.14,11.35
-Peanuts 200g,Saltede jordnødder,Peanuts 200g,Salted peanuts,Groceries,1140,24,50,91,01.09,30.35.00
-Appelsiner 1kg,Friske appelsiner,Oranges 1kg,Fresh oranges,Groceries,400,90,6,0.3,00.53,18.00
-Fuldkornsbrød 400g,Økologisk fuldkornsbrød,Wholemeal bread 400g,Organic whole grain bread,Bakery,860,150,30,10,00.41,12.35
-Rapsolie 1L,Koldpresset rapsolie,Rapeseed oil 1L,Cold-pressed rapeseed oil,Groceries,8840,0,0,1000,04.20,19.35
-Grønne linser 400g,Konserves linser,Green lentils 400g,Canned lentils,Preserves,448,60,32,1.8,01.38,17.35
-Havremælk 1L,Uden sukker,Oat milk 1L,No sugar,Refrigerator,390,45,8,9,00.41,23.35
-Spinat 200g,Økologisk frisk spinat,Spinach 200g,Organic Fresh Spinach,Groceries,40,4,4.5,0.5,00.09,19.00
-Rødløg 1kg,Rødløg,Red onion 1kg,Red onion,Groceries,340,78,11,0.3,01.10,15.00
-Hvidløg 200g,Hele hvidløg,Garlic 200g,Whole garlic,Groceries,296,66,12,1,00.23,12.22
-Tofu 400g,"Fast tofu, økologisk",Tofu 400g,"Firm tofu, organic",Refrigerator,512,12,50,30,01.16,41.00.00
-Peanutbutter 250g,Økologisk uden sukker,Peanut butter 250g,Organic without sugar,Groceries,1450,30,75,120,01.36,25.35.00
-Løg 1kg,Almindelige løg,Onion 1kg,Common onions,Groceries,400,93,12,0.4,00.25,12.00
-Hakkede tomater 400g,Hakkede tomater,Chopped tomatoes 400g,Chopped tomatoes,Preserves,76,15.2,4.2,0.4,00.42,06.50
-Frosne blåbær 200g,Økologiske frosne blåbær,Frozen Blueberries 200g,Organic frozen blueberries,Frozen,46,11.7,1,0.2,00.18,15.00
-Gulerødder 1kg,Friske gulerødder,Carrots 1kg,Fresh carrots,Groceries,350,83,7,0.5,00.27,14.00
-Oliven 200g,"Grønne oliven, i lage",Olives 200g,"Green olives, in brine",Groceries,294,5,2.2,31,00.37,48.35.00
-Knækbrød 250g,Fuldkorns knækbrød,Crispbread 250g,Wholemeal crispbread,Bakery,800,130,20,12,00.33,22.35
-Honning 500g,Flydende honning,Honey 500g,Liquid honey,Groceries,1500,400,0.5,0,00.40,33.35.00
-Appelsinjuice 1L,Friskpresset juice,Orange juice 1L,Freshly squeezed juice,Refrigerator,410,100,5,0.5,01.41,45.00.00
-Rødbeder 500g,Friske rødbeder,Beetroot 500g,Fresh beetroot,Groceries,188,35,7,1,00.16,24.35.00
-Slikmix 200g,"Slik, blandet",Candy mix 200g,"Candy, mixed",Groceries,850,200,5,0.5,00.48,25.00.00
-Frosne rejer 500g,Pillede rejer,Frozen prawns 500g,Peeled prawns,Frozen,350,0.5,85,3,04.40,38.17.00
-Havsalt 500g,Fint havsalt,Sea salt 500g,Fine sea salt,Groceries,0,0,0,0,00.22,15.00
-,,, ,,,,,,,
+Items navne,Description,Type,kcal,Kulhydrat (g),Protein (g),Fedt (g),CO2e
+Mælk 1L,Mini mælk,Refrigerator,380,47,35,5,0.55,11.50
+Smør 200g,Smør saltet,Refrigerator,1432,0.2,1.8,162,0.77,29.95
+Hakket oksekød 500g,5-10% fedt,Meats,1120,0,96.5,80,20.6,46.85
+Æg 10stk,Skrabeæg,Refrigerator,832,6.6,73.8,57,0.59,27.25
+Ost 500g,Danbo ost,Refrigerator,1585,4,116,125,3.32,39.95
+Kyllingekød 500g,Bryst kød og skind,Meats,745,0.5,108,35,2.59,49.95
+Creme fraiche 500g,18% fedt,Refrigerator,933,14.5,14,93,0.93,18.95
+Kikærter 400g,Konserveskikærter,Preserves,453,48,28.8,9.2,4,6.50
+Flødeis 1L,Vanilje,Refrigerator,1551,277,40,30,2.91,35.50
+Yoghurt 1L,Naturel sødmælk,Refrigerator,624,45,34,35,0.65,16.00
+Frysepizza,Oksekød tomat og ost 420g,Frozen,1085,123.9,49.6,41.2,1.82,26.95
+Havregryn 1kg,Havregryn,Preserves,3683,570,142,67,1.48,9.50
+Agurk 300g,1 Agurk,Groceries,36,5.4,2.1,0,0.11,10.00
+Kartofler 1kg,Kartofler,Groceries,779,159,20,0.9,0.39,15.00
+Salat 100g,1 Iceberghovede,Groceries,16,2.4,0.8,0.1,0.04,11.00
+Toastbrød 300g,Fint hvedebrød,Bakery,772,141,26.1,8.4,0.28,5.00
+Rugbrød 500 g,Fuldkornsrugbrød,Bakery,1007,185,27.5,7,0.4,13.25
+Ærter 1Kg,Frosne ærter,Frozen,684,50,57,9,1.52,50.00
+Spinat 500g,Frossent hakket spinat,Frozen,129,11,10.5,2.5,0.29,29.00
+Bønner 500g,Frosne bønner,Frozen,147,14,11,1.5,0.86,15.50
+Kødboller 500g,Frosne okse/gris kødboller,Frozen,811,45,52.5,47,6.61,30.00
+Hindbær 200g,Frosne hindbær,Frozen,76,15.4,2.4,0.8,0.22,14.80
+Jordbær 200g,Frosne jordbær,Frozen,39,12.6,0,0,0.11,7.50
+Bacon 100g,Bacon i skiver,Frozen,424,0,13,42,0.64,12.00
+Tortillabrød 300g,Tortillabrød hvede,Bakery,760,148.8,22.8,4.8,28,20.00
+Grovboller 8stk,Grovboller 500g,Bakery,1442,247,52.5,20,0.47,25.00
