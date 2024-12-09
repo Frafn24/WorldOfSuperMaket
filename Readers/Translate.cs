@@ -13,7 +13,7 @@ public class Translate
     private Dictionary<string, string> ActiveTranslations = new Dictionary<string, string>();
 
     // constructor som sikrer vi kun har denne ene instans
-    private Translate() { }
+    public Translate() { }
 
     // Indlæser oversættelserne
     public void SetLanguage(string language)
