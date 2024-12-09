@@ -42,7 +42,7 @@ public class Translate
                 throw new Exception("Language not supported. Either pick danish or english.");
             }
         }
-
+        //lol
     }
 
     public string GetTranslation(string key)
