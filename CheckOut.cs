@@ -65,9 +65,10 @@ public class CheckOut
             $"{Translate.Instance.GetTranslation("Varer").PadRight(25)}" +
             $"{Translate.Instance.GetTranslation("Pris").PadLeft(15)}" +
             $"{Translate.Instance.GetTranslation("Kalorier").PadLeft(14)}" +
-            $"{Translate.Instance.GetTranslation("Fedt").PadLeft(10)}" +
+            $"{Translate.Instance.GetTranslation("Fedt").PadLeft(8)}" +
             $"{Translate.Instance.GetTranslation("Protein").PadLeft(10)}" +
-            $"{Translate.Instance.GetTranslation("Kulhydrater").PadLeft(14)}");
+            $"{Translate.Instance.GetTranslation("Kulhydrater").PadLeft(14)}" +
+            $"{Translate.Instance.GetTranslation("CO2").PadLeft(7)})");
 
         Console.WriteLine(new string('-', 100));
 
