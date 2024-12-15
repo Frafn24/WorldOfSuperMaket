@@ -5,8 +5,8 @@ Welcome3,Udfordringen ved spillet er at du også skal have fokus på at have et 
 Welcome4,Jo lavere dit CO2 aftryk jo bedre en score får du til sidst.,The lower your footprint the better score at the end of the game.
 Welcome5,Velkommen til supermarkedet.,Welcome to the supermarket.
 Welcome6,Du kan skrive 'gå' + 'lokation' for at bevæge dig.,You can type 'go' + 'location' to move.
-Welcome7,Skriv 'Actions' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
-Welcome8,Skriv 'help' for at se alle kommandoer.,Type 'help' to see all commands.
+Welcome7,Skriv 'handlinger' for at se hvad du kan gøre i det rum du er i.,Type 'Actions' to see what you can do in the room you're in.
+Welcome8,Skriv 'hjælp' for at se alle kommandoer.,Type 'help' to see all commands.
 Wrong Input,Jeg kan ikke finde ud af hvor det er henne ??,I don't seem to know where that is ??
 Add_item,Ønsker du at tilføje denne vare til kurven?,Do you want to add this item to your cart?
 Add_Choose,Du skal vælge mellem 'ja' eller 'nej'.,You have to choose 'yes' or 'no'
@@ -24,7 +24,7 @@ Inv_No_Choice,Der er ikke noget i dit inventory eller du har ikke valgt noget it
 Arrow_Keys_Remove,Brug piletasterne til at vælge hvad du vil fjerne fra kurven og tryk Enter:,Use your arrow keys to choose what you want to remove and press Enter:
 Cart_Empty,Din kurv er nu tom.,Your cart is now empty.
 Help,Kommandoer:,Commands:
-CommandUnknown,Woopsie jeg forstår ikke 'command',Woopsie i don't understand 'command'
+CommandUnknown,Woopsie jeg forstår ikke {0},Woopsie i don't understand {0}
 Actions1,De handlinger du kan vælge imellem er:,The actions you can do are:
 Actions2,Tilføj vare - Tilføj,Add item - Add
 Actions3,Fjern vare - Fjern,Remove item - Remove
@@ -85,3 +85,4 @@ Protein,Protein,Protein
 Kulhydrater,Kulhydrater,Carbs
 CO2,CO2,CO2
 KviteringSamlet,Samlet:,In all:
+Welcome_Hello,Velkommen til supermarkedet {0}!,Welcome to the supermarket {0}!

@@ -6,6 +6,6 @@ using WorldOfSuperMaket.Readers;
 
 class CommandUnknown : BaseCommand, ICommand {
   public void Execute (Context context, string command, string[] parameters) {
-      Console.WriteLine(Translate.Instance.GetTranslation("CommandUnknown"));
+      Console.WriteLine(Translate.Instance.GetTranslation("CommandUnknown"), command);
   }
 }

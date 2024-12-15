@@ -98,6 +98,9 @@ namespace WorldOfSuperMaket.Commands
                 case "Inventory":
                     InvActions.Show(inv, User);
                     break;
+                case "inventory":
+                    InvActions.Show(inv, User);
+                    break;
                 
                 case "Checkout":
                     InvActions.CheckOut(inv, User);

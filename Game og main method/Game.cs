@@ -23,7 +23,8 @@ class Game {
     TextAnime text = new TextAnime();
     Lyd sounds = new Lyd();
     private string? language;
-    private string QuestionsBefore = "https://docs.google.com/forms/d/e/1FAIpQLSd-H-n-lt57jKjZ86WlugHdVyTxHHO4EyXT6QK8ovrH3WlP_g/viewform?usp=dialog";
+    private string QuestionsBefore = "https://docs.google.com/forms/d/1JJ3q5uzBCSxfbjSfjolMz9TDKq678vtFBpz09ScOGFg/edit";
+        
   
   //SoundsClass sound = new SoundsClass();
   
@@ -75,8 +76,8 @@ class Game {
         user = new UserInfo(playerName);
         InitRegistry();
         Console.WriteLine();
-        Console.WriteLine($"Hello {UserInfo.Username}!");
-        Console.WriteLine(Translate.Instance.GetTranslation("Welcome5"));
+        Console.WriteLine(Translate.Instance.GetTranslation("Welcome_Hello"), UserInfo.Username);
+        //Console.WriteLine(Translate.Instance.GetTranslation("Welcome5"));
         Console.WriteLine("");
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome1"));
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome2"));
