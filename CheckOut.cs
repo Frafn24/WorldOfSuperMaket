@@ -59,7 +59,7 @@ public class CheckOut
 
         decimal foodScore = (fatPercentage + carbsPercentage + proteinsPercentage) / 3;
         
-        decimal EnviromentScore = (totalCO2 / 100) / (decimal)(0.55 / 52.0);
+        decimal EnviromentScore = (totalCO2 / 100) / (decimal)(553 / 52.0);
         Console.Clear();
         Console.WriteLine("****************************************************************************************************");
         Console.WriteLine("                                         KVITTERING");
@@ -94,7 +94,7 @@ public class CheckOut
         
         Console.WriteLine("");
         Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Items_In_Cart"),Math.Round(foodScore,2));
-        Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2)/1000);
+        Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2));
         Console.WriteLine("");
 
         Console.WriteLine(new string('-', 100));
