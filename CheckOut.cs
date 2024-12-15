@@ -14,6 +14,8 @@ public class CheckOut
         decimal totalCarbs = 0;
         decimal totalProteins=0;
         decimal totalCal =0;
+        string QuestionsAfter =
+            "https://docs.google.com/forms/d/e/1FAIpQLSd-H-n-lt57jKjZ86WlugHdVyTxHHO4EyXT6QK8ovrH3WlP_g/viewform?usp=dialog";
         var sounds = new Lyd();
         Console.Clear();
         foreach (var item in inv)
@@ -59,7 +61,7 @@ public class CheckOut
 
         decimal foodScore = (fatPercentage + carbsPercentage + proteinsPercentage) / 3;
         
-        decimal EnviromentScore = (totalCO2 / 100) / (decimal)(0.55 / 52.0);
+        decimal EnviromentScore = (totalCO2 / 100) / (decimal)(553 / 52.0);
         Console.Clear();
         Console.WriteLine("****************************************************************************************************");
         Console.WriteLine("                                         KVITTERING");
@@ -94,7 +96,7 @@ public class CheckOut
         
         Console.WriteLine("");
         Console.WriteLine(Translate.Instance.GetTranslation("Checkout_Items_In_Cart"),Math.Round(foodScore,2));
-        Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2)/1000);
+        Console.WriteLine(Translate.Instance.GetTranslation("Earths"),Math.Round(EnviromentScore,2));
         Console.WriteLine("");
 
         Console.WriteLine(new string('-', 100));
@@ -103,28 +105,11 @@ public class CheckOut
         Console.WriteLine("Tryk 'Enter' for at komme videre til spørgeskema.");
         Console.ReadKey();
         Console.Clear();
-        Console.WriteLine("Har du lært noget om at reducere dit CO2-aftryk, når du handler ind? (ja/nej)");
+        Console.WriteLine("Tusind tak fordi du ville spille vores spil! Linket til spørgeskemaet:");
+        Console.WriteLine(QuestionsAfter);
+        Console.WriteLine("");
 
-        string? svar = string.Empty;
-        while (true)
-        {
-            Console.Write("> ");
-            svar = Console.ReadLine()?.ToLower(); 
-            if (svar == "ja")
-            {
-                Console.WriteLine("Det er fantastisk at høre! Tak for din feedback.");
-                break; 
-            }
-            else if (svar == "nej")
-            {
-                Console.WriteLine("Det er ærgerligt at høre. Vi håber, du vil lære mere næste gang!");
-                break; 
-            }
-            else
-            {
-                Console.WriteLine("Ugyldigt svar. Prøv venligst igen og skriv 'ja' eller 'nej'.");
-            }
-        }
+        
 
         Console.WriteLine("Tak fordi du spillede spillet!");
         sounds.GameOver();
