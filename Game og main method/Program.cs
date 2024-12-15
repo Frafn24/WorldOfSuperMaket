@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using CsvHelper;
+using WorldOfSuperMaket.Sounds;
 
 namespace WorldOfSuperMaket;
 
@@ -7,13 +8,7 @@ public class Program
 {
     static void Main(string[] args)
     {
-        /*CsvReader csvReader = new CsvReader();
-        var s =csvReader.csvTest();
-        foreach (var item in s)
-        {
-            Console.WriteLine(item.Name);
-        }*/
-
+        //test();
         RunGame();
         Console.ReadLine();
 
@@ -23,6 +18,11 @@ public class Program
         Game game = new Game();
         game.run();
         
+    }
+    static void test()
+    {
+        Lyd lyd = new Lyd();
+        lyd.GameOver();
     }
 }
 

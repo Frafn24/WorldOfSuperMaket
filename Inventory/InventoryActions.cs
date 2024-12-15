@@ -26,53 +26,73 @@ public class InventoryActions
                 {
                     if (i == selectedIndex)
                     {
-                        Console.ForegroundColor = ConsoleColor.Green; // Markér valget
-                        Console.WriteLine($">{stock[i].Name}");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.WriteLine($">{stock[i].Name}");
-                    }
-                }
-
-                // Håndter brugerinput
-                var key = Console.ReadKey(intercept: true).Key;
-                switch (key)
-                {
-                    case ConsoleKey.UpArrow:
-                        selectedIndex = (selectedIndex == 0) ? stock.Count() - 1 : selectedIndex - 1;
-                        break;
-                    case ConsoleKey.DownArrow:
-                        selectedIndex = (selectedIndex == stock.Count() - 1) ? 0 : selectedIndex + 1;
-                        break;
-                    case ConsoleKey.Enter:
-                        Console.Clear();
-                        if (stock[selectedIndex].Name == "Tilbage")
+                        if (stock[i].Name != "Tilbage")
                         {
-                            return inv;
-                        }
-                       
-                        Console.WriteLine(Translate.Instance.GetTranslation("Added_To_Cart"), stock[selectedIndex].Name);
-                        if (inv.Count(x => x.item.Name == stock[selectedIndex].Name) > 0)
-                        {
-                            int index = inv.FindIndex(x => x.item == stock[selectedIndex]);
-                            var inve = inv[index];
-                            inve.Number++;
-                            inv[index] = inve;
+                            Console.ForegroundColor = ConsoleColor.Green; // Markér valget
+                            Console.WriteLine($">{stock[i].Name} C02{stock[i].GetCO2()} gram");
+                            Console.ResetColor();
                         }
                         else
                         {
-                            inv.Add(new Inv { Number = 1, item = stock[selectedIndex] });
+                            Console.ForegroundColor = ConsoleColor.Green; // Markér valget
+                            Console.WriteLine($">{stock[i].Name}");
+                            Console.ResetColor();
                         }
-                      
+                    }
+                    else
+                    {
+                        if (stock[i].Name != "Tilbage")
+                        {
 
-                        selectedIndex = Math.Min(selectedIndex, stock.Count() - 1); // Juster index
-                        Console.ReadKey();
-                        break;
-                    case ConsoleKey.Escape:
-                        Console.WriteLine(Translate.Instance.GetTranslation("Returning"));
-                        return inv;
+                            Console.WriteLine($"> {stock[i].Name}.stk : {stock[i].GetCO2()} gram");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($">{stock[i].Name}");
+                        }
+                    }
+
+                    // Håndter brugerinput
+                    var key = Console.ReadKey(intercept: true).Key;
+                    switch (key)
+                    {
+                        case ConsoleKey.UpArrow:
+                            selectedIndex = (selectedIndex == 0) ? stock.Count() - 1 : selectedIndex - 1;
+                            break;
+                        case ConsoleKey.DownArrow:
+                            selectedIndex = (selectedIndex == stock.Count() - 1) ? 0 : selectedIndex + 1;
+                            break;
+                        case ConsoleKey.Enter:
+                            Console.Clear();
+                            if (stock[selectedIndex].Name == "Tilbage")
+                            {
+                                return inv;
+                            }
+
+                            Console.WriteLine(Translate.Instance.GetTranslation("Added_To_Cart"), stock[selectedIndex].Name);
+                            if (inv.Count(x => x.item.Name == stock[selectedIndex].Name) > 0)
+                            {
+                                int index = inv.FindIndex(x => x.item == stock[selectedIndex]);
+                                var inve = inv[index];
+                                inve.Number++;
+                                inv[index] = inve;
+                            }
+                            else
+                            {
+                                inv.Add(new Inv { Number = 1, item = stock[selectedIndex] });
+                            }
+
+
+                            selectedIndex = Math.Min(selectedIndex, stock.Count() - 1); // Juster index
+                            Console.ReadKey();
+                            break;
+                        case ConsoleKey.Escape:
+                            Console.WriteLine(Translate.Instance.GetTranslation("Returning"));
+                            return inv;
+                            break;
+
+                    }
                 }
             }
         }
@@ -103,7 +123,7 @@ public class InventoryActions
                 int selectedIndex = 0;
                 bool back = true;
                 bool exMark = false;
-                var afslut = new Items("afslut", "", "", 0, 0, 0, 0, 0, 0);
+                var afslut = new Items("Tilbage", "", "", 0, 0, 0, 0, 0, 0);
                 newinv.Add(new Inv { Number = 1, item = afslut });
                 while (back)
                 {
@@ -115,7 +135,7 @@ public class InventoryActions
                     {
                         if (i == selectedIndex)
                         {
-                            if (inv[i].item.Name != "afslut")
+                            if (inv[i].item.Name != "Tilbage")
                             {
                                 Console.ForegroundColor = ConsoleColor.Green; // Markér valget
                                 Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item.Name}");
@@ -130,17 +150,17 @@ public class InventoryActions
                         }
                         else
                         {
-                            if (inv[i].item.Name != "afslut")
+                            if (inv[i].item.Name != "Tilbage")
                             {
-                                
+
                                 Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item.Name}");
-                               
+
                             }
                             else
                             {
-                                 // Markér valget
+                                // Markér valget
                                 Console.WriteLine($"> {inv[i].item.Name}");
-                                
+
                             }
                         }
 
@@ -159,22 +179,22 @@ public class InventoryActions
                             break;
                         case ConsoleKey.Enter:
                             Console.Clear();
-                            if (inv[selectedIndex].item.Name != "afslut")
+                            if (inv[selectedIndex].item.Name != "Tilbage")
                             {
                                 if (inv[selectedIndex].Number > 1)
                                 {
-                                    Console.WriteLine(Translate.Instance.GetTranslation("Fjerner"),inv[selectedIndex].Number - 1);
+                                    Console.WriteLine(Translate.Instance.GetTranslation("Fjerner"), inv[selectedIndex].Number - 1);
                                     inv[selectedIndex].Number--;
                                 }
                                 else
                                 {
-                                    Console.WriteLine(Translate.Instance.GetTranslation("Fjerner"),inv[selectedIndex]);
+                                    Console.WriteLine(Translate.Instance.GetTranslation("Fjerner"), inv[selectedIndex]);
                                     inv.RemoveAt(selectedIndex);
                                 }
                             }
                             else
                             {
-                                var res = newinv.Where(x => x.item.Name != "afslut").ToList();
+                                var res = newinv.Where(x => x.item.Name != "Tilbage").ToList();
                                 return res;
                             }
 
@@ -204,9 +224,9 @@ public class InventoryActions
         Console.Clear();
         if (inv.Count() > 0)
         {
-            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"), user.DaliyCalo, Math.Round(inv.Sum(x => x.item.Calorie ), 0));
-            Console.WriteLine(Translate.Instance.GetTranslation("Carbs_Goal"),user.DaliyKullhydrat,inv.Sum(x => x.item.Carbo ));
-            Console.WriteLine(Translate.Instance.GetTranslation("Fat_Goal"),user.DaliyFat,inv.Sum(x => x.item.Fat ));
+            Console.WriteLine(Translate.Instance.GetTranslation("Calorie_Goal"), user.DaliyCalo, Math.Round(inv.Sum(x => x.item.Calorie), 0));
+            Console.WriteLine(Translate.Instance.GetTranslation("Carbs_Goal"), user.DaliyKullhydrat, inv.Sum(x => x.item.Carbo));
+            Console.WriteLine(Translate.Instance.GetTranslation("Fat_Goal"), user.DaliyFat, inv.Sum(x => x.item.Fat));
             Console.WriteLine($"Protein: {inv.Sum(x => x.item.Protien / 100)} / {user.DaliyProtien} g");
             Console.WriteLine($"C02: {inv.Sum(x => x.item.C02 / 100)} Kg");
             Console.WriteLine(Translate.Instance.GetTranslation("Items_In_Cart"));
@@ -222,25 +242,25 @@ public class InventoryActions
             Console.WriteLine(Translate.Instance.GetTranslation("If_No_Items"));
         }
     }
-    public void CheckOut (List<Inv> inv, UserInfo userInfo)
+    public void CheckOut(List<Inv> inv, UserInfo userInfo)
     {
-        double CaloriesInCart = Convert.ToInt32(Math.Round(inv.Sum(x => x.item.Calorie), 0));                       
+        double CaloriesInCart = Convert.ToInt32(Math.Round(inv.Sum(x => x.item.Calorie), 0));
         bool EnoughCalories = CaloriesInCart >= userInfo.DaliyCalo;
         double Calodif = userInfo.DaliyCalo - CaloriesInCart;
         var checkOut = new CheckOut();
         checkOut.DoCheckOut(inv, userInfo);
 
-       /* if (EnoughCalories)
-        {
+        /* if (EnoughCalories)
+         {
 
-            
-        }
-        else
-        {
-            Console.WriteLine();
-           // Console.WriteLine($"du mangler at tilføje flere kalorier til din kurv, før du kan gå til kurv du mangler {Math.Round(Calodif,2)} kalorier");
-            Console.WriteLine(Translate.Instance.GetTranslation("Missing_Items_In_Cart"),Math.Round(Calodif,2));
-            Console.ReadLine();
-        }*/
+
+         }
+         else
+         {
+             Console.WriteLine();
+            // Console.WriteLine($"du mangler at tilføje flere kalorier til din kurv, før du kan gå til kurv du mangler {Math.Round(Calodif,2)} kalorier");
+             Console.WriteLine(Translate.Instance.GetTranslation("Missing_Items_In_Cart"),Math.Round(Calodif,2));
+             Console.ReadLine();
+         }*/
     }
 }
