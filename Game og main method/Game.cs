@@ -23,6 +23,7 @@ class Game {
     TextAnime text = new TextAnime();
     Lyd sounds = new Lyd();
     private string? language;
+    private string QuestionsBefore = "https://docs.google.com/forms/d/e/1FAIpQLSd-H-n-lt57jKjZ86WlugHdVyTxHHO4EyXT6QK8ovrH3WlP_g/viewform?usp=dialog";
   
   //SoundsClass sound = new SoundsClass();
   
@@ -82,8 +83,9 @@ class Game {
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome3"));
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome4"));
         Console.WriteLine("");
-     
-        
+        Console.WriteLine("Før du går ind i supermarkedet, vil vi sætte pris på, hvis du ville svare på vores spørgeskema:");
+        Console.WriteLine(QuestionsBefore);
+        Console.WriteLine("");
         while (context.IsDone() == false)
         {
             context.GetCurrent().Welcome();
