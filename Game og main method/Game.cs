@@ -84,7 +84,7 @@ class Game {
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome3"));
         Console.WriteLine(Translate.Instance.GetTranslation("Welcome4"));
         Console.WriteLine("");
-        Console.WriteLine("Før du går ind i supermarkedet, vil vi sætte pris på, hvis du ville svare på vores spørgeskema:");
+        Console.WriteLine(Translate.Instance.GetTranslation("Questions"));
         Console.WriteLine(QuestionsBefore);
         Console.WriteLine("");
         while (context.IsDone() == false)
