@@ -28,8 +28,9 @@ public class InventoryActions
                     {
                         if (stock[i].Name != "Tilbage")
                         {
+                            var test = stock[i].GetCO2();
                             Console.ForegroundColor = ConsoleColor.Green; // Markér valget
-                            Console.WriteLine($">{stock[i].Name} C02{stock[i].GetCO2()} gram");
+                            Console.WriteLine($">{stock[i].Name} C02 {stock[i].GetCO2()} gram");
                             Console.ResetColor();
                         }
                         else
@@ -49,51 +50,52 @@ public class InventoryActions
                         }
                         else
                         {
-                            Console.WriteLine($">{stock[i].Name}");
+                            Console.WriteLine($"> {stock[i].Name}");
                         }
                     }
-
-                    // Håndter brugerinput
-                    var key = Console.ReadKey(intercept: true).Key;
-                    switch (key)
-                    {
-                        case ConsoleKey.UpArrow:
-                            selectedIndex = (selectedIndex == 0) ? stock.Count() - 1 : selectedIndex - 1;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            selectedIndex = (selectedIndex == stock.Count() - 1) ? 0 : selectedIndex + 1;
-                            break;
-                        case ConsoleKey.Enter:
-                            Console.Clear();
-                            if (stock[selectedIndex].Name == "Tilbage")
-                            {
-                                return inv;
-                            }
-
-                            Console.WriteLine(Translate.Instance.GetTranslation("Added_To_Cart"), stock[selectedIndex].Name);
-                            if (inv.Count(x => x.item.Name == stock[selectedIndex].Name) > 0)
-                            {
-                                int index = inv.FindIndex(x => x.item == stock[selectedIndex]);
-                                var inve = inv[index];
-                                inve.Number++;
-                                inv[index] = inve;
-                            }
-                            else
-                            {
-                                inv.Add(new Inv { Number = 1, item = stock[selectedIndex] });
-                            }
-
-
-                            selectedIndex = Math.Min(selectedIndex, stock.Count() - 1); // Juster index
-                            Console.ReadKey();
-                            break;
-                        case ConsoleKey.Escape:
-                            Console.WriteLine(Translate.Instance.GetTranslation("Returning"));
-                            return inv;
-                            break;
-
-                    }
                 }
+
+                // Håndter brugerinput
+                var key = Console.ReadKey(intercept: true).Key;
+                switch (key)
+                {
+                    case ConsoleKey.UpArrow:
+                        selectedIndex = (selectedIndex == 0) ? stock.Count() - 1 : selectedIndex - 1;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        selectedIndex = (selectedIndex == stock.Count() - 1) ? 0 : selectedIndex + 1;
+                        break;
+                    case ConsoleKey.Enter:
+                        Console.Clear();
+                        if (stock[selectedIndex].Name == "Tilbage")
+                        {
+                            return inv;
+                        }
+
+                        Console.WriteLine(Translate.Instance.GetTranslation("Added_To_Cart"), stock[selectedIndex].Name);
+                        if (inv.Count(x => x.item.Name == stock[selectedIndex].Name) > 0)
+                        {
+                            int index = inv.FindIndex(x => x.item == stock[selectedIndex]);
+                            var inve = inv[index];
+                            inve.Number++;
+                            inv[index] = inve;
+                        }
+                        else
+                        {
+                            inv.Add(new Inv { Number = 1, item = stock[selectedIndex] });
+                        }
+
+
+                        selectedIndex = Math.Min(selectedIndex, stock.Count() - 1); // Juster index
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.Escape:
+                        Console.WriteLine(Translate.Instance.GetTranslation("Returning"));
+                        return inv;
+                        break;
+
+                }
+
             }
         }
         catch (Exception)
@@ -153,13 +155,13 @@ public class InventoryActions
                             if (inv[i].item.Name != "Tilbage")
                             {
 
-                                Console.WriteLine($"> {inv[i].Number}.stk : {inv[i].item.Name}");
+                                Console.WriteLine($">{inv[i].Number}.stk : {inv[i].item.Name}");
 
                             }
                             else
                             {
                                 // Markér valget
-                                Console.WriteLine($"> {inv[i].item.Name}");
+                                Console.WriteLine($">{inv[i].item.Name}");
 
                             }
                         }
