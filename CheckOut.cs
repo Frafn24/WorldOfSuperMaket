@@ -113,7 +113,7 @@ public class CheckOut
 
         Console.WriteLine("Tak fordi du spillede spillet!");
         sounds.GameOver();
-        Console.WriteLine("Game Over 😥");
+        Console.WriteLine("Game Over.");
         Thread.Sleep(1000);
         Environment.Exit(0);
     }
