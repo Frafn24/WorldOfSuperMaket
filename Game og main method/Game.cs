@@ -24,6 +24,7 @@ class Game {
     Lyd sounds = new Lyd();
     private string? language;
     private string QuestionsBefore = "https://docs.google.com/forms/d/1JJ3q5uzBCSxfbjSfjolMz9TDKq678vtFBpz09ScOGFg/edit";
+    TextAnime textanime = new TextAnime();
         
   
   //SoundsClass sound = new SoundsClass();
@@ -56,6 +57,7 @@ class Game {
   
     public void run()
     {
+        
         Console.Clear();
         
         Console.WriteLine("Before we start, please type what language you want to play in.");

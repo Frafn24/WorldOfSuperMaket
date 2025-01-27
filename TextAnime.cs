@@ -22,7 +22,7 @@ namespace WorldOfSuperMaket
             for (int i = 0; i < text.Length; i++)
             {
                 Console.Write(text[i]);
-                Thread.Sleep(50);
+                Thread.Sleep(5);
 
             }
         }
